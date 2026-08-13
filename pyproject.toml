@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "so-agent"
+version = "0.1.0"
+description = "Measures what structured output enforcement actually guarantees, and what it costs."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+
+dependencies = [
+    "openai>=1.40,<4",
+    "pydantic>=2.7",
+    "pydantic-settings>=2.2",
+    "typer>=0.12",
+    "rich>=13.7",
+    "jinja2>=3.1",
+    "httpx>=0.27",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.23",
+]
+
+[project.scripts]
+so-agent = "cli.main:app"
+
+[tool.setuptools]
+packages = [
+    "bench",
+    "cli",
+    "contracts",
+    "critic",
+    "enforce",
+    "provider",
+    "report",
+    "store",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "live: needs provider credentials and makes real API calls",
+]
