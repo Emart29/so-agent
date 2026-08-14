@@ -16,6 +16,18 @@ from __future__ import annotations
 import os
 from dataclasses import dataclass
 
+from dotenv import load_dotenv
+
+# API keys are read from the process environment, so a .env file has to be
+# loaded into it first. Settings classes read .env only for the fields they
+# declare and never export anything, so relying on that alone leaves a key
+# present on disk and invisible here — which reports as "credentials not set"
+# for a key the user can plainly see in their editor.
+#
+# Existing environment variables win: an explicitly exported key should not be
+# silently overridden by a stale file.
+load_dotenv(override=False)
+
 
 @dataclass(frozen=True)
 class Provider:
