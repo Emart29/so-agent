@@ -28,6 +28,7 @@ that needed it.
 from __future__ import annotations
 
 import json
+import re
 import logging
 from dataclasses import asdict, dataclass, field
 from datetime import datetime, timedelta, timezone
@@ -576,12 +577,18 @@ def _nested_schema(depth: int) -> dict[str, Any]:
 
 
 def _short_error(exc: Exception) -> str:
-    """Condense a provider error to the part that identifies the cause."""
+    """Condense a provider error to the part that identifies the cause.
+
+    Error bodies arrive as a stringified dict whose quoting is not consistent:
+    the key may be single-quoted while the value is double-quoted, because
+    Python's repr switches quote style when the value itself contains an
+    apostrophe. Matching a fixed marker therefore truncates exactly the errors
+    worth reading — the ones naming a schema field.
+    """
     message = str(exc)
-    for marker in ("'message': '", '"message": "'):
-        if marker in message:
-            rest = message.split(marker, 1)[1]
-            return rest.split("'", 1)[0].split('"', 1)[0][:200]
+    match = re.search(r"""["']message["']\s*:\s*(["'])(.*?)\1(?=\s*[,}])""", message, re.S)
+    if match:
+        return match.group(2)[:200]
     return message[:200]
 
 
