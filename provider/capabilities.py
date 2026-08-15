@@ -185,6 +185,39 @@ FEATURE_SCHEMAS: dict[str, dict[str, Any]] = {
         "required": ["name", "nickname"],
         "additionalProperties": False,
     },
+    # Pydantic emits `oneOf` for a discriminated union, not `anyOf`. They are
+    # different keywords and a validator may accept one and reject the other, so
+    # measuring only `anyOf` and assuming unions work would leave the shape this
+    # project actually sends unmeasured.
+    "oneof_discriminated": {
+        "type": "object",
+        "properties": {
+            "decision": {
+                "oneOf": [
+                    {
+                        "type": "object",
+                        "properties": {
+                            "kind": {"const": "answer"},
+                            "text": {"type": "string"},
+                        },
+                        "required": ["kind", "text"],
+                        "additionalProperties": False,
+                    },
+                    {
+                        "type": "object",
+                        "properties": {
+                            "kind": {"const": "question"},
+                            "ask": {"type": "string"},
+                        },
+                        "required": ["kind", "ask"],
+                        "additionalProperties": False,
+                    },
+                ]
+            }
+        },
+        "required": ["decision"],
+        "additionalProperties": False,
+    },
     "anyof_union": {
         "type": "object",
         "properties": {
@@ -231,6 +264,7 @@ FEATURE_PROMPTS: dict[str, str] = {
     "partial_required": "Return a person named Ada, with no nickname.",
     "nullable_field": "Return a person named Ada, with a null nickname.",
     "anyof_union": "Answer this: what is 2+2? Use the answer variant.",
+    "oneof_discriminated": "Answer this: what is 2+2? Use the answer variant.",
     "ref_defs": "Return a start point at coordinates x=1, y=2.",
 }
 

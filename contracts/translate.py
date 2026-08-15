@@ -39,7 +39,17 @@ VALUE_CONSTRAINTS = frozenset(
 )
 
 #: Annotations that carry no meaning for generation and only add tokens.
-COSMETIC_KEYS = frozenset({"title", "examples", "default", "$schema"})
+#:
+#: ``discriminator`` is here for two reasons beyond token cost. It is an OpenAPI
+#: keyword rather than core JSON Schema, so a strict validator may reject it
+#: outright; and its ``mapping`` holds ``#/$defs/`` pointers that become dangling
+#: references the moment definitions are inlined. It is also redundant — a
+#: discriminated union's variants already carry a const tag field that
+#: determines the variant on its own, and Pydantic applies its own discriminator
+#: when validating the response regardless of what the provider was sent.
+COSMETIC_KEYS = frozenset(
+    {"title", "examples", "default", "$schema", "discriminator"}
+)
 
 
 @dataclass

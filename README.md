@@ -52,10 +52,16 @@ Probed against every model that enforces natively, and identical on all three:
 
 | schema feature | result |
 |---|---|
-| nested objects, arrays of objects, enums, `anyOf` unions, `$ref`/`$defs` | accepted |
+| nested objects, arrays of objects, enums, `$ref`/`$defs` | accepted |
+| `anyOf` unions **and** `oneOf` discriminated unions | accepted |
 | nullable field (`"type": ["string", "null"]`, still in `required`) | accepted |
 | **optional field omitted from `required`** | **rejected everywhere** |
 | maximum nesting depth | 6 |
+
+`anyOf` and `oneOf` are probed separately on purpose. Pydantic emits **`oneOf`**
+for a discriminated union — not `anyOf` — and they are different keywords a
+validator may treat differently. Measuring only `anyOf` and assuming unions work
+would have left the shape this library actually sends unmeasured.
 
 That last rejection is the one that matters for anything built on Pydantic.
 Pydantic's natural output for an optional field leaves it out of `required`, and
