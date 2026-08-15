@@ -30,7 +30,7 @@ class Settings(BaseSettings):
     #: Filled in by the capability probe, not guessed. Empty means "not probed
     #: yet" and every entry point should say so rather than falling back.
     PRIMARY_MODEL: str = ""
-    CRITIC_MODEL: str = ""
+    CRITIC_MODEL: str = ""  # set by the probe; must be a model the critic scores well on
     FALLBACK_MODEL: str = ""
 
     #: How many times a failed generation may be sent back for repair. Attempts
