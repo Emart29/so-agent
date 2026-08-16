@@ -21,6 +21,7 @@ from __future__ import annotations
 
 import logging
 import random
+import re
 import time
 from dataclasses import dataclass, field
 from typing import Any
@@ -62,6 +63,48 @@ class GenerationRejectedError(RuntimeError):
     def __init__(self, message: str, failed_generation: str = "") -> None:
         super().__init__(message)
         self.failed_generation = failed_generation
+
+
+#: Rate-limit resets arrive as durations rather than seconds, in a format the
+#: OpenAI spec does not define: "410ms", "7.66s", "2m59.56s". Parsed rather than
+#: coerced, because ``float("2m36s")`` raises and the silent fallback to
+#: exponential backoff waits far longer than the provider asked for.
+_DURATION = re.compile(
+    r"(?:(?P<h>[\d.]+)h)?(?:(?P<m>[\d.]+)m(?!s))?"
+    r"(?:(?P<s>[\d.]+)s)?(?:(?P<ms>[\d.]+)ms)?$"
+)
+
+
+def parse_duration(raw: str | None) -> float | None:
+    """Read a rate-limit duration into seconds, or ``None`` if unreadable."""
+    if raw is None:
+        return None
+    text = str(raw).strip()
+    if not text:
+        return None
+    try:  # A bare number is already seconds.
+        return float(text)
+    except ValueError:
+        pass
+
+    match = _DURATION.match(text)
+    if not match or not any(match.groupdict().values()):
+        return None
+    parts = {k: float(v) for k, v in match.groupdict().items() if v}
+    return (
+        parts.get("h", 0.0) * 3600
+        + parts.get("m", 0.0) * 60
+        + parts.get("s", 0.0)
+        + parts.get("ms", 0.0) / 1000
+    )
+
+
+def _is_zero(value: str | None) -> bool:
+    """Whether a remaining-quota header says the bucket is empty."""
+    try:
+        return value is not None and float(value) <= 0
+    except (TypeError, ValueError):
+        return False
 
 
 #: Finish reason stamped on a result rebuilt from a rejected generation. Not a
@@ -321,21 +364,35 @@ class LLMClient:
         ) from last_error
 
     def _retry_after(self, exc: Exception) -> float | None:
-        """Read the wait a rate-limit response asked for, if it gave one."""
+        """Read the wait a rate-limit response asked for, if it gave one.
+
+        Which bucket ran out decides the wait, because they refill on very
+        different timescales. A token-per-minute limit typically resets in under
+        a second; a daily request quota does not. Waiting the wrong one turns a
+        400ms pause into a minute, which across a benchmark is the difference
+        between hours and days.
+        """
         response = getattr(exc, "response", None)
         header = getattr(response, "headers", None)
         if not header:
             return None
-        raw = header.get("retry-after") or header.get("x-ratelimit-reset-requests")
-        if raw is None:
-            return None
-        try:
-            wait = float(str(raw).rstrip("s"))
-        except (TypeError, ValueError):
-            return None
+
+        exhausted = [
+            header.get(f"x-ratelimit-reset-{bucket}")
+            for bucket in ("tokens", "requests")
+            if _is_zero(header.get(f"x-ratelimit-remaining-{bucket}"))
+        ]
+        candidates = [w for w in (parse_duration(v) for v in exhausted) if w is not None]
+
+        if not candidates:
+            wait = parse_duration(header.get("retry-after"))
+            if wait is None:
+                return None
+            candidates = [wait]
+
         # Providers occasionally return very long waits under load. Past a
         # threshold it is better to fail visibly than to block for minutes.
-        return min(max(wait, 0.0), settings.MAX_RETRY_AFTER)
+        return min(max(max(candidates), 0.0), settings.MAX_RETRY_AFTER)
 
     @staticmethod
     def _backoff(attempt: int) -> float:

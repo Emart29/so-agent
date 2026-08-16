@@ -17,7 +17,9 @@ from provider.client import (
     LLMClient,
     MissingCredentialsError,
     _rejected_generation,
+    parse_duration,
 )
+from config import settings
 from provider.registry import get_provider
 from store.requests import RequestLog
 
@@ -180,3 +182,75 @@ class TestGenerationRejected:
         with pytest.raises(GenerationRejectedError):
             client.chat(messages=[{"role": "user", "content": "x"}], model="m")
         assert len(calls) == 1
+
+
+class TestRateLimitWait:
+    """Which bucket ran out decides the wait.
+
+    Groq reports resets as durations ("410ms", "2m36s"), not seconds, and the
+    two buckets refill on wildly different timescales. Reading the wrong one, or
+    failing to parse it at all, turns a sub-second pause into a minute — across
+    a benchmark that is the difference between hours and days.
+    """
+
+    @pytest.mark.parametrize(
+        "raw,expected",
+        [("410ms", 0.41), ("7.66s", 7.66), ("2m36s", 156.0),
+         ("2m59.56s", 179.56), ("1h2m3s", 3723.0), ("60", 60.0)],
+    )
+    def test_durations_are_parsed(self, raw, expected):
+        assert parse_duration(raw) == pytest.approx(expected)
+
+    @pytest.mark.parametrize("raw", [None, "", "Wed, 21 Oct 2026 07:28:00 GMT"])
+    def test_unreadable_values_fall_back(self, raw):
+        assert parse_duration(raw) is None
+
+    def _limited(self, headers: dict) -> openai.RateLimitError:
+        response = httpx.Response(
+            429,
+            headers=headers,
+            request=httpx.Request("POST", "https://example.test/v1/chat/completions"),
+        )
+        return openai.RateLimitError("rate limited", response=response, body=None)
+
+    def _client(self, monkeypatch) -> LLMClient:
+        monkeypatch.setenv("GROQ_API_KEY", "test-key-not-used")
+        return LLMClient("groq")
+
+    def test_an_exhausted_token_bucket_waits_its_own_reset(self, monkeypatch):
+        """The short one. Waiting the request reset here would be 150x too long."""
+        client = self._client(monkeypatch)
+        wait = client._retry_after(self._limited({
+            "x-ratelimit-remaining-tokens": "0",
+            "x-ratelimit-reset-tokens": "410ms",
+            "x-ratelimit-remaining-requests": "998",
+            "x-ratelimit-reset-requests": "2m36s",
+        }))
+        assert wait == pytest.approx(0.41)
+
+    def test_an_exhausted_request_bucket_waits_its_own_reset(self, monkeypatch):
+        client = self._client(monkeypatch)
+        wait = client._retry_after(self._limited({
+            "x-ratelimit-remaining-tokens": "5000",
+            "x-ratelimit-reset-tokens": "410ms",
+            "x-ratelimit-remaining-requests": "0",
+            "x-ratelimit-reset-requests": "30s",
+        }))
+        assert wait == pytest.approx(30.0)
+
+    def test_retry_after_is_used_when_no_bucket_is_empty(self, monkeypatch):
+        client = self._client(monkeypatch)
+        assert client._retry_after(self._limited({"retry-after": "12"})) == 12.0
+
+    def test_a_long_wait_is_capped(self, monkeypatch):
+        """Better to fail visibly than to block for an hour."""
+        client = self._client(monkeypatch)
+        wait = client._retry_after(self._limited({
+            "x-ratelimit-remaining-requests": "0",
+            "x-ratelimit-reset-requests": "1h",
+        }))
+        assert wait == settings.MAX_RETRY_AFTER
+
+    def test_no_headers_falls_back_to_backoff(self, monkeypatch):
+        client = self._client(monkeypatch)
+        assert client._retry_after(self._limited({})) is None
