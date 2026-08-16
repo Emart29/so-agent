@@ -1,0 +1,190 @@
+{
+  "groq": {
+    "allam-2-7b": {
+      "provider": "groq",
+      "model": "allam-2-7b",
+      "probed_at": "2026-08-14T13:32:12.711243+00:00",
+      "tiers": {
+        "json_schema": "rejected",
+        "json_object": "conformed",
+        "tools": "rejected",
+        "prompt_only": "conformed"
+      },
+      "features": {},
+      "max_nesting_depth": null,
+      "notes": [
+        "json_schema: This model does not support response format `json_schema`. See supported models at https://console.groq.com/docs/structured-outputs#supported-models",
+        "tools: `tool calling` is not supported with this model"
+      ]
+    },
+    "groq/compound": {
+      "provider": "groq",
+      "model": "groq/compound",
+      "probed_at": "2026-08-14T13:32:14.450510+00:00",
+      "tiers": {
+        "json_schema": "rejected",
+        "json_object": "rejected",
+        "tools": "rejected",
+        "prompt_only": "error"
+      },
+      "features": {},
+      "max_nesting_depth": null,
+      "notes": [
+        "json_schema: This model does not support response format `json_schema`. See supported models at https://console.groq.com/docs/structured-outputs#supported-models",
+        "json_object: APIStatusError: Error code: 413 - {'error': {'message': 'Request Entity Too Large', 'type': 'invalid_request_error', 'code': 'request_too_large'}}",
+        "tools: `tool calling` is not supported with this model",
+        "prompt_only: APIStatusError: Error code: 413 - {'error': {'message': 'Request Entity Too Large', 'type': 'invalid_request_error', 'code': 'request_too_large'}}"
+      ]
+    },
+    "groq/compound-mini": {
+      "provider": "groq",
+      "model": "groq/compound-mini",
+      "probed_at": "2026-08-14T13:32:31.512070+00:00",
+      "tiers": {
+        "json_schema": "rejected",
+        "json_object": "conformed",
+        "tools": "rejected",
+        "prompt_only": "conformed"
+      },
+      "features": {},
+      "max_nesting_depth": null,
+      "notes": [
+        "json_schema: This model does not support response format `json_schema`. See supported models at https://console.groq.com/docs/structured-outputs#supported-models",
+        "tools: `tool calling` is not supported with this model"
+      ]
+    },
+    "llama-3.1-8b-instant": {
+      "provider": "groq",
+      "model": "llama-3.1-8b-instant",
+      "probed_at": "2026-08-14T13:32:34.080862+00:00",
+      "tiers": {
+        "json_schema": "rejected",
+        "json_object": "conformed",
+        "tools": "conformed",
+        "prompt_only": "conformed"
+      },
+      "features": {},
+      "max_nesting_depth": null,
+      "notes": [
+        "json_schema: This model does not support response format `json_schema`. See supported models at https://console.groq.com/docs/structured-outputs#supported-models"
+      ]
+    },
+    "llama-3.3-70b-versatile": {
+      "provider": "groq",
+      "model": "llama-3.3-70b-versatile",
+      "probed_at": "2026-08-14T13:32:40.533466+00:00",
+      "tiers": {
+        "json_schema": "rejected",
+        "json_object": "conformed",
+        "tools": "conformed",
+        "prompt_only": "conformed"
+      },
+      "features": {},
+      "max_nesting_depth": null,
+      "notes": [
+        "json_schema: This model does not support response format `json_schema`. See supported models at https://console.groq.com/docs/structured-outputs#supported-models"
+      ]
+    },
+    "openai/gpt-oss-120b": {
+      "provider": "groq",
+      "model": "openai/gpt-oss-120b",
+      "probed_at": "2026-08-15T14:20:46.518859+00:00",
+      "tiers": {
+        "json_schema": "conformed",
+        "json_object": "conformed",
+        "tools": "conformed",
+        "prompt_only": "conformed"
+      },
+      "features": {
+        "nested_object": "conformed",
+        "array_of_objects": "conformed",
+        "enum": "conformed",
+        "partial_required": "rejected",
+        "nullable_field": "conformed",
+        "oneof_discriminated": "conformed",
+        "anyof_union": "conformed",
+        "ref_defs": "conformed"
+      },
+      "max_nesting_depth": 6,
+      "notes": [
+        "partial_required: invalid JSON schema for response_format: 'probe_partial_required': /required: `required` is required to be supplied and to be an array including every key in properties. The following properties must "
+      ]
+    },
+    "openai/gpt-oss-20b": {
+      "provider": "groq",
+      "model": "openai/gpt-oss-20b",
+      "probed_at": "2026-08-15T14:19:59.345289+00:00",
+      "tiers": {
+        "json_schema": "conformed",
+        "json_object": "conformed",
+        "tools": "conformed",
+        "prompt_only": "conformed"
+      },
+      "features": {
+        "nested_object": "conformed",
+        "array_of_objects": "conformed",
+        "enum": "conformed",
+        "partial_required": "rejected",
+        "nullable_field": "conformed",
+        "oneof_discriminated": "conformed",
+        "anyof_union": "conformed",
+        "ref_defs": "conformed"
+      },
+      "max_nesting_depth": 6,
+      "notes": [
+        "partial_required: invalid JSON schema for response_format: 'probe_partial_required': /required: `required` is required to be supplied and to be an array including every key in properties. The following properties must "
+      ]
+    },
+    "qwen/qwen3.6-27b": {
+      "provider": "groq",
+      "model": "qwen/qwen3.6-27b",
+      "probed_at": "2026-08-15T14:21:20.919133+00:00",
+      "tiers": {
+        "json_schema": "conformed",
+        "json_object": "conformed",
+        "tools": "conformed",
+        "prompt_only": "ignored"
+      },
+      "features": {
+        "nested_object": "conformed",
+        "array_of_objects": "conformed",
+        "enum": "conformed",
+        "partial_required": "rejected",
+        "nullable_field": "conformed",
+        "oneof_discriminated": "conformed",
+        "anyof_union": "conformed",
+        "ref_defs": "conformed"
+      },
+      "max_nesting_depth": 6,
+      "notes": [
+        "tools: first sample did not conform (no tool call emitted); second did",
+        "prompt_only: <think> Here's a thinking process: 1. **Analyze User Input:** - **Request:** Return the name and approximate population ...",
+        "partial_required: invalid JSON schema for response_format: 'probe_partial_required': /required: `required` is required to be supplied and to be an array including every key in properties. The following properties must "
+      ]
+    }
+  },
+  "openrouter": {
+    "openai/gpt-oss-20b:free": {
+      "provider": "openrouter",
+      "model": "openai/gpt-oss-20b:free",
+      "probed_at": "2026-08-14T13:46:49.645091+00:00",
+      "tiers": {
+        "json_schema": "conformed",
+        "json_object": "conformed",
+        "tools": "conformed",
+        "prompt_only": "conformed"
+      },
+      "features": {
+        "nested_object": "conformed",
+        "array_of_objects": "conformed",
+        "enum": "conformed",
+        "partial_required": "conformed",
+        "nullable_field": "conformed",
+        "anyof_union": "conformed",
+        "ref_defs": "conformed"
+      },
+      "max_nesting_depth": 6,
+      "notes": []
+    }
+  }
+}

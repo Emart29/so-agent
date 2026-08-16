@@ -1,0 +1,19 @@
+# One service, no dependencies. The measurements and the report land in ./data
+# on the host so they survive the container.
+services:
+  so-agent:
+    build: .
+    image: so-agent:latest
+    environment:
+      # Supplied from the host environment or a .env file beside this one. The
+      # image never bakes in a key.
+      GROQ_API_KEY: ${GROQ_API_KEY:-}
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:-}
+      PROVIDER: ${PROVIDER:-groq}
+      PRIMARY_MODEL: ${PRIMARY_MODEL:-}
+      CRITIC_MODEL: ${CRITIC_MODEL:-}
+      LOG_DB_PATH: /app/data/runs.db
+    volumes:
+      - ./data:/app/data
+    # Answers "am I set up?" without spending any provider allowance.
+    command: ["providers"]

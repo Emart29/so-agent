@@ -3,13 +3,21 @@ __pycache__/
 .venv/
 venv/
 .env
-*.db
-*.db-wal
-*.db-shm
-capabilities.json
 .pytest_cache/
-report/*.html
 dist/
 build/
 *.egg-info/
 .DS_Store
+
+# The attempt log is rebuilt by running the tool, and holds raw model output
+# from whoever ran it last.
+*.db
+*.db-wal
+*.db-shm
+
+# Generated views. The measurements they are built from are committed instead:
+# capabilities.json and bench_results_*.json are the evidence, and a reader
+# should not have to spend a day of API allowance to check a number.
+report.html
+report_preview.html
+bench_*.log
