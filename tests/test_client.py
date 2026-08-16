@@ -169,6 +169,10 @@ class TestGenerationRejected:
                 raise self_outer._error("failed_generation was not valid")
 
         self_outer = self
+        # A key the client never uses: the request is intercepted below. Set
+        # explicitly so the test runs the same way with or without credentials
+        # in the environment.
+        monkeypatch.setenv("GROQ_API_KEY", "test-key-not-used")
         client = LLMClient("groq")
         monkeypatch.setattr(
             client._client.chat, "completions", _Completions(), raising=False

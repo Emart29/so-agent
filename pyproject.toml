@@ -30,6 +30,10 @@ dev = [
 so-agent = "cli.main:main"
 
 [tool.setuptools]
+# Top-level modules, not packages. Without these the installed distribution is
+# missing them entirely: an editable install still works because the repo root
+# is on the path, so the gap only appears in a container or a fresh install.
+py-modules = ["agent", "config"]
 packages = [
     "bench",
     "cli",
