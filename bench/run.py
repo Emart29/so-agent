@@ -197,9 +197,15 @@ def run_matrix(
     for model in models:
         caps = capabilities.get(model)
         agent = None
+        # A daily quota is enforced per model, so exhausting one says nothing
+        # about the next. Abandoning the model rather than the run keeps the
+        # rest of the ladder measurable.
+        model_unavailable = ""
 
         for tier in tiers:
             possible, reason = tier_is_possible(caps, tier)
+            if model_unavailable:
+                possible, reason = False, model_unavailable
 
             for contract in contract_types:
                 if not possible:
@@ -236,6 +242,26 @@ def run_matrix(
                     if on_cell:
                         on_cell(partial)
                     return results
+                except RuntimeError as exc:
+                    # The transport gave up — a daily quota, or the provider
+                    # being unreachable for this model. Record it and move on;
+                    # retrying the same model would only spend the same wait.
+                    logger.warning("%s unavailable: %s", model, exc)
+                    model_unavailable = f"model unavailable: {exc}"
+                    failed = CellResult(
+                        provider=provider, model=model, tier=tier,
+                        contract=contract.__name__,
+                        difficulty=contract.difficulty().value,
+                        skipped_reason=model_unavailable,
+                    )
+                    results.append(failed)
+                    if on_cell:
+                        on_cell(failed)
+                    # Every remaining cell for this model is recorded as skipped
+                    # rather than dropped: an absent row is indistinguishable
+                    # from one nobody thought to run.
+                    possible, reason = False, model_unavailable
+                    continue
 
                 results.append(cell)
                 if on_cell:

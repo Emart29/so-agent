@@ -11,7 +11,16 @@ from __future__ import annotations
 import pytest
 
 from bench.cases import CASES, CASES_BY_ID
-from bench.run import BENCH_TIERS, CellResult, tier_is_possible
+from bench.results import (
+    failure_table,
+    interval_advice,
+    load_results,
+    save_results,
+    summary_table,
+    tier_table,
+    trajectory_table,
+)
+from bench.run import BENCH_TIERS, CellResult, run_matrix, tier_is_possible
 from bench.score import PLACEHOLDER_MARKERS, is_placeholder, score_case
 from contracts.schemas import (
     Category,
@@ -231,3 +240,112 @@ class TestCellResult:
     def test_tools_is_excluded_from_the_measured_tiers(self):
         """A different envelope with its own failure modes, measured separately."""
         assert "tools" not in BENCH_TIERS
+
+
+class TestResults:
+    def _cell(self, **overrides) -> CellResult:
+        base = dict(
+            provider="groq", model="m", tier="json_object",
+            contract="TicketSummary", difficulty="simple",
+            first_attempt_ok=9, final_ok=10, total=10,
+            failures={"not_json": 1},
+            scores=[score_case(CASES_BY_ID["billing_duplicate"], triage())],
+        )
+        return CellResult(**{**base, **overrides})
+
+    def test_a_run_survives_a_round_trip(self, tmp_path):
+        """A matrix costs hours of real requests; it must reload exactly."""
+        path = tmp_path / "results.json"
+        save_results([self._cell()], path, sampling={"repeats": 3})
+
+        payload = load_results(path)
+        restored = payload["cells"][0]
+        assert payload["sampling"]["repeats"] == 3
+        assert restored.final_rate == 1.0
+        assert restored.failures == {"not_json": 1}
+        assert restored.scores[0].accurate
+
+    def test_a_skipped_cell_is_kept_in_the_file(self, tmp_path):
+        path = tmp_path / "results.json"
+        save_results([CellResult(
+            provider="groq", model="m", tier="json_schema", contract="c",
+            difficulty="simple", skipped_reason="json_schema is rejected",
+        )], path)
+        assert load_results(path)["cells"][0].skipped_reason
+
+    def test_the_tables_render_a_mixed_run(self):
+        """Skipped and measured cells share a table, so both paths must render."""
+        cells = [
+            self._cell(),
+            CellResult(
+                provider="groq", model="m", tier="json_schema", contract="c",
+                difficulty="simple", skipped_reason="rejected",
+            ),
+        ]
+        for build in (summary_table, tier_table, failure_table, trajectory_table):
+            assert build(cells).row_count >= 1
+
+    def test_sizing_advice_counts_thin_cells(self):
+        advice = interval_advice([self._cell()])
+        assert "n<30" in advice
+
+    def test_sizing_advice_passes_a_large_run(self):
+        advice = interval_advice([self._cell(total=40, final_ok=38)])
+        assert "n>=30" in advice
+
+    def test_sizing_advice_ignores_skipped_cells(self):
+        """A cell that never ran says nothing about whether the run was big enough."""
+        skipped = CellResult(
+            provider="groq", model="m", tier="json_schema", contract="c",
+            difficulty="simple", skipped_reason="rejected",
+        )
+        assert "No cell produced data" in interval_advice([skipped])
+
+    def test_the_projection_reports_the_best_and_worst_cells(self):
+        cells = [self._cell(), self._cell(tier="prompt_only", final_ok=6)]
+        rendered = trajectory_table(cells)
+        assert rendered.row_count == 2
+
+
+class TestUnavailableModel:
+    """A model whose daily quota runs out must not take the run down with it."""
+
+    class _Agent:
+        def __init__(self, model: str, fail: bool) -> None:
+            self.provider, self.model, self._fail = "groq", model, fail
+
+        def extract(self, *_args, **_kwargs):
+            if self._fail:
+                raise RuntimeError("groq failed after 4 attempts: rate limited")
+            raise AssertionError("the healthy model should not have been reached")
+
+    def test_the_rest_of_the_ladder_still_runs(self, monkeypatch):
+        monkeypatch.setattr(
+            "bench.run.load_capabilities",
+            lambda: {"groq": {}},
+        )
+        cells = run_matrix(
+            lambda model: self._Agent(model, fail=True),
+            provider="groq",
+            models=["dead", "alive"],
+            tiers=["prompt_only"],
+            contracts=["ticket_summary", "ticket_analysis"],
+            repeats=1,
+            cases=[CASES_BY_ID["dark_mode"]],
+        )
+        assert len(cells) == 4
+        assert all(c.skipped_reason for c in cells)
+        assert any(c.model == "alive" for c in cells)
+
+    def test_the_remaining_cells_say_why_they_did_not_run(self, monkeypatch):
+        monkeypatch.setattr("bench.run.load_capabilities", lambda: {"groq": {}})
+        cells = run_matrix(
+            lambda model: self._Agent(model, fail=True),
+            provider="groq",
+            models=["dead"],
+            tiers=["prompt_only"],
+            contracts=["ticket_summary", "ticket_analysis"],
+            repeats=1,
+            cases=[CASES_BY_ID["dark_mode"]],
+        )
+        assert all("unavailable" in c.skipped_reason for c in cells)
