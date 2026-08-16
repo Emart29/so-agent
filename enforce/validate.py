@@ -40,6 +40,10 @@ class FailureType(str, Enum):
     TRUNCATED = "truncated"
     REFUSAL = "refusal"
     EMPTY = "empty"
+    #: The provider enforced the constraint, the generation did not satisfy
+    #: it, and the provider refused to return it. Enforcement working, and
+    #: distinct from the same mistake caught locally after the fact.
+    PROVIDER_REJECTED = "provider_rejected"
 
 
 #: Failures a second request cannot fix as posed. Retrying these spends the
@@ -148,6 +152,7 @@ def validate_response(
     text: str,
     contract: type[BaseModel],
     truncated: bool = False,
+    provider_rejected: bool = False,
 ) -> ValidationResult:
     """Turn a raw response into a validated object, or say precisely why not.
 
@@ -159,11 +164,34 @@ def validate_response(
             syntactically plausible and would otherwise be misreported as a
             schema mismatch — sending it back for repair instead of raising the
             budget that actually caused it.
+        provider_rejected: Whether the provider refused the generation because
+            it failed the constraint being enforced. Passed in for the same
+            reason as ``truncated``: the local classification would otherwise
+            call an empty body "the model returned nothing", which is a
+            different event with a different remedy.
 
     Returns:
         The result, carrying the failure type and the detail a repair needs.
     """
     raw = text or ""
+
+    if provider_rejected:
+        # Retryable on purpose. The provider caught the mistake instead of the
+        # validator, which says nothing about whether asking again would work —
+        # and treating an empty rejection as an empty response would stop the
+        # repair loop dead on the tier where enforcement is doing its job.
+        inner = _validate_object(_try_parse(raw), contract, raw, recovered=False)             if _try_parse(raw) is not None else None
+        return ValidationResult(
+            ok=False,
+            failure=FailureType.PROVIDER_REJECTED,
+            raw=raw,
+            detail=(
+                inner.detail if inner is not None and inner.detail
+                else "the provider refused the generation: it did not satisfy "
+                     "the schema being enforced"
+            ),
+            field_errors=inner.field_errors if inner is not None else [],
+        )
 
     if not raw.strip():
         # Truncation is reported first: an empty body after hitting the ceiling

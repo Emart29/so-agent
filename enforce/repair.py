@@ -114,6 +114,15 @@ def build_repair_message(result: ValidationResult, contract: type[BaseModel]) ->
             "fences, and no text before or after it."
         )
 
+    if result.failure is FailureType.PROVIDER_REJECTED:
+        return (
+            "The provider rejected that response because it did not match the "
+            "required schema:\n"
+            f"{errors}\n\n"
+            "Return a JSON object that matches the schema exactly. Every "
+            "required field must be present, with the correct type."
+        )
+
     if result.failure is FailureType.CONSTRAINT_FAIL:
         return (
             "The JSON was structurally correct but violated a value constraint:\n"
@@ -161,7 +170,10 @@ def repair_loop(
     for index in range(1, limit + 1):
         response = generate(repair_message, budget)
         result = validate_response(
-            response.text, contract, truncated=getattr(response, "truncated", False)
+            response.text,
+            contract,
+            truncated=getattr(response, "truncated", False),
+            provider_rejected=getattr(response, "rejected_by_provider", False),
         )
 
         attempt = Attempt(

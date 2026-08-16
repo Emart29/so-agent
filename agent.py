@@ -29,7 +29,12 @@ from enforce.ladder import EnforcementPlan, build_plan
 from enforce.repair import RepairOutcome, repair_loop
 from enforce.tools import ToolResult, validate_tool_call
 from provider.capabilities import ModelCapabilities, load_capabilities
-from provider.client import LLMClient
+from provider.client import (
+    GENERATION_REJECTED_FINISH_REASON,
+    ChatResult,
+    GenerationRejectedError,
+    LLMClient,
+)
 from store.log import AttemptLog, AttemptRow, new_run_id
 
 logger = logging.getLogger("agent")
@@ -193,12 +198,25 @@ class StructuredAgent:
             turn = list(messages)
             if repair_message:
                 turn.append({"role": "user", "content": repair_message})
-            return self.client.chat(
-                messages=turn,
-                model=self.model,
-                max_tokens=max_tokens or self.max_tokens,
-                **plan.request_kwargs,
-            )
+            try:
+                return self.client.chat(
+                    messages=turn,
+                    model=self.model,
+                    max_tokens=max_tokens or self.max_tokens,
+                    **plan.request_kwargs,
+                )
+            except GenerationRejectedError as exc:
+                # The provider enforced the constraint and the model missed it.
+                # That is a failed attempt, not a dead request: handing the
+                # rejected text back lets it be classified, repaired, and
+                # counted like any other failure instead of vanishing as an
+                # error with no type.
+                return ChatResult(
+                    text=exc.failed_generation,
+                    provider=self.provider,
+                    model=self.model,
+                    finish_reason=GENERATION_REJECTED_FINISH_REASON,
+                )
 
         try:
             outcome = repair_loop(

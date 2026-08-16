@@ -46,6 +46,53 @@ class BudgetExhaustedError(RuntimeError):
     """
 
 
+class GenerationRejectedError(RuntimeError):
+    """The model could not satisfy a constraint the provider was enforcing.
+
+    Arrives as a 400 and is not one: the request was well formed, and the
+    generation failed to validate against the schema the provider was asked to
+    hold it to. Treating it as a malformed request would discard a real
+    measurement — this is enforcement working, loudly.
+
+    Groq returns the text it could not validate. That is the raw output of a
+    failed attempt, so it is carried here rather than dropped, which turns an
+    opaque error into a classified failure with the bytes attached.
+    """
+
+    def __init__(self, message: str, failed_generation: str = "") -> None:
+        super().__init__(message)
+        self.failed_generation = failed_generation
+
+
+#: Finish reason stamped on a result rebuilt from a rejected generation. Not a
+#: value any provider returns; it carries the rejection through the layers that
+#: only see a completion.
+GENERATION_REJECTED_FINISH_REASON = "generation_rejected"
+
+#: Substrings that mark a 400 as a generation failure rather than a bad request.
+GENERATION_REJECTED_MARKERS = (
+    "failed_generation",
+    "json_validate_failed",
+    "failed to generate json",
+    "failed to validate json",
+)
+
+
+def _rejected_generation(exc: Exception) -> GenerationRejectedError | None:
+    """Recognise a 400 that means "the model could not comply"."""
+    message = str(exc)
+    if not any(m in message.lower() for m in GENERATION_REJECTED_MARKERS):
+        return None
+
+    body = getattr(exc, "body", None)
+    failed = ""
+    if isinstance(body, dict):
+        error = body.get("error")
+        if isinstance(error, dict):
+            failed = error.get("failed_generation") or ""
+    return GenerationRejectedError(message, failed_generation=failed)
+
+
 @dataclass
 class ChatResult:
     """A completion plus the metadata every later layer needs.
@@ -83,6 +130,11 @@ class ChatResult:
     def truncated(self) -> bool:
         """Whether generation stopped because the token limit was reached."""
         return self.finish_reason == "length"
+
+    @property
+    def rejected_by_provider(self) -> bool:
+        """Whether the provider refused this generation for failing its schema."""
+        return self.finish_reason == GENERATION_REJECTED_FINISH_REASON
 
 
 class LLMClient:
@@ -226,8 +278,14 @@ class LLMClient:
             try:
                 return self._client.chat.completions.create(**payload)
 
-            except openai.BadRequestError:
-                # The request itself is wrong. It will be wrong next time too.
+            except openai.BadRequestError as exc:
+                # A 400 usually means the request is wrong and will be wrong
+                # next time too. One kind is not: the provider enforced a
+                # constraint and the model could not satisfy it, which is a
+                # generation failure carrying its own evidence.
+                rejected = _rejected_generation(exc)
+                if rejected is not None:
+                    raise rejected from exc
                 raise
 
             except openai.RateLimitError as exc:

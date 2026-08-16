@@ -7,9 +7,17 @@ resource it protects takes a day to replenish.
 
 from __future__ import annotations
 
+import httpx
+import openai
 import pytest
 
-from provider.client import BudgetExhaustedError, LLMClient, MissingCredentialsError
+from provider.client import (
+    BudgetExhaustedError,
+    GenerationRejectedError,
+    LLMClient,
+    MissingCredentialsError,
+    _rejected_generation,
+)
 from provider.registry import get_provider
 from store.requests import RequestLog
 
@@ -108,3 +116,63 @@ class TestBudgetGuard:
             log.record("openrouter", "m")
 
         assert client.remaining_budget() == 0
+
+
+class TestGenerationRejected:
+    """A 400 that means "the model could not comply" is a measurement, not a bug.
+
+    Discarding it would delete the loudest evidence enforcement produces: the
+    provider held the model to a schema, the model missed, and the provider said
+    so — and handed back the text it refused.
+    """
+
+    def _error(self, message: str, failed: str | None = None) -> openai.BadRequestError:
+        body = {"error": {"message": message, "code": "json_validate_failed"}}
+        if failed is not None:
+            body["error"]["failed_generation"] = failed
+        response = httpx.Response(
+            400,
+            request=httpx.Request("POST", "https://example.test/v1/chat/completions"),
+        )
+        return openai.BadRequestError(message, response=response, body=body)
+
+    def test_it_is_recognised_and_carries_the_rejected_text(self):
+        exc = _rejected_generation(
+            self._error(
+                "Failed to generate JSON. See 'failed_generation' for details.",
+                failed='{"category",\n "priority"}',
+            )
+        )
+        assert exc is not None
+        assert "category" in exc.failed_generation
+
+    def test_an_ordinary_bad_request_is_left_alone(self):
+        """A malformed request will be malformed next time; it is not a failure
+        of the model."""
+        assert _rejected_generation(
+            self._error("Invalid value for 'model': no such model")
+        ) is None
+
+    def test_a_rejection_without_the_text_still_classifies(self):
+        """Not every provider returns what it refused."""
+        exc = _rejected_generation(self._error("json_validate_failed"))
+        assert exc is not None
+        assert exc.failed_generation == ""
+
+    def test_it_is_not_retried_at_the_transport(self, monkeypatch):
+        """Retrying re-runs the same generation and spends the allowance twice."""
+        calls = []
+
+        class _Completions:
+            def create(self, **_kwargs):
+                calls.append(1)
+                raise self_outer._error("failed_generation was not valid")
+
+        self_outer = self
+        client = LLMClient("groq")
+        monkeypatch.setattr(
+            client._client.chat, "completions", _Completions(), raising=False
+        )
+        with pytest.raises(GenerationRejectedError):
+            client.chat(messages=[{"role": "user", "content": "x"}], model="m")
+        assert len(calls) == 1

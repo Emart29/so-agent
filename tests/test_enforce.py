@@ -259,3 +259,44 @@ class TestRepairMessages:
         result = validate_response(MALFORMED["prose_only"], TicketSummary)
         message = build_repair_message(result, TicketSummary)
         assert "markdown" in message.lower()
+
+
+class TestProviderRejection:
+    """The provider caught the mistake instead of the validator.
+
+    Worth its own failure type: it is the only direct evidence that enforcement
+    ran at all, and it must stay retryable — an empty rejection classified as an
+    empty response would stop the repair loop on exactly the tier where
+    enforcement is doing its job.
+    """
+
+    def test_it_is_classified_as_a_rejection_not_an_empty_response(self):
+        result = validate_response("", TicketSummary, provider_rejected=True)
+        assert result.failure is FailureType.PROVIDER_REJECTED
+        assert not result.ok
+
+    def test_a_rejection_is_retryable(self):
+        assert validate_response("", TicketSummary, provider_rejected=True).retryable
+
+    def test_an_ordinary_empty_response_is_still_unretryable(self):
+        """Asking a model that returned nothing to try again returns nothing."""
+        assert not validate_response("", TicketSummary).retryable
+
+    def test_the_rejected_text_is_kept_and_explained(self):
+        """Groq hands back what it refused, which is the evidence."""
+        result = validate_response(
+            '{"category": 5}', TicketSummary, provider_rejected=True
+        )
+        assert result.raw == '{"category": 5}'
+        assert result.field_errors
+        assert result.failure is FailureType.PROVIDER_REJECTED
+
+    def test_a_rejection_without_text_still_explains_itself(self):
+        detail = validate_response("", TicketSummary, provider_rejected=True).detail
+        assert "refused" in detail
+
+    def test_the_repair_message_asks_for_the_whole_object(self):
+        """There is no partial output to preserve: the provider returned none."""
+        result = validate_response("", TicketSummary, provider_rejected=True)
+        message = build_repair_message(result, TicketSummary)
+        assert "matches the schema exactly" in message

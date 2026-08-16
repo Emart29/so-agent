@@ -116,6 +116,8 @@ def main() -> int:
             "review": review,
             "critic_model": critic_model or "",
             "temperature": "provider default (not pinned)",
+            "transport_retries": settings.MAX_TRANSPORT_RETRIES,
+            "max_repair_attempts": settings.MAX_REPAIR_ATTEMPTS,
             "critic_judges_itself": bool(critic_model) and critic_model in models,
             "elapsed_seconds": round(elapsed, 1),
         }
