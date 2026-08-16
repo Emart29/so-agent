@@ -24,13 +24,15 @@ API calls, against a live provider, on a stated date.
 
 ## The measured capability matrix
 
-Groq, 14 August 2026. Every cell is a real API call, not a documentation claim.
+Groq, 14–15 August 2026. Every cell is a real API call, not a documentation
+claim. The dated probe record is committed as `capabilities.json`, so these rows
+can be checked against the measurement rather than taken on trust.
 
 | model | json_schema | json_object | tools | prompt_only |
 |---|---|---|---|---|
 | `openai/gpt-oss-120b` | yes | yes | yes | yes |
 | `openai/gpt-oss-20b` | yes | yes | yes | yes |
-| `qwen/qwen3.6-27b` | yes | yes | **ignored** | — |
+| `qwen/qwen3.6-27b` | yes | yes | yes | reasons first |
 | `llama-3.3-70b-versatile` | no | yes | yes | yes |
 | `llama-3.1-8b-instant` | no | yes | yes | yes |
 | `allam-2-7b` | no | yes | no | yes |
@@ -42,9 +44,17 @@ directive outright, which is why the enforcement ladder exists rather than being
 a formality — on most of this provider's line-up there is nothing to fall back
 from.
 
-**`qwen/qwen3.6-27b` accepts a tool definition and emits no tool call.** The
-request succeeds and nothing is enforced. That is the failure this project was
-built to detect: indistinguishable from working code until the output is checked.
+**`qwen/qwen3.6-27b` failed the tool probe on its first sample and passed on the
+second.** A single sample would have recorded it as a provider that accepts a
+tool definition and emits no tool call — the exact failure this project exists to
+detect, and in this case not true. Every non-conforming verdict is therefore
+re-sampled before it is recorded, because a one-shot probe measures a draw from
+the model rather than the provider's behaviour.
+
+Its `prompt_only` row is a different thing again: asked for JSON with no
+enforcement directive, it emits its reasoning first. Nothing was ignored there,
+because nothing was sent — which is why the prompt-only baseline is excluded
+from the "accepted and ignored" count rather than inflating it.
 
 ### What strict mode will not accept
 

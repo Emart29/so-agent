@@ -1,5 +1,5 @@
 {
-  "written_at": "2026-08-16T13:00:17.729833+00:00",
+  "written_at": "2026-08-16T13:19:10.624626+00:00",
   "sampling": {
     "provider": "groq",
     "repeats": 3,
@@ -8,7 +8,7 @@
     "critic_model": "llama-3.1-8b-instant",
     "temperature": "provider default (not pinned)",
     "critic_judges_itself": true,
-    "elapsed_seconds": 832.7
+    "elapsed_seconds": 1965.6
   },
   "cells": [
     {
@@ -627,6 +627,483 @@
           "placeholders": [
             "account_tier='unknown'"
           ]
+        }
+      ]
+    },
+    {
+      "provider": "groq",
+      "model": "llama-3.1-8b-instant",
+      "tier": "json_object",
+      "contract": "TicketTriage",
+      "difficulty": "hard",
+      "first_attempt_ok": 1,
+      "final_ok": 16,
+      "free_repairs": 0,
+      "total": 30,
+      "failures": {
+        "schema_mismatch": 24
+      },
+      "critic_sound": 0,
+      "critic_judged": 15,
+      "tokens": 72857,
+      "latency_ms": 669458.4520999633,
+      "skipped_reason": "",
+      "scores": [
+        {
+          "case_id": "billing_duplicate",
+          "category_ok": true,
+          "priority_ok": true,
+          "invented": [],
+          "missed": [],
+          "placeholders": []
+        },
+        {
+          "case_id": "export_broken",
+          "category_ok": false,
+          "priority_ok": true,
+          "invented": [
+            "name='John Doe'",
+            "assignee='support-team'"
+          ],
+          "missed": [],
+          "placeholders": []
+        },
+        {
+          "case_id": "cancel_account",
+          "category_ok": false,
+          "priority_ok": true,
+          "invented": [],
+          "missed": [],
+          "placeholders": [
+            "name=''",
+            "account_tier='unknown'"
+          ]
+        },
+        {
+          "case_id": "total_outage",
+          "category_ok": true,
+          "priority_ok": true,
+          "invented": [
+            "name=\"Your Company's Name\"",
+            "assignee='Jane Doe'"
+          ],
+          "missed": [],
+          "placeholders": [
+            "account_tier='unknown'"
+          ]
+        },
+        {
+          "case_id": "vat_rate",
+          "category_ok": false,
+          "priority_ok": false,
+          "invented": [
+            "name='John Doe'",
+            "account_tier='Premium'",
+            "assignee='Jane Admin'"
+          ],
+          "missed": [],
+          "placeholders": []
+        },
+        {
+          "case_id": "api_500s",
+          "category_ok": true,
+          "priority_ok": false,
+          "invented": [
+            "assignee='John Smith'",
+            "name='John Doe' (source says 'Tom Reyes')",
+            "account_tier='unknown' (source says 'Enterprise')"
+          ],
+          "missed": [],
+          "placeholders": []
+        },
+        {
+          "case_id": "angry_refund",
+          "category_ok": true,
+          "priority_ok": true,
+          "invented": [
+            "name='You'",
+            "assignee='You'"
+          ],
+          "missed": [],
+          "placeholders": [
+            "account_tier='unknown'"
+          ]
+        },
+        {
+          "case_id": "billing_duplicate",
+          "category_ok": true,
+          "priority_ok": true,
+          "invented": [],
+          "missed": [],
+          "placeholders": []
+        },
+        {
+          "case_id": "cancel_account",
+          "category_ok": false,
+          "priority_ok": false,
+          "invented": [
+            "name=\"Customer's name exactly as it appears in the ticket.\"",
+            "assignee=\"Someone's name\""
+          ],
+          "missed": [],
+          "placeholders": [
+            "account_tier='unknown'"
+          ]
+        },
+        {
+          "case_id": "dark_mode",
+          "category_ok": false,
+          "priority_ok": false,
+          "invented": [
+            "name='John Doe'",
+            "assignee='Alice'"
+          ],
+          "missed": [],
+          "placeholders": [
+            "account_tier='unknown'"
+          ]
+        },
+        {
+          "case_id": "total_outage",
+          "category_ok": false,
+          "priority_ok": true,
+          "invented": [
+            "name=\"Customer's Name Exactly as it Appears in the Ticket\"",
+            "assignee='Specific Person the Ticket Asks For'"
+          ],
+          "missed": [],
+          "placeholders": [
+            "account_tier='unknown'"
+          ]
+        },
+        {
+          "case_id": "vat_rate",
+          "category_ok": false,
+          "priority_ok": false,
+          "invented": [
+            "name='John Doe'",
+            "assignee='James'"
+          ],
+          "missed": [],
+          "placeholders": [
+            "account_tier='unknown'"
+          ]
+        },
+        {
+          "case_id": "vague",
+          "category_ok": true,
+          "priority_ok": true,
+          "invented": [
+            "name='John Doe'",
+            "assignee='Jane Doe'"
+          ],
+          "missed": [],
+          "placeholders": [
+            "account_tier='unknown'"
+          ]
+        },
+        {
+          "case_id": "cancel_account",
+          "category_ok": false,
+          "priority_ok": true,
+          "invented": [
+            "name='Your Name'",
+            "assignee='John Doe'"
+          ],
+          "missed": [],
+          "placeholders": [
+            "account_tier='unknown'"
+          ]
+        },
+        {
+          "case_id": "dark_mode",
+          "category_ok": false,
+          "priority_ok": false,
+          "invented": [
+            "name='Alex Chen'",
+            "account_tier='premium'",
+            "assignee='John Doe'"
+          ],
+          "missed": [],
+          "placeholders": []
+        },
+        {
+          "case_id": "angry_refund",
+          "category_ok": true,
+          "priority_ok": true,
+          "invented": [
+            "name='you'",
+            "assignee='you'"
+          ],
+          "missed": [],
+          "placeholders": [
+            "account_tier='unknown'"
+          ]
+        }
+      ]
+    },
+    {
+      "provider": "groq",
+      "model": "llama-3.1-8b-instant",
+      "tier": "prompt_only",
+      "contract": "TicketSummary",
+      "difficulty": "simple",
+      "first_attempt_ok": 12,
+      "final_ok": 27,
+      "free_repairs": 0,
+      "total": 30,
+      "failures": {
+        "schema_mismatch": 15,
+        "not_json": 3
+      },
+      "critic_sound": 3,
+      "critic_judged": 26,
+      "tokens": 39002,
+      "latency_ms": 369623.05120020756,
+      "skipped_reason": "",
+      "scores": [
+        {
+          "case_id": "billing_duplicate",
+          "category_ok": true,
+          "priority_ok": false,
+          "invented": [],
+          "missed": [
+            "name",
+            "account_tier",
+            "assignee"
+          ],
+          "placeholders": []
+        },
+        {
+          "case_id": "export_broken",
+          "category_ok": true,
+          "priority_ok": true,
+          "invented": [],
+          "missed": [
+            "account_tier"
+          ],
+          "placeholders": []
+        },
+        {
+          "case_id": "cancel_account",
+          "category_ok": false,
+          "priority_ok": true,
+          "invented": [],
+          "missed": [],
+          "placeholders": []
+        },
+        {
+          "case_id": "total_outage",
+          "category_ok": true,
+          "priority_ok": true,
+          "invented": [],
+          "missed": [],
+          "placeholders": []
+        },
+        {
+          "case_id": "vat_rate",
+          "category_ok": false,
+          "priority_ok": false,
+          "invented": [],
+          "missed": [],
+          "placeholders": []
+        },
+        {
+          "case_id": "api_500s",
+          "category_ok": false,
+          "priority_ok": true,
+          "invented": [],
+          "missed": [
+            "name",
+            "account_tier"
+          ],
+          "placeholders": []
+        },
+        {
+          "case_id": "add_seat",
+          "category_ok": false,
+          "priority_ok": true,
+          "invented": [],
+          "missed": [],
+          "placeholders": []
+        },
+        {
+          "case_id": "vague",
+          "category_ok": false,
+          "priority_ok": true,
+          "invented": [],
+          "missed": [],
+          "placeholders": []
+        },
+        {
+          "case_id": "angry_refund",
+          "category_ok": true,
+          "priority_ok": true,
+          "invented": [],
+          "missed": [],
+          "placeholders": []
+        },
+        {
+          "case_id": "billing_duplicate",
+          "category_ok": true,
+          "priority_ok": false,
+          "invented": [],
+          "missed": [
+            "name",
+            "account_tier",
+            "assignee"
+          ],
+          "placeholders": []
+        },
+        {
+          "case_id": "export_broken",
+          "category_ok": false,
+          "priority_ok": false,
+          "invented": [],
+          "missed": [
+            "account_tier"
+          ],
+          "placeholders": []
+        },
+        {
+          "case_id": "cancel_account",
+          "category_ok": false,
+          "priority_ok": true,
+          "invented": [],
+          "missed": [],
+          "placeholders": []
+        },
+        {
+          "case_id": "total_outage",
+          "category_ok": true,
+          "priority_ok": true,
+          "invented": [],
+          "missed": [],
+          "placeholders": []
+        },
+        {
+          "case_id": "vat_rate",
+          "category_ok": false,
+          "priority_ok": false,
+          "invented": [],
+          "missed": [],
+          "placeholders": []
+        },
+        {
+          "case_id": "api_500s",
+          "category_ok": true,
+          "priority_ok": true,
+          "invented": [],
+          "missed": [
+            "name",
+            "account_tier"
+          ],
+          "placeholders": []
+        },
+        {
+          "case_id": "add_seat",
+          "category_ok": false,
+          "priority_ok": false,
+          "invented": [],
+          "missed": [],
+          "placeholders": []
+        },
+        {
+          "case_id": "vague",
+          "category_ok": true,
+          "priority_ok": true,
+          "invented": [],
+          "missed": [],
+          "placeholders": []
+        },
+        {
+          "case_id": "angry_refund",
+          "category_ok": true,
+          "priority_ok": true,
+          "invented": [],
+          "missed": [],
+          "placeholders": []
+        },
+        {
+          "case_id": "billing_duplicate",
+          "category_ok": true,
+          "priority_ok": true,
+          "invented": [],
+          "missed": [
+            "name",
+            "account_tier",
+            "assignee"
+          ],
+          "placeholders": []
+        },
+        {
+          "case_id": "export_broken",
+          "category_ok": true,
+          "priority_ok": true,
+          "invented": [],
+          "missed": [
+            "account_tier"
+          ],
+          "placeholders": []
+        },
+        {
+          "case_id": "cancel_account",
+          "category_ok": false,
+          "priority_ok": true,
+          "invented": [],
+          "missed": [],
+          "placeholders": []
+        },
+        {
+          "case_id": "total_outage",
+          "category_ok": true,
+          "priority_ok": true,
+          "invented": [],
+          "missed": [],
+          "placeholders": []
+        },
+        {
+          "case_id": "vat_rate",
+          "category_ok": false,
+          "priority_ok": false,
+          "invented": [],
+          "missed": [],
+          "placeholders": []
+        },
+        {
+          "case_id": "api_500s",
+          "category_ok": true,
+          "priority_ok": false,
+          "invented": [],
+          "missed": [
+            "name",
+            "account_tier"
+          ],
+          "placeholders": []
+        },
+        {
+          "case_id": "add_seat",
+          "category_ok": false,
+          "priority_ok": false,
+          "invented": [],
+          "missed": [],
+          "placeholders": []
+        },
+        {
+          "case_id": "vague",
+          "category_ok": false,
+          "priority_ok": true,
+          "invented": [],
+          "missed": [],
+          "placeholders": []
+        },
+        {
+          "case_id": "angry_refund",
+          "category_ok": true,
+          "priority_ok": true,
+          "invented": [],
+          "missed": [],
+          "placeholders": []
         }
       ]
     }

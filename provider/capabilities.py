@@ -283,7 +283,14 @@ class ModelCapabilities:
 
     @property
     def best_tier(self) -> str:
-        """Strongest enforcement tier this model was measured to honour."""
+        """Strongest enforcement tier this model was measured to honour.
+
+        Falls back to ``prompt_only``, which is a floor rather than a finding:
+        it carries no directive, so there is nothing for a provider to reject.
+        A model that failed even the prompt-only probe still reports it, and
+        whether the model works at all is a separate question from which tier
+        is strongest.
+        """
         for tier in ("json_schema", "json_object", "tools"):
             if self.tiers.get(tier) == TierSupport.CONFORMED:
                 return tier
