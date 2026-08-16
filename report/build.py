@@ -211,7 +211,7 @@ def matrix_section(cells: list[CellResult]) -> str:
         )
         if cell.skipped_reason:
             rows.append(
-                head + f'<td class="skip" colspan="6">{esc(cell.skipped_reason)}'
+                head + f'<td class="skip" colspan="7">{esc(cell.skipped_reason)}'
                 "</td></tr>"
             )
             continue
@@ -223,7 +223,8 @@ def matrix_section(cells: list[CellResult]) -> str:
             + rate_cell(sum(1 for s in cell.scores if s.accurate), scored)
             + rate_cell(sum(1 for s in cell.scores if s.grounded), scored)
             + f'<td class="num">{cell.tokens / cell.total:.0f}</td>'
-            + f'<td class="num">{cell.latency_ms / cell.total:.0f}</td></tr>'
+            + f'<td class="num">{cell.latency_ms / cell.total:.0f}</td>'
+            + f'<td class="num">{cell.errors or "-"}</td></tr>'
         )
     return (
         "<h2>The matrix</h2>"
@@ -233,12 +234,15 @@ def matrix_section(cells: list[CellResult]) -> str:
         "rather than against a model. <em>Grounded</em> asks whether any field "
         "was invented, so it only bites on contracts that carry fields the "
         "source may not supply — a summary has none, and scores 100% by "
-        "construction.</p>"
+        "construction. <em>No output</em> counts calls where the transport gave "
+        "up after its retries, almost always a rate limit; those are excluded "
+        "from the denominators, because a rate limit says nothing about whether "
+        "a model can satisfy a schema.</p>"
         "<table><thead><tr><th>provider</th><th>model</th><th>tier</th>"
         "<th>schema</th><th class='num'>first attempt</th>"
         "<th class='num'>after repair</th><th class='num'>accurate</th>"
         "<th class='num'>grounded</th><th class='num'>tokens</th>"
-        "<th class='num'>ms</th></tr></thead>"
+        "<th class='num'>ms</th><th class='num'>no output</th></tr></thead>"
         f"<tbody>{''.join(rows)}</tbody></table>"
     )
 

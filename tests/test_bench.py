@@ -349,3 +349,43 @@ class TestUnavailableModel:
             cases=[CASES_BY_ID["dark_mode"]],
         )
         assert all("unavailable" in c.skipped_reason for c in cells)
+
+
+class TestTransportErrors:
+    """A call that never produced output must not be scored as a model failure."""
+
+    class _Agent:
+        def __init__(self, model: str) -> None:
+            self.provider, self.model = "groq", model
+
+        def extract(self, *_args, **_kwargs):
+            from agent import Result
+
+            return Result(
+                ok=False, run_id="r", provider="groq", model=self.model,
+                tier="prompt_only", error="RuntimeError: groq rate limited",
+            )
+
+    def test_it_is_counted_separately_from_the_rates(self, monkeypatch):
+        monkeypatch.setattr("bench.run.load_capabilities", lambda: {"groq": {}})
+        cells = run_matrix(
+            lambda m: self._Agent(m),
+            provider="groq",
+            models=["m"],
+            tiers=["prompt_only"],
+            contracts=["ticket_summary"],
+            repeats=2,
+            cases=[CASES_BY_ID["dark_mode"]],
+        )
+        cell = cells[0]
+        assert cell.errors == 2
+        assert cell.total == 0
+        assert cell.failures == {}
+
+    def test_the_count_survives_a_round_trip(self, tmp_path):
+        path = tmp_path / "results.json"
+        save_results([CellResult(
+            provider="groq", model="m", tier="prompt_only", contract="c",
+            difficulty="simple", total=8, final_ok=8, errors=2,
+        )], path)
+        assert load_results(path)["cells"][0].errors == 2

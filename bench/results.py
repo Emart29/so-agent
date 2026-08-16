@@ -58,6 +58,7 @@ def _cell_to_dict(cell: CellResult) -> dict[str, Any]:
         "free_repairs": cell.free_repairs,
         "total": cell.total,
         "failures": cell.failures,
+        "errors": cell.errors,
         "critic_sound": cell.critic_sound,
         "critic_judged": cell.critic_judged,
         "tokens": cell.tokens,
@@ -134,12 +135,13 @@ def summary_table(cells: list[CellResult]) -> Table:
     table.add_column("accuracy", justify="right")
     table.add_column("grounded", justify="right")
     table.add_column("tok/call", justify="right")
+    table.add_column("no output", justify="right")
 
     for cell in cells:
         if cell.skipped_reason:
             table.add_row(
                 _short_model(cell.model), cell.tier, cell.difficulty,
-                f"[dim]skipped: {cell.skipped_reason}[/dim]", "", "", "", "", "",
+                f"[dim]skipped: {cell.skipped_reason}[/dim]", "", "", "", "", "", "",
             )
             continue
         scored = len(cell.scores)
@@ -153,6 +155,7 @@ def summary_table(cells: list[CellResult]) -> Table:
             _rate(sum(1 for s in cell.scores if s.accurate), scored),
             _rate(sum(1 for s in cell.scores if s.grounded), scored),
             f"{cell.tokens / cell.total:.0f}" if cell.total else "-",
+            str(cell.errors) if cell.errors else "",
         )
     return table
 

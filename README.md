@@ -116,27 +116,188 @@ infrastructure rather than weights.
 Neither requires a payment method. That is deliberate: the benchmark should be
 reproducible by a reader who cannot or will not add a card.
 
+## The enforcement ladder
+
+Three tiers, in descending order of what they actually guarantee:
+
+| tier | what the provider guarantees | when it applies |
+|---|---|---|
+| `json_schema` | the shape is enforced during generation | the model was probed as conforming |
+| `json_object` | valid JSON; **the shape is not enforced** | native enforcement is unavailable |
+| `prompt_only` | nothing | neither directive is available |
+
+The middle rung is the one worth understanding. `json_object` guarantees the
+response parses, and says nothing about whether it has the fields you asked for.
+That is not a small gap: on `llama-3.1-8b-instant`, a simple three-field schema
+validated on the first attempt 70% of the time, and the same model on a nested
+schema managed 17% — with valid JSON almost every time in both cases.
+
+Selection is automatic from the probe, and always overridable. Forcing a tier a
+model does not support is allowed on purpose: measuring what happens is the point
+of the tool.
+
+## Structural success is not correctness
+
+A schema check tells you the output parsed. It cannot tell you the model read the
+ticket. Both are measured here, separately:
+
+- **Structural**, deterministic: did it parse and validate against the contract?
+- **Semantic**, scored against hand-written labels: is the category one a careful
+  reader would accept, and did it invent a customer name the ticket never gave?
+
+The labels allow a *set* of answers wherever a ticket genuinely straddles two
+teams, because forcing one answer onto an ambiguous input measures the labeller
+rather than the model.
+
+There is also an LLM critic, and it is deliberately not the source of the
+headline number. It was measured against the same hand labels first: on its
+initial version it agreed with them 50% of the time — chance — because it could
+not see the allowed enum values and treated inferred judgements like priority as
+if they were facts to be found in the text. Fixed, it reached full agreement on
+the label set, and the failure rate it reports dropped from 91.7% to 41.7%. An
+unmeasured judge is just a second unvalidated model, and the first version of
+this one would have published a number that was wrong by half.
+
 ## Quick start
 
 ```bash
 pip install -r requirements.txt
 cp .env.example .env        # add GROQ_API_KEY
-python examples/check_provider.py
+so-agent providers          # makes no API calls
+so-agent probe              # measures what your models enforce
+python examples/demo.py     # end to end in under a minute
 ```
 
-`check_provider.py` confirms credentials work, lists the models your key can
-reach, and prints one normalised completion with its metadata.
+`providers` answers "am I set up?" and "how much metered budget is left today?"
+without spending any of it. `probe` fills in the model ids: nothing here
+hardcodes one, because provider line-ups change often enough that any id written
+into this repo would eventually be wrong.
 
-## Model ids are measured, not hardcoded
+## Using another provider
 
-Provider line-ups change often enough that any model id written into this repo
-would eventually be wrong. Nothing here hardcodes one: models are discovered from
-the provider, probed for what they actually support, and the measured result is
-cached to disk.
+A provider is a row in `provider/registry.py`, never a code path:
 
-That includes the case docs never cover — a provider that *accepts* a
-`response_format` and then ignores it. It looks like enforcement and isn't, and
-the only way to catch it is to check the output actually conformed.
+```python
+Provider(
+    name="openrouter",
+    base_url="https://openrouter.ai/api/v1",
+    key_env="OPENROUTER_API_KEY",
+    daily_budget=45,            # refuses rather than overspending
+    is_default_eligible=False,  # never selected implicitly
+)
+```
+
+Then one argument changes at the call site, and every command takes `--provider`:
+
+```python
+agent = StructuredAgent(provider="openrouter", model="openai/gpt-oss-20b:free")
+```
+
+```bash
+so-agent extract --provider openrouter --schema ticket_triage --text "..."
+```
+
+A metered provider must be named explicitly. Reaching one by accident is how a
+daily allowance disappears before the work that needed it, and when the budget
+runs out the client refuses rather than rerouting — a benchmark row attributed to
+the wrong provider is worse than a missing row.
+
+## Library usage
+
+```python
+from agent import StructuredAgent
+from contracts.schemas import TicketTriage
+
+agent = StructuredAgent(provider="groq", model="openai/gpt-oss-120b")
+
+result = agent.extract(ticket_text, TicketTriage)
+if result.ok:
+    print(result.value.priority, result.value.assignee)
+else:
+    print(result.summary())      # says what failed and why, never returns None
+```
+
+`result` carries the accounting as well as the value: which tier ran, whether it
+was downgraded, every attempt with its failure type, tokens, and latency.
+
+```python
+# Let the model pick a response shape instead of filling a fixed one.
+result = agent.choose(text, ActionEnvelope)
+
+# Ask for a tool call and validate its arguments — they are model output too.
+call, result = agent.call_tool(text, tools=[schema], expected={"refund": Refund})
+```
+
+Nothing returns `None` or an empty dict on failure. Silent degradation pushes the
+problem downstream to whoever cannot attribute it.
+
+## CLI reference
+
+| command | what it does |
+|---|---|
+| `so-agent providers` | keys, probe age, and budget left today — no API calls |
+| `so-agent probe [--provider] [--refresh]` | measure what each model enforces |
+| `so-agent extract --schema NAME --text ...` | one extraction, printed as JSON |
+| `so-agent bench --model M [--k N]` | run the matrix, checkpointing each cell |
+| `so-agent metrics [--provider] [--tier]` | the tables, computed from the log |
+| `so-agent report [--results FILE]` | build the self-contained HTML report |
+| `so-agent replay RUN_ID [--provider] [--tier]` | re-run a logged attempt elsewhere |
+
+`--provider` is accepted everywhere and defaults to Groq. Failures exit non-zero.
+
+`replay` is the one that earns the logging. "This extraction failed in
+production; would native enforcement have caught it?" is answerable directly
+against the same input, because the source text and the raw output that failed
+are both in the log.
+
+## Architecture
+
+```mermaid
+flowchart TD
+    A[Pydantic contract] --> B[SchemaTranslator]
+    B -->|rewrites optionals as nullable,<br/>reports stripped constraints| C[EnforcementPlan]
+    D[(capabilities.json<br/>measured, dated)] --> C
+    C -->|json_schema / json_object / prompt_only| E[LLMClient]
+    E -->|any OpenAI-compatible endpoint| F[Provider]
+    E --> G[Validate]
+    G -->|typed failure| H[Repair loop]
+    H -->|free: strip fences<br/>paid: re-ask<br/>truncated: bigger budget| E
+    G -->|valid| I[SemanticCritic]
+    G --> J[(runs.db<br/>one row per attempt)]
+    I --> J
+    J --> K[Metrics + HTML report]
+```
+
+## Honest evaluation
+
+**These numbers are provider-, model-, and date-specific.** They were measured
+against line-ups that change; a model id here may not exist in six months, and a
+provider can add or drop enforcement support without announcing it. The date and
+provider are printed on every table for that reason.
+
+**The task set is fixed and synthetic.** Ten hand-written support tickets, chosen
+to vary in the ways the contracts care about. They are not a sample of anyone's
+production traffic, and a different task set would produce different rates.
+
+**Repeats are samples, not reproductions.** Temperature is not pinned to zero and
+the runs are not claimed to be deterministic: providers differ in which sampling
+settings they honour, and batching alone makes identical output unlikely. Every
+rate is reported with its interval and its n.
+
+**Semantic accuracy has two measures and they disagree.** The headline figure is
+scored against hand labels. The LLM critic runs alongside as a second opinion,
+with its own agreement rate published above rather than assumed. Where they
+diverge, that divergence is reported rather than resolved in favour of whichever
+looks better.
+
+**One cell has the critic reviewing its own output**, because the critic model is
+also a rung on the measured ladder. Its label-based scores are unaffected; its
+critic column for that model is not independent of it.
+
+What transfers is not the percentages. It is the method — probe rather than trust
+documentation, re-sample before recording a negative verdict, score correctness
+separately from validity, and report the interval — along with the ladder and the
+measuring instrument itself.
 
 ## Licence
 

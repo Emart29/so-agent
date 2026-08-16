@@ -53,6 +53,13 @@ class CellResult:
     free_repairs: int = 0
     total: int = 0
     failures: dict[str, int] = field(default_factory=dict)
+    #: Calls that never produced output — the transport gave up after its
+    #: retries, almost always a rate limit. Counted and reported, but kept out
+    #: of ``total``: a rate limit says nothing about whether a model can satisfy
+    #: a schema, and weak models attract more of them because they retry more,
+    #: so folding them into the denominator would bias every rate downward
+    #: exactly where the measurement matters most.
+    errors: int = 0
     scores: list[CaseScore] = field(default_factory=list)
     critic_sound: int = 0
     critic_judged: int = 0
@@ -127,16 +134,23 @@ def run_cell(
     for _ in range(repeats):
         for case in cases:
             result = agent.extract(case.text, contract, tier=tier, review=review)
+
+            if result.outcome is None:
+                # No generation happened at all, so there is nothing to score.
+                cell.errors += 1
+                logger.warning("no output for %s: %s", case.id, result.error)
+                continue
+
             cell.total += 1
             cell.tokens += result.total_tokens
             cell.latency_ms += result.total_latency_ms
 
             if result.first_attempt_ok:
                 cell.first_attempt_ok += 1
-            elif result.outcome and result.outcome.needed_only_extraction:
+            elif result.outcome.needed_only_extraction:
                 cell.free_repairs += 1
 
-            if result.outcome and result.outcome.attempts:
+            if result.outcome.attempts:
                 first = result.outcome.attempts[0]
                 if not first.ok:
                     key = first.failure.value
