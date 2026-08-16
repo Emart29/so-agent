@@ -23,7 +23,7 @@ import typer
 from rich.console import Console
 from rich.table import Table
 
-from bench.results import DEFAULT_RESULTS_PATH, load_results, print_summary
+from bench.results import DEFAULT_RESULTS_PATH, print_summary
 from config import settings
 from contracts.schemas import CONTRACTS, get_contract
 from provider.capabilities import (

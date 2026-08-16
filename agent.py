@@ -24,7 +24,7 @@ from pydantic import BaseModel
 from config import settings
 from contracts.schemas import Contract
 from contracts.translate import SchemaTranslator, Translation
-from critic.semantic import SemanticCritic, SemanticResult, Verdict
+from critic.semantic import SemanticCritic, SemanticResult
 from enforce.ladder import EnforcementPlan, build_plan
 from enforce.repair import RepairOutcome, repair_loop
 from enforce.tools import ToolResult, validate_tool_call

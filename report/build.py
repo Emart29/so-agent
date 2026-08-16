@@ -452,7 +452,7 @@ def sample_failures(log: AttemptLog, limit: int = FAILURE_SAMPLE) -> str:
     )
 
 
-def headline_cards(cells: list[CellResult], sampling: dict) -> str:
+def headline_cards(cells: list[CellResult]) -> str:
     """The four numbers a reader should leave with."""
     run = [c for c in cells if not c.skipped_reason and c.total]
     if not run:
@@ -512,7 +512,7 @@ def build_report(
         "<h1>Structured output, measured</h1>",
         "<p class='sub'>What enforcement actually guarantees across providers, "
         "models, and schema difficulty — and what it costs when it fails.</p>",
-        headline_cards(cells, sampling),
+        headline_cards(cells),
         capability_section(load_capabilities()),
         tier_section(cells),
         matrix_section(cells),
