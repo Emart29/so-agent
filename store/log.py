@@ -50,7 +50,8 @@ CREATE TABLE IF NOT EXISTS attempts (
     latency_ms            REAL,
     max_tokens            INTEGER,
     critic_verdict        TEXT,
-    critic_reason         TEXT
+    critic_reason         TEXT,
+    source_text           TEXT
 );
 CREATE INDEX IF NOT EXISTS idx_attempts_group
     ON attempts (provider, model, tier, failure_type);
@@ -58,13 +59,17 @@ CREATE INDEX IF NOT EXISTS idx_attempts_run
     ON attempts (run_id, attempt_index);
 """
 
+#: Columns added after the first release. Databases created before them are
+#: migrated in place rather than rebuilt.
+_ADDED_COLUMNS = {"source_text": "TEXT"}
+
 COLUMNS = (
     "run_id", "attempt_index", "created_at", "provider", "model", "tier",
     "requested_tier", "downgraded_from", "schema_name", "schema_difficulty",
     "success", "failure_type", "failure_detail", "raw_output",
     "recovered_by_extraction", "repaired_from", "prompt_tokens",
     "completion_tokens", "latency_ms", "max_tokens", "critic_verdict",
-    "critic_reason",
+    "critic_reason", "source_text",
 )
 
 
@@ -94,6 +99,10 @@ class AttemptRow:
     max_tokens: int | None = None
     critic_verdict: str | None = None
     critic_reason: str | None = None
+    #: The input the attempt was given. Stored on every row rather than once per
+    #: run so any single row can be replayed on its own, which is what makes
+    #: "would native enforcement have caught this?" answerable from the log.
+    source_text: str | None = None
 
     def as_row(self) -> tuple:
         return (
@@ -119,6 +128,7 @@ class AttemptRow:
             self.max_tokens,
             self.critic_verdict,
             self.critic_reason,
+            self.source_text,
         )
 
 
@@ -139,7 +149,25 @@ class AttemptLog:
         self._conn.row_factory = sqlite3.Row
         self._conn.execute("PRAGMA journal_mode=WAL")
         self._conn.executescript(_SCHEMA)
+        self._migrate()
         self._conn.commit()
+
+    def _migrate(self) -> None:
+        """Add columns a database created by an earlier version is missing.
+
+        Dropping and recreating would discard measurements that cost real
+        requests, so columns are added in place and left NULL for older rows.
+        Anything reading them treats NULL as "not recorded" rather than as a
+        value.
+        """
+        existing = {
+            row["name"] for row in self._conn.execute("PRAGMA table_info(attempts)")
+        }
+        for column, declaration in _ADDED_COLUMNS.items():
+            if column not in existing:
+                self._conn.execute(
+                    f"ALTER TABLE attempts ADD COLUMN {column} {declaration}"
+                )
 
     def record(self, row: AttemptRow) -> None:
         """Store one attempt."""

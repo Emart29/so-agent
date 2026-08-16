@@ -9,6 +9,7 @@ while looking like coverage. Both are asserted directly.
 from __future__ import annotations
 
 import math
+import sqlite3
 
 import pytest
 
@@ -278,3 +279,65 @@ class TestAgreementScore:
 
     def test_no_judged_cases_does_not_divide_by_zero(self):
         assert AgreementScore(total=3, agreed=0, false_pass=0, false_fail=0, unavailable=3).agreement == 0.0
+
+
+class TestSchemaMigration:
+    """A database from an earlier version must keep its measurements."""
+
+    def _legacy_db(self, path):
+        conn = sqlite3.connect(path)
+        conn.execute(
+            "CREATE TABLE attempts ("
+            " id INTEGER PRIMARY KEY AUTOINCREMENT, run_id TEXT NOT NULL,"
+            " attempt_index INTEGER NOT NULL, created_at TEXT NOT NULL,"
+            " provider TEXT NOT NULL, model TEXT NOT NULL, tier TEXT NOT NULL,"
+            " requested_tier TEXT, downgraded_from TEXT, schema_name TEXT NOT NULL,"
+            " schema_difficulty TEXT, success INTEGER NOT NULL, failure_type TEXT,"
+            " failure_detail TEXT, raw_output TEXT,"
+            " recovered_by_extraction INTEGER NOT NULL DEFAULT 0,"
+            " repaired_from INTEGER, prompt_tokens INTEGER, completion_tokens INTEGER,"
+            " latency_ms REAL, max_tokens INTEGER, critic_verdict TEXT,"
+            " critic_reason TEXT)"
+        )
+        conn.execute(
+            "INSERT INTO attempts (run_id, attempt_index, created_at, provider,"
+            " model, tier, schema_name, success) VALUES"
+            " ('old', 1, '2026-01-01T00:00:00+00:00', 'groq', 'm', 'json_object',"
+            " 'ticketsummary', 1)"
+        )
+        conn.commit()
+        conn.close()
+
+    def test_an_older_database_gains_the_column_without_losing_rows(self, tmp_path):
+        path = tmp_path / "legacy.db"
+        self._legacy_db(path)
+
+        log = AttemptLog(path)
+        assert log.count() == 1
+        assert log.query("SELECT source_text FROM attempts")[0]["source_text"] is None
+        log.close()
+
+    def test_new_rows_still_write_after_a_migration(self, tmp_path):
+        path = tmp_path / "legacy.db"
+        self._legacy_db(path)
+
+        log = AttemptLog(path)
+        log.record(
+            AttemptRow(
+                run_id="new", attempt_index=1, provider="groq", model="m",
+                tier="json_object", schema_name="ticketsummary", success=True,
+                source_text="the ticket text",
+            )
+        )
+        stored = log.query("SELECT source_text FROM attempts WHERE run_id = 'new'")
+        assert stored[0]["source_text"] == "the ticket text"
+        log.close()
+
+    def test_migrating_twice_is_harmless(self, tmp_path):
+        """Every command opens the log, so the migration runs constantly."""
+        path = tmp_path / "legacy.db"
+        self._legacy_db(path)
+        AttemptLog(path).close()
+        log = AttemptLog(path)
+        assert log.count() == 1
+        log.close()

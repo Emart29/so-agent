@@ -214,7 +214,7 @@ class StructuredAgent:
                 tier=plan.tier, downgraded_from=plan.downgraded_from,
                 translation=translation, error=f"{type(exc).__name__}: {exc}",
             )
-            self._log(result, contract, plan)
+            self._log(result, contract, plan, text)
             return result
 
         critic_result: SemanticResult | None = None
@@ -234,7 +234,7 @@ class StructuredAgent:
             translation=translation,
             error="" if outcome.ok else outcome.stopped_because,
         )
-        self._log(result, contract, plan)
+        self._log(result, contract, plan, text)
         return result
 
     def choose(
@@ -325,9 +325,18 @@ class StructuredAgent:
     # ------------------------------------------------------------------
 
     def _log(
-        self, result: Result, contract: type[BaseModel], plan: EnforcementPlan
+        self,
+        result: Result,
+        contract: type[BaseModel],
+        plan: EnforcementPlan,
+        source: str,
     ) -> None:
-        """Write one row per attempt, including successful first attempts."""
+        """Write one row per attempt, including successful first attempts.
+
+        The source text goes in with them. Without it a logged failure can be
+        counted but not reproduced, and reproducing it elsewhere is the whole
+        argument for keeping the raw output.
+        """
         if self.store is None:
             return
 
@@ -346,6 +355,7 @@ class StructuredAgent:
                     requested_tier=plan.tier, downgraded_from=plan.downgraded_from,
                     schema_name=name, schema_difficulty=difficulty,
                     success=False, failure_type="error", failure_detail=result.error,
+                    source_text=source,
                 )
             )
             return
@@ -385,6 +395,7 @@ class StructuredAgent:
                     critic_reason=(
                         result.critic.reason if is_final and result.critic else None
                     ),
+                    source_text=source,
                 )
             )
         self.store.record_many(rows)

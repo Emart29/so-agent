@@ -27,7 +27,7 @@ dev = [
 ]
 
 [project.scripts]
-so-agent = "cli.main:app"
+so-agent = "cli.main:main"
 
 [tool.setuptools]
 packages = [
