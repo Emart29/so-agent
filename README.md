@@ -128,9 +128,8 @@ Three tiers, in descending order of what they actually guarantee:
 
 The middle rung is the one worth understanding. `json_object` guarantees the
 response parses, and says nothing about whether it has the fields you asked for.
-That is not a small gap: on `llama-3.1-8b-instant`, a simple three-field schema
-validated on the first attempt 70% of the time, and the same model on a nested
-schema managed 17% — with valid JSON almost every time in both cases.
+The measured gap between those two guarantees is the headline result, and it goes
+here when the run finishes.
 
 Selection is automatic from the probe, and always overridable. Forcing a tier a
 model does not support is allowed on purpose: measuring what happens is the point
