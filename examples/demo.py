@@ -3,8 +3,10 @@
 Three things happen, in the order that makes the argument:
 
 1. What the configured model actually enforces, read from the cached probe.
-2. One extraction run at the weakest tier and one at the strongest, on the same
-   input, so the difference is visible rather than asserted.
+2. The same ticket run twice: on a small model with nothing enforcing the shape,
+   then on a model that enforces it natively. Both halves use the hardest
+   contract in the set, because an easy one succeeds everywhere and shows
+   nothing.
 3. The headline table from the saved benchmark run, if one is present.
 
 Usage::
@@ -46,6 +48,20 @@ TICKET = (
 RESULTS_FILES = ("bench_results_groq.json", "bench_results.json")
 
 
+def _weakest_probed(capabilities: dict, exclude: str) -> str | None:
+    """Pick a model with no native schema enforcement, to show the gap.
+
+    Running both halves on a model that enforces natively would show two
+    successes and demonstrate nothing.
+    """
+    candidates = [
+        name for name, caps in capabilities.items()
+        if name != exclude and not caps.enforces_schema
+        and caps.tiers.get("prompt_only") == "conformed"
+    ]
+    return candidates[0] if candidates else None
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--provider", default=settings.PROVIDER)
@@ -81,32 +97,47 @@ def main() -> int:
         )
 
     store = AttemptLog(settings.LOG_DB_PATH)
-    agent = StructuredAgent(provider=args.provider, model=model, store=store)
 
-    console.rule("[bold]2. The same ticket, at two enforcement tiers")
-    for tier in ("prompt_only", caps.best_tier):
+    console.rule("[bold]2. The same ticket, with and without enforcement")
+    console.print(
+        "The hardest contract in the set, run on a small model with nothing "
+        "enforcing the shape, then on a model that enforces it natively.\n"
+    )
+
+    weak = args.weak or _weakest_probed(capabilities, exclude=model)
+    runs = [("no enforcement", weak, "prompt_only"), ("enforced", model, caps.best_tier)]
+
+    for label, run_model, tier in runs:
+        if run_model is None:
+            continue
+        agent = StructuredAgent(provider=args.provider, model=run_model, store=store)
         result = agent.extract(TICKET, TicketTriage, tier=tier, review=False)
-        console.print(f"\n[bold]{tier}[/bold]: {result.summary()}")
+        console.print(
+            f"[bold]{label}[/bold] — {run_model} at {tier}: {result.summary()}"
+        )
 
-        if result.outcome:
-            for attempt in result.outcome.attempts:
-                if attempt.ok:
-                    console.print(f"  attempt {attempt.index}: validated")
-                    continue
-                console.print(
-                    f"  attempt {attempt.index}: [red]{attempt.failure.value}[/red]"
-                    + ("  (recoverable by extraction, no second call)"
-                       if attempt.recovered_by_extraction else "")
-                )
-                if attempt.detail:
-                    console.print(f"    {attempt.detail[:160]}")
+        for attempt in result.outcome.attempts if result.outcome else []:
+            if attempt.ok:
+                console.print(f"  attempt {attempt.index}: [green]validated[/green]")
+                continue
+            note = (
+                "  (recovered locally, no second call)"
+                if attempt.recovered_by_extraction else ""
+            )
+            console.print(
+                f"  attempt {attempt.index}: [red]{attempt.failure.value}[/red]{note}"
+            )
+            if attempt.detail:
+                console.print(f"    [dim]{attempt.detail[:150]}[/dim]")
 
         if result.ok:
             triage = result.value
             console.print(
                 f"  -> {len(triage.issues)} issues, priority={triage.priority.value}, "
-                f"sentiment={triage.sentiment.value}, assignee={triage.assignee}"
+                f"sentiment={triage.sentiment.value}, assignee={triage.assignee}\n"
             )
+        else:
+            console.print(f"  -> [red]no usable object: {result.error}[/red]\n")
 
     console.rule("[bold]3. What the benchmark measured")
     saved = next((Path(f) for f in RESULTS_FILES if Path(f).exists()), None)
@@ -121,10 +152,14 @@ def main() -> int:
 
     stats = Metrics(store)
     final = stats.final_success(provider=args.provider)
-    console.print(f"\nlogged success rate for {args.provider}: {final}")
+    console.print(
+        f"\nEvery attempt in this log for {args.provider}, including the two "
+        f"runs above and anything logged before them: {final}"
+    )
     projection = trajectory_reliability(final.value)
     console.print(
-        "projected across a chain (upper bound): "
+        "projected across a chain of independent calls — a ceiling, because "
+        "real failures correlate: "
         + ", ".join(f"{n} steps {v:.0%}" for n, v in projection.items())
     )
     store.close()
