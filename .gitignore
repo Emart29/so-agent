@@ -21,3 +21,5 @@ build/
 report.html
 report_preview.html
 bench_*.log
+runs_parallel.log
+runs/
