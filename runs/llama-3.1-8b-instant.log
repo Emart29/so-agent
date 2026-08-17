@@ -1,0 +1,412 @@
+groq: 1 models x 3 tiers x 3 contracts, 10 cases x 3 repeats -> up to 9 cells
+  1/9 skip llama-3.1-8b-instant / json_schema / TicketSummary: json_schema is 
+rejected on this model
+  2/9 skip llama-3.1-8b-instant / json_schema / TicketAnalysis: json_schema is 
+rejected on this model
+  3/9 skip llama-3.1-8b-instant / json_schema / TicketTriage: json_schema is 
+rejected on this model
+WARNING groq rate limited, waiting 4.0s (attempt 1/4)
+WARNING groq rate limited, waiting 1.0s (attempt 1/4)
+WARNING groq rate limited, waiting 3.0s (attempt 1/4)
+WARNING groq rate limited, waiting 3.0s (attempt 1/4)
+WARNING groq rate limited, waiting 2.0s (attempt 1/4)
+WARNING groq rate limited, waiting 3.0s (attempt 1/4)
+WARNING groq rate limited, waiting 1.0s (attempt 1/4)
+WARNING groq rate limited, waiting 3.0s (attempt 1/4)
+WARNING groq rate limited, waiting 3.0s (attempt 1/4)
+WARNING groq rate limited, waiting 4.0s (attempt 1/4)
+WARNING groq rate limited, waiting 3.0s (attempt 1/4)
+WARNING groq rate limited, waiting 2.0s (attempt 1/4)
+WARNING groq rate limited, waiting 3.0s (attempt 1/4)
+WARNING groq rate limited, waiting 3.0s (attempt 1/4)
+WARNING groq rate limited, waiting 3.0s (attempt 1/4)
+WARNING groq rate limited, waiting 3.0s (attempt 1/4)
+WARNING groq rate limited, waiting 2.0s (attempt 1/4)
+WARNING groq rate limited, waiting 4.0s (attempt 1/4)
+WARNING groq rate limited, waiting 3.0s (attempt 1/4)
+WARNING groq rate limited, waiting 3.0s (attempt 1/4)
+WARNING groq rate limited, waiting 2.0s (attempt 1/4)
+WARNING groq rate limited, waiting 3.0s (attempt 1/4)
+WARNING groq rate limited, waiting 4.0s (attempt 1/4)
+WARNING groq rate limited, waiting 3.0s (attempt 1/4)
+WARNING groq rate limited, waiting 2.0s (attempt 1/4)
+WARNING groq rate limited, waiting 2.0s (attempt 1/4)
+WARNING groq rate limited, waiting 1.0s (attempt 2/4)
+WARNING groq rate limited, waiting 2.0s (attempt 1/4)
+  4/9 llama-3.1-8b-instant / json_object / TicketSummary: first 73%, final 93%,
+accurate 46%
+WARNING groq rate limited, waiting 4.0s (attempt 1/4)
+WARNING groq rate limited, waiting 5.0s (attempt 1/4)
+WARNING groq rate limited, waiting 4.0s (attempt 1/4)
+WARNING groq rate limited, waiting 3.0s (attempt 1/4)
+WARNING groq rate limited, waiting 4.0s (attempt 1/4)
+WARNING groq rate limited, waiting 4.0s (attempt 1/4)
+WARNING groq rate limited, waiting 5.0s (attempt 1/4)
+WARNING groq rate limited, waiting 4.0s (attempt 1/4)
+WARNING groq rate limited, waiting 5.0s (attempt 1/4)
+WARNING groq rate limited, waiting 4.0s (attempt 1/4)
+WARNING groq rate limited, waiting 5.0s (attempt 1/4)
+WARNING groq rate limited, waiting 7.0s (attempt 1/4)
+WARNING groq rate limited, waiting 4.0s (attempt 1/4)
+WARNING groq rate limited, waiting 5.0s (attempt 1/4)
+WARNING groq rate limited, waiting 5.0s (attempt 1/4)
+WARNING groq rate limited, waiting 7.0s (attempt 1/4)
+WARNING groq rate limited, waiting 4.0s (attempt 1/4)
+WARNING groq rate limited, waiting 4.0s (attempt 1/4)
+WARNING groq rate limited, waiting 1.0s (attempt 1/4)
+WARNING groq rate limited, waiting 8.0s (attempt 1/4)
+WARNING groq rate limited, waiting 1.0s (attempt 1/4)
+WARNING groq rate limited, waiting 5.0s (attempt 1/4)
+WARNING groq rate limited, waiting 4.0s (attempt 1/4)
+WARNING groq rate limited, waiting 3.0s (attempt 2/4)
+WARNING groq rate limited, waiting 1.0s (attempt 1/4)
+WARNING groq rate limited, waiting 3.0s (attempt 2/4)
+WARNING groq rate limited, waiting 5.0s (attempt 1/4)
+WARNING groq rate limited, waiting 5.0s (attempt 1/4)
+WARNING groq rate limited, waiting 3.0s (attempt 2/4)
+WARNING groq rate limited, waiting 1.0s (attempt 1/4)
+WARNING groq rate limited, waiting 6.0s (attempt 1/4)
+WARNING groq rate limited, waiting 4.0s (attempt 1/4)
+WARNING groq rate limited, waiting 4.0s (attempt 1/4)
+WARNING groq rate limited, waiting 1.0s (attempt 1/4)
+WARNING groq rate limited, waiting 3.0s (attempt 2/4)
+WARNING groq rate limited, waiting 5.0s (attempt 1/4)
+WARNING groq rate limited, waiting 1.0s (attempt 1/4)
+WARNING groq rate limited, waiting 2.0s (attempt 2/4)
+WARNING groq rate limited, waiting 2.0s (attempt 1/4)
+WARNING groq rate limited, waiting 5.0s (attempt 1/4)
+WARNING groq rate limited, waiting 5.0s (attempt 1/4)
+WARNING groq rate limited, waiting 2.0s (attempt 2/4)
+WARNING groq rate limited, waiting 5.0s (attempt 1/4)
+WARNING groq rate limited, waiting 2.0s (attempt 1/4)
+WARNING groq rate limited, waiting 5.0s (attempt 1/4)
+WARNING groq rate limited, waiting 4.0s (attempt 1/4)
+WARNING groq rate limited, waiting 5.0s (attempt 1/4)
+WARNING groq rate limited, waiting 3.0s (attempt 1/4)
+WARNING groq rate limited, waiting 5.0s (attempt 1/4)
+WARNING groq rate limited, waiting 7.0s (attempt 1/4)
+WARNING groq rate limited, waiting 1.0s (attempt 1/4)
+WARNING groq rate limited, waiting 5.0s (attempt 1/4)
+WARNING groq rate limited, waiting 2.0s (attempt 2/4)
+WARNING groq rate limited, waiting 4.0s (attempt 1/4)
+WARNING groq rate limited, waiting 5.0s (attempt 1/4)
+WARNING groq rate limited, waiting 2.0s (attempt 2/4)
+WARNING groq rate limited, waiting 9.0s (attempt 1/4)
+WARNING groq rate limited, waiting 1.0s (attempt 2/4)
+WARNING groq rate limited, waiting 5.0s (attempt 1/4)
+WARNING groq rate limited, waiting 4.0s (attempt 1/4)
+WARNING groq rate limited, waiting 4.0s (attempt 1/4)
+WARNING groq rate limited, waiting 4.0s (attempt 1/4)
+WARNING groq rate limited, waiting 5.0s (attempt 2/4)
+WARNING groq rate limited, waiting 4.0s (attempt 1/4)
+WARNING groq rate limited, waiting 9.0s (attempt 1/4)
+  5/9 llama-3.1-8b-instant / json_object / TicketAnalysis: first 30%, final 
+90%, accurate 4%
+WARNING groq rate limited, waiting 7.0s (attempt 1/4)
+WARNING groq rate limited, waiting 3.0s (attempt 1/4)
+WARNING groq rate limited, waiting 5.0s (attempt 2/4)
+WARNING groq rate limited, waiting 11.0s (attempt 1/4)
+WARNING groq rate limited, waiting 7.0s (attempt 1/4)
+WARNING groq rate limited, waiting 3.0s (attempt 1/4)
+WARNING groq rate limited, waiting 8.0s (attempt 1/4)
+WARNING groq rate limited, waiting 4.0s (attempt 2/4)
+WARNING groq rate limited, waiting 3.0s (attempt 1/4)
+WARNING groq rate limited, waiting 8.0s (attempt 1/4)
+WARNING groq rate limited, waiting 7.0s (attempt 1/4)
+WARNING groq rate limited, waiting 12.0s (attempt 1/4)
+WARNING groq rate limited, waiting 8.0s (attempt 1/4)
+WARNING groq rate limited, waiting 3.0s (attempt 1/4)
+WARNING groq rate limited, waiting 8.0s (attempt 1/4)
+WARNING groq rate limited, waiting 5.0s (attempt 2/4)
+WARNING groq rate limited, waiting 6.0s (attempt 1/4)
+WARNING groq rate limited, waiting 7.0s (attempt 1/4)
+WARNING groq rate limited, waiting 3.0s (attempt 1/4)
+WARNING groq rate limited, waiting 8.0s (attempt 1/4)
+WARNING groq rate limited, waiting 3.0s (attempt 1/4)
+WARNING groq rate limited, waiting 12.0s (attempt 1/4)
+WARNING groq rate limited, waiting 8.0s (attempt 1/4)
+WARNING groq rate limited, waiting 3.0s (attempt 1/4)
+WARNING groq rate limited, waiting 13.0s (attempt 1/4)
+WARNING groq rate limited, waiting 2.0s (attempt 1/4)
+WARNING groq rate limited, waiting 5.0s (attempt 2/4)
+WARNING groq rate limited, waiting 3.0s (attempt 1/4)
+WARNING groq rate limited, waiting 5.0s (attempt 2/4)
+WARNING groq rate limited, waiting 7.0s (attempt 1/4)
+WARNING groq rate limited, waiting 2.0s (attempt 1/4)
+WARNING groq rate limited, waiting 7.0s (attempt 1/4)
+WARNING groq rate limited, waiting 7.0s (attempt 1/4)
+WARNING groq rate limited, waiting 3.0s (attempt 1/4)
+WARNING groq rate limited, waiting 8.0s (attempt 1/4)
+WARNING groq rate limited, waiting 5.0s (attempt 2/4)
+WARNING groq rate limited, waiting 3.0s (attempt 1/4)
+WARNING groq rate limited, waiting 5.0s (attempt 1/4)
+WARNING groq rate limited, waiting 7.0s (attempt 1/4)
+WARNING groq rate limited, waiting 8.0s (attempt 1/4)
+WARNING groq rate limited, waiting 7.0s (attempt 1/4)
+WARNING groq rate limited, waiting 1.0s (attempt 2/4)
+WARNING groq rate limited, waiting 3.0s (attempt 3/4)
+WARNING groq rate limited, waiting 4.0s (attempt 1/4)
+WARNING groq rate limited, waiting 4.0s (attempt 2/4)
+WARNING groq rate limited, waiting 2.0s (attempt 1/4)
+WARNING groq rate limited, waiting 1.0s (attempt 2/4)
+WARNING groq rate limited, waiting 12.0s (attempt 1/4)
+WARNING groq rate limited, waiting 3.0s (attempt 1/4)
+WARNING groq rate limited, waiting 4.0s (attempt 2/4)
+WARNING groq rate limited, waiting 3.0s (attempt 1/4)
+WARNING groq rate limited, waiting 5.0s (attempt 2/4)
+WARNING groq rate limited, waiting 3.0s (attempt 1/4)
+WARNING groq rate limited, waiting 3.0s (attempt 1/4)
+WARNING groq rate limited, waiting 3.0s (attempt 2/4)
+WARNING groq rate limited, waiting 9.0s (attempt 1/4)
+WARNING groq rate limited, waiting 4.0s (attempt 1/4)
+WARNING groq rate limited, waiting 3.0s (attempt 2/4)
+WARNING groq rate limited, waiting 8.0s (attempt 1/4)
+WARNING groq rate limited, waiting 47.0s (attempt 1/4)
+WARNING groq rate limited, waiting 60.0s (attempt 1/4)
+WARNING groq rate limited, waiting 60.0s (attempt 2/4)
+WARNING groq rate limited, waiting 34.0s (attempt 3/4)
+WARNING groq rate limited, waiting 60.0s (attempt 1/4)
+WARNING groq rate limited, waiting 60.0s (attempt 2/4)
+WARNING groq rate limited, waiting 21.0s (attempt 3/4)
+WARNING no output for cancel_account: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 500000, Used 499041, Requested 2723. Please try again in 5m4.819199999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+WARNING groq rate limited, waiting 60.0s (attempt 1/4)
+WARNING groq rate limited, waiting 60.0s (attempt 2/4)
+WARNING groq rate limited, waiting 60.0s (attempt 3/4)
+WARNING no output for dark_mode: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 500000, Used 498820, Requested 2852. Please try again in 4m48.9216s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+WARNING groq rate limited, waiting 60.0s (attempt 1/4)
+WARNING groq rate limited, waiting 60.0s (attempt 1/4)
+WARNING groq rate limited, waiting 60.0s (attempt 1/4)
+WARNING groq rate limited, waiting 60.0s (attempt 2/4)
+WARNING groq rate limited, waiting 60.0s (attempt 3/4)
+WARNING groq rate limited, waiting 60.0s (attempt 1/4)
+WARNING groq rate limited, waiting 33.0s (attempt 2/4)
+WARNING groq rate limited, waiting 60.0s (attempt 3/4)
+WARNING groq rate limited, waiting 60.0s (attempt 1/4)
+WARNING groq rate limited, waiting 30.0s (attempt 2/4)
+WARNING groq rate limited, waiting 60.0s (attempt 3/4)
+WARNING groq rate limited, waiting 60.0s (attempt 1/4)
+WARNING groq rate limited, waiting 27.0s (attempt 2/4)
+WARNING groq rate limited, waiting 60.0s (attempt 1/4)
+WARNING groq rate limited, waiting 60.0s (attempt 2/4)
+WARNING groq rate limited, waiting 18.0s (attempt 3/4)
+WARNING groq rate limited, waiting 60.0s (attempt 1/4)
+WARNING groq rate limited, waiting 60.0s (attempt 2/4)
+WARNING groq rate limited, waiting 34.0s (attempt 3/4)
+WARNING groq rate limited, waiting 60.0s (attempt 1/4)
+WARNING groq rate limited, waiting 60.0s (attempt 2/4)
+WARNING groq rate limited, waiting 60.0s (attempt 3/4)
+WARNING no output for api_500s: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 500000, Used 498788, Requested 2800. Please try again in 4m34.4064s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+WARNING groq rate limited, waiting 60.0s (attempt 1/4)
+WARNING groq rate limited, waiting 60.0s (attempt 2/4)
+WARNING groq rate limited, waiting 60.0s (attempt 3/4)
+WARNING no output for add_seat: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 500000, Used 497730, Requested 2722. Please try again in 1m18.1056s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+WARNING groq rate limited, waiting 60.0s (attempt 1/4)
+WARNING groq rate limited, waiting 17.0s (attempt 2/4)
+WARNING groq rate limited, waiting 60.0s (attempt 1/4)
+WARNING groq rate limited, waiting 60.0s (attempt 2/4)
+WARNING groq rate limited, waiting 60.0s (attempt 3/4)
+WARNING no output for vague: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 500000, Used 498945, Requested 2801. Please try again in 5m1.7088s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+WARNING groq rate limited, waiting 60.0s (attempt 1/4)
+WARNING groq rate limited, waiting 60.0s (attempt 2/4)
+  6/9 llama-3.1-8b-instant / json_object / TicketTriage: first 12%, final 76%, 
+accurate 5%
+WARNING groq rate limited, waiting 59.0s (attempt 1/4)
+WARNING groq rate limited, waiting 21.0s (attempt 2/4)
+WARNING groq rate limited, waiting 60.0s (attempt 3/4)
+WARNING groq rate limited, waiting 60.0s (attempt 1/4)
+WARNING groq rate limited, waiting 60.0s (attempt 2/4)
+WARNING groq rate limited, waiting 60.0s (attempt 3/4)
+WARNING groq rate limited, waiting 60.0s (attempt 1/4)
+WARNING groq rate limited, waiting 60.0s (attempt 2/4)
+WARNING groq rate limited, waiting 60.0s (attempt 3/4)
+WARNING no output for cancel_account: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 500000, Used 498402, Requested 2347. Please try again in 2m9.4272s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+WARNING groq rate limited, waiting 60.0s (attempt 1/4)
+WARNING groq rate limited, waiting 57.0s (attempt 2/4)
+WARNING groq rate limited, waiting 60.0s (attempt 1/4)
+WARNING groq rate limited, waiting 60.0s (attempt 2/4)
+WARNING groq rate limited, waiting 60.0s (attempt 3/4)
+WARNING groq rate limited, waiting 60.0s (attempt 1/4)
+WARNING groq rate limited, waiting 60.0s (attempt 2/4)
+WARNING groq rate limited, waiting 60.0s (attempt 1/4)
+WARNING groq rate limited, waiting 60.0s (attempt 2/4)
+WARNING groq rate limited, waiting 44.0s (attempt 1/4)
+WARNING groq rate limited, waiting 60.0s (attempt 2/4)
+WARNING groq rate limited, waiting 60.0s (attempt 1/4)
+WARNING groq rate limited, waiting 60.0s (attempt 2/4)
+WARNING groq rate limited, waiting 60.0s (attempt 3/4)
+WARNING no output for vague: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 500000, Used 498570, Requested 2265. Please try again in 2m24.288s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+WARNING groq rate limited, waiting 60.0s (attempt 1/4)
+WARNING groq rate limited, waiting 60.0s (attempt 2/4)
+WARNING groq rate limited, waiting 27.0s (attempt 3/4)
+WARNING groq rate limited, waiting 60.0s (attempt 1/4)
+WARNING groq rate limited, waiting 60.0s (attempt 2/4)
+WARNING groq rate limited, waiting 60.0s (attempt 3/4)
+WARNING groq rate limited, waiting 60.0s (attempt 1/4)
+WARNING no output for export_broken: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for cancel_account: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for dark_mode: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for total_outage: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for vat_rate: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for api_500s: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for add_seat: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for vague: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for angry_refund: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for billing_duplicate: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for export_broken: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for cancel_account: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for dark_mode: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for total_outage: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for vat_rate: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for api_500s: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for add_seat: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for vague: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for angry_refund: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+  7/9 llama-3.1-8b-instant / prompt_only / TicketSummary: first 56%, final 
+100%, accurate 56%
+WARNING no output for billing_duplicate: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for export_broken: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for cancel_account: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for dark_mode: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for total_outage: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for vat_rate: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for api_500s: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for add_seat: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for vague: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for angry_refund: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for billing_duplicate: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for export_broken: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for cancel_account: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for dark_mode: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for total_outage: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for vat_rate: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for api_500s: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for add_seat: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for vague: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for angry_refund: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for billing_duplicate: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for export_broken: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for cancel_account: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for dark_mode: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for total_outage: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for vat_rate: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for api_500s: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for add_seat: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for vague: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for angry_refund: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+  8/9 llama-3.1-8b-instant / prompt_only / TicketAnalysis: first 0%, final 0%, 
+accurate 0%
+WARNING no output for billing_duplicate: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for export_broken: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for cancel_account: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for dark_mode: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for total_outage: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for vat_rate: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for api_500s: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for add_seat: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for vague: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for angry_refund: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for billing_duplicate: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for export_broken: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for cancel_account: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for dark_mode: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for total_outage: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for vat_rate: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for api_500s: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for add_seat: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for vague: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for angry_refund: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for billing_duplicate: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for export_broken: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for cancel_account: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for dark_mode: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for total_outage: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for vat_rate: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for api_500s: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for add_seat: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for vague: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for angry_refund: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+  9/9 llama-3.1-8b-instant / prompt_only / TicketTriage: first 0%, final 0%, 
+accurate 0%
+
+                               Benchmark matrix                                
+┌───────┬───────┬───────┬───────┬───────┬───────┬──────┬───────┬──────┬───────┐
+│       │       │       │ first │ after │  free │      │       │      │    no │
+│ model │ tier  │ sche… │ atte… │ repa… │ repa… │ acc… │ grou… │ tok… │ outp… │
+├───────┼───────┼───────┼───────┼───────┼───────┼──────┼───────┼──────┼───────┤
+│ llam… │ json… │ simp… │ skip… │       │       │      │       │      │       │
+│       │       │       │ json… │       │       │      │       │      │       │
+│       │       │       │    is │       │       │      │       │      │       │
+│       │       │       │ reje… │       │       │      │       │      │       │
+│       │       │       │    on │       │       │      │       │      │       │
+│       │       │       │  this │       │       │      │       │      │       │
+│       │       │       │ model │       │       │      │       │      │       │
+│ llam… │ json… │ nest… │ skip… │       │       │      │       │      │       │
+│       │       │       │ json… │       │       │      │       │      │       │
+│       │       │       │    is │       │       │      │       │      │       │
+│       │       │       │ reje… │       │       │      │       │      │       │
+│       │       │       │    on │       │       │      │       │      │       │
+│       │       │       │  this │       │       │      │       │      │       │
+│       │       │       │ model │       │       │      │       │      │       │
+│ llam… │ json… │ hard  │ skip… │       │       │      │       │      │       │
+│       │       │       │ json… │       │       │      │       │      │       │
+│       │       │       │    is │       │       │      │       │      │       │
+│       │       │       │ reje… │       │       │      │       │      │       │
+│       │       │       │    on │       │       │      │       │      │       │
+│       │       │       │  this │       │       │      │       │      │       │
+│       │       │       │ model │       │       │      │       │      │       │
+│ llam… │ json… │ simp… │ 73.3% │ 93.3% │     0 │ 46.… │ 100.… │  426 │       │
+│       │       │       │ (57.… │ (84.… │       │ (28… │ (100… │      │       │
+│       │       │       │ n=30) │ n=30) │       │ n=2… │ n=28) │      │       │
+│ llam… │ json… │ nest… │ 30.0% │ 90.0% │     0 │ 3.7% │  7.4% │ 1013 │       │
+│       │       │       │ (13.… │ (79.… │       │ (0.… │ (0.0… │      │       │
+│       │       │       │ n=30) │ n=30) │       │ n=2… │ n=27) │      │       │
+│ llam… │ json… │ hard  │ 12.0% │ 76.0% │     0 │ 5.3% │ 10.5% │ 1910 │     5 │
+│       │       │       │ (0.0… │ (59.… │       │ (0.… │ (0.0… │      │       │
+│       │       │       │ n=25) │ n=25) │       │ n=1… │ n=19) │      │       │
+│ llam… │ prom… │ simp… │ 55.6% │ 100.… │     0 │ 55.… │ 100.… │  528 │    21 │
+│       │       │       │ (23.… │ (100… │       │ (23… │ (100… │      │       │
+│       │       │       │  n=9) │  n=9) │       │ n=9) │  n=9) │      │       │
+│ llam… │ prom… │ nest… │     - │     - │     0 │    - │     - │    - │    30 │
+│ llam… │ prom… │ hard  │     - │     - │     0 │    - │     - │    - │    30 │
+└───────┴───────┴───────┴───────┴───────┴───────┴──────┴───────┴──────┴───────┘
+
+                              By enforcement tier                              
+┌─────────────┬────────────────────┬────────────────────┬─────────────────────┐
+│ tier        │      first attempt │       after repair │   semantic accuracy │
+├─────────────┼────────────────────┼────────────────────┼─────────────────────┤
+│ json_object │              40.0% │              87.1% │ 20.3% (11.1%-29.4%, │
+│             │      (29.6%-50.4%, │      (79.9%-94.2%, │               n=74) │
+│             │              n=85) │              n=85) │                     │
+│ prompt_only │              55.6% │             100.0% │ 55.6% (23.1%-88.0%, │
+│             │ (23.1%-88.0%, n=9) │    (100.0%-100.0%, │                n=9) │
+│             │                    │               n=9) │                     │
+└─────────────┴────────────────────┴────────────────────┴─────────────────────┘
+
+      First-attempt failures by type       
+┌─────────────┬───────────────────┬───────┐
+│ tier        │ failure           │ count │
+├─────────────┼───────────────────┼───────┤
+│ json_object │ schema_mismatch   │    44 │
+│ json_object │ provider_rejected │     7 │
+│ prompt_only │ schema_mismatch   │     3 │
+│ prompt_only │ not_json          │     1 │
+└─────────────┴───────────────────┴───────┘
+
+                   Projected chain reliability (upper bound)                   
+┌─────────────────────────┬──────────┬────────┬─────────┬──────────┬──────────┐
+│ cell                    │ per call │ 1 step │ 5 steps │ 10 steps │ 50 steps │
+├─────────────────────────┼──────────┼────────┼─────────┼──────────┼──────────┤
+│ best:                   │   100.0% │ 100.0% │  100.0% │   100.0% │   100.0% │
+│ llama-3.1-8b-instant /  │          │        │         │          │          │
+│ prompt_only / simple    │          │        │         │          │          │
+│ worst:                  │    76.0% │  76.0% │   25.4% │     6.4% │     0.0% │
+│ llama-3.1-8b-instant /  │          │        │         │          │          │
+│ json_object / hard      │          │        │         │          │          │
+└─────────────────────────┴──────────┴────────┴─────────┴──────────┴──────────┘
+
+2 of 4 cells have n<30 (smallest n=9); widest interval is +/-16.7%. Around 4x 
+the repeats would put every cell over the threshold. Cells sitting at 0% or 
+100% show a zero-width interval, which is an artefact of the approximation 
+rather than precision.
+
+Wrote runs\llama-3.1-8b-instant.json in 80.9 min

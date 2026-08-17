@@ -19,6 +19,11 @@ probe measured them failing:
   leaving it out of ``required`` — the exact form Groq rejects outright.
 
 A contract that avoided both would be easier to satisfy and would test nothing.
+
+Every field that a ticket may simply not supply is nullable, and asks for null
+in its description. This is not politeness: a non-nullable string for a detail
+the source omits leaves the model no legal way to decline, so it writes
+something, and the benchmark then records the schema's mistake as the model's.
 """
 
 from __future__ import annotations
@@ -92,14 +97,30 @@ class TicketSummary(Contract):
         return Difficulty.SIMPLE
 
 
+# Both fields are nullable, and that is the point of them. Most tickets name
+# nobody and mention no plan, so a non-nullable string leaves a model no legal
+# way to say "not stated": it must write something, and the benchmark then
+# records the schema's mistake as the model inventing a fact. Asking for null
+# makes declining a real option, which is what turns inventing one into a
+# finding. Kept as a comment rather than a docstring because a class docstring
+# is serialised into the schema and shipped on every request.
 class Customer(BaseModel):
     """Who reported a ticket."""
 
     model_config = ConfigDict(extra="forbid")
 
-    name: str = Field(description="Customer's name exactly as it appears in the ticket.")
-    account_tier: str = Field(
-        description='Plan named in the ticket, or "unknown" if none is mentioned.'
+    name: str | None = Field(
+        description=(
+            "Customer's name exactly as it appears in the ticket, or null if the "
+            "ticket does not name them. Do not guess, and do not write a "
+            'placeholder such as "unknown" or "customer".'
+        )
+    )
+    account_tier: str | None = Field(
+        description=(
+            "Plan named in the ticket, or null if no plan is mentioned. Do not "
+            "write a placeholder."
+        )
     )
 
 
@@ -137,14 +158,13 @@ class ResolutionStep(BaseModel):
     )
 
 
+# Both of the fields the capability probe found problematic appear here on
+# purpose: `confidence` carries bounds that strict modes strip, and `assignee`
+# is the optional form Groq rejects. This is the contract that exercises the
+# translator rather than the model. As a comment, not a docstring — a class
+# docstring is serialised into the schema and paid for on every request.
 class TicketTriage(Contract):
-    """Everything at once: nesting, lists, enums, bounds, and an optional field.
-
-    Both of the fields the capability probe found problematic appear here on
-    purpose. ``confidence`` carries bounds that strict modes strip, and
-    ``assignee`` is the optional form Groq rejects. This is the contract that
-    exercises the translator rather than the model.
-    """
+    """Everything at once: nesting, lists, enums, bounds, and an optional field."""
 
     customer: Customer = Field(description="Who reported the ticket.")
     issues: list[Issue] = Field(description="Every distinct problem raised.")

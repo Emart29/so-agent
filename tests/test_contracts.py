@@ -16,6 +16,7 @@ from pydantic import BaseModel, Field
 
 from contracts.schemas import (
     CONTRACTS,
+    Customer,
     Difficulty,
     TicketAnalysis,
     TicketSummary,
@@ -24,6 +25,7 @@ from contracts.schemas import (
 )
 from contracts.translate import (
     COSMETIC_KEYS,
+    SchemaTranslator,
     VALUE_CONSTRAINTS,
     SchemaTranslator,
     response_format_for,
@@ -330,3 +332,47 @@ class TestArbitraryModels:
 
         result = SchemaTranslator().translate(Bounded)
         assert {c.keyword for c in result.stripped} & {"minItems", "maxItems"}
+
+
+class TestAbsenceIsExpressible:
+    """A field the source may omit must have a legal way to say "not stated".
+
+    Without one the model has to write something, and the benchmark then scores
+    the schema's mistake as the model inventing a fact. An earlier run measured
+    exactly that: 292 of the flagged grounding failures were the value the field
+    description itself asked for.
+    """
+
+    @pytest.mark.parametrize("field", ["name", "account_tier"])
+    def test_a_customer_detail_accepts_null(self, field):
+        customer = Customer(**{"name": None, "account_tier": None})
+        assert getattr(customer, field) is None
+
+    def test_a_class_docstring_does_not_bloat_every_request(self):
+        """Docstrings are serialised into the schema and sent on every call, so
+        rationale for the reader belongs in a comment."""
+        for model in (Customer, TicketAnalysis, TicketTriage):
+            assert len(model.__doc__.strip()) < 200, model.__name__
+
+    def test_the_optional_assignee_still_accepts_null(self):
+        assert TicketTriage.model_fields["assignee"].default is None
+
+    @pytest.mark.parametrize("name", ["name", "account_tier"])
+    def test_the_description_asks_for_null_rather_than_a_placeholder(self, name):
+        """The instruction and the scoring have to agree on what absence looks
+        like; a description asking for "unknown" contradicts the check."""
+        description = Customer.model_fields[name].description.lower()
+        assert "null" in description
+        assert "placeholder" in description
+
+    def test_nullable_fields_stay_required_after_translation(self):
+        """Groq rejects a schema that omits a key from `required`, so optionality
+        is carried by the type rather than by absence from the list."""
+        translated = SchemaTranslator().translate(TicketAnalysis).schema
+        customer = translated["$defs"]["Customer"]
+        assert set(customer["required"]) == {"name", "account_tier"}
+        # Pydantic expresses `str | None` as anyOf rather than a type list. The
+        # probe measured both forms as accepted, so the shape is checked rather
+        # than assumed to be one of them.
+        variants = customer["properties"]["name"]["anyOf"]
+        assert {v["type"] for v in variants} == {"string", "null"}
