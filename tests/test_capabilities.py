@@ -13,6 +13,11 @@ from datetime import datetime, timedelta, timezone
 
 import pytest
 
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / 'examples'))
+from ladder import build_ladder, is_measurable  # noqa: E402
 from provider.capabilities import (
     classify_400,
     FEATURE_PROMPTS,
@@ -27,6 +32,7 @@ from provider.capabilities import (
     chat_models,
     is_stale,
     load_capabilities,
+    mark_retired,
     save_capabilities,
 )
 
@@ -288,3 +294,76 @@ class TestErrorFormatting:
     def test_sample_collapses_whitespace_and_truncates(self):
         assert _sample("a\n\n  b") == "a b"
         assert len(_sample("x" * 500)) < 130
+
+
+class TestRetirement:
+    """Provider line-ups change. A benchmark that hardcodes model ids breaks
+    silently when they do — this run lost two of five models overnight."""
+
+    def _caps(self, model: str, retired: str = "") -> ModelCapabilities:
+        return ModelCapabilities(
+            provider="groq", model=model, probed_at="2026-08-14T00:00:00+00:00",
+            tiers={"json_object": "conformed"}, retired_at=retired,
+        )
+
+    def test_a_vanished_model_is_marked(self):
+        cached = {"gone": self._caps("gone"), "here": self._caps("here")}
+        newly = mark_retired(cached, ["here"])
+        assert newly == ["gone"]
+        assert cached["gone"].retired_at
+        assert not cached["here"].retired_at
+
+    def test_its_measurement_is_kept(self):
+        """The date it was measured and the date it disappeared are both
+        evidence about how long any of these numbers last."""
+        cached = {"gone": self._caps("gone")}
+        mark_retired(cached, ["other"])
+        assert cached["gone"].tiers == {"json_object": "conformed"}
+        assert cached["gone"].probed_at == "2026-08-14T00:00:00+00:00"
+
+    def test_an_empty_listing_retires_nothing(self):
+        """A failed list call is not evidence that every model is gone."""
+        cached = {"here": self._caps("here")}
+        assert mark_retired(cached, []) == []
+        assert not cached["here"].retired_at
+
+    def test_marking_twice_keeps_the_first_date(self):
+        cached = {"gone": self._caps("gone", retired="2026-08-18T00:00:00+00:00")}
+        assert mark_retired(cached, ["other"]) == []
+        assert cached["gone"].retired_at == "2026-08-18T00:00:00+00:00"
+
+    def test_a_returning_model_can_be_probed_again(self):
+        """Retirement records history; it does not blocklist."""
+        cached = {"back": self._caps("back", retired="2026-08-18T00:00:00+00:00")}
+        mark_retired(cached, ["back"])
+        assert cached["back"].retired_at  # unchanged; the probe overwrites on refresh
+
+
+class TestLadder:
+    def test_a_retired_model_is_left_out(self):
+        assert not is_measurable(
+            ModelCapabilities(
+                provider="groq", model="gone", probed_at="x",
+                tiers={"json_schema": "conformed"},
+                retired_at="2026-08-18T00:00:00+00:00",
+            )
+        )
+
+    def test_a_model_that_conforms_nowhere_is_left_out(self):
+        """Every cell would be an error, and error cells measure the harness."""
+        assert not is_measurable(
+            ModelCapabilities(
+                provider="groq", model="broken", probed_at="x",
+                tiers={"json_schema": "rejected", "prompt_only": "error"},
+            )
+        )
+
+    def test_models_without_native_enforcement_run_first(self):
+        """If a daily token budget runs out, the cells lost should be the ones a
+        reader can most easily predict rather than the ones carrying the finding."""
+        ladder = build_ladder("groq")
+        if len(ladder) < 2:
+            pytest.skip("needs a probed provider with several models")
+        caps = load_capabilities()["groq"]
+        enforcing = [bool(caps[m].enforces_schema) for m in ladder]
+        assert enforcing == sorted(enforcing)

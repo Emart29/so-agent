@@ -24,13 +24,14 @@ set -u
 K="${1:-3}"
 PYTHON="${PYTHON:-../.venv/Scripts/python.exe}"
 
-MODELS=(
-  "llama-3.1-8b-instant"
-  "openai/gpt-oss-20b"
-  "qwen/qwen3.6-27b"
-  "llama-3.3-70b-versatile"
-  "openai/gpt-oss-120b"
-)
+# Read from the probe, never hardcoded. A run of this benchmark lost two of its
+# five models overnight when Groq dropped them from its line-up, which is the
+# same argument the project makes about capabilities applied to existence.
+mapfile -t MODELS < <("$PYTHON" examples/ladder.py --provider groq)
+if [ "${#MODELS[@]}" -eq 0 ]; then
+  echo "no probed models; run: so-agent probe --provider groq" >&2
+  exit 1
+fi
 
 mkdir -p runs
 

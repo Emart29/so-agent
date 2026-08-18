@@ -3,7 +3,7 @@
     "allam-2-7b": {
       "provider": "groq",
       "model": "allam-2-7b",
-      "probed_at": "2026-08-14T13:32:12.711243+00:00",
+      "probed_at": "2026-08-18T05:17:20.042706+00:00",
       "tiers": {
         "json_schema": "rejected",
         "json_object": "conformed",
@@ -15,15 +15,16 @@
       "notes": [
         "json_schema: This model does not support response format `json_schema`. See supported models at https://console.groq.com/docs/structured-outputs#supported-models",
         "tools: `tool calling` is not supported with this model"
-      ]
+      ],
+      "retired_at": ""
     },
     "groq/compound": {
       "provider": "groq",
       "model": "groq/compound",
-      "probed_at": "2026-08-14T13:32:14.450510+00:00",
+      "probed_at": "2026-08-18T05:17:22.292850+00:00",
       "tiers": {
         "json_schema": "rejected",
-        "json_object": "rejected",
+        "json_object": "conformed",
         "tools": "rejected",
         "prompt_only": "error"
       },
@@ -31,15 +32,15 @@
       "max_nesting_depth": null,
       "notes": [
         "json_schema: This model does not support response format `json_schema`. See supported models at https://console.groq.com/docs/structured-outputs#supported-models",
-        "json_object: APIStatusError: Error code: 413 - {'error': {'message': 'Request Entity Too Large', 'type': 'invalid_request_error', 'code': 'request_too_large'}}",
         "tools: `tool calling` is not supported with this model",
         "prompt_only: APIStatusError: Error code: 413 - {'error': {'message': 'Request Entity Too Large', 'type': 'invalid_request_error', 'code': 'request_too_large'}}"
-      ]
+      ],
+      "retired_at": ""
     },
     "groq/compound-mini": {
       "provider": "groq",
       "model": "groq/compound-mini",
-      "probed_at": "2026-08-14T13:32:31.512070+00:00",
+      "probed_at": "2026-08-18T05:17:47.125734+00:00",
       "tiers": {
         "json_schema": "rejected",
         "json_object": "conformed",
@@ -51,7 +52,8 @@
       "notes": [
         "json_schema: This model does not support response format `json_schema`. See supported models at https://console.groq.com/docs/structured-outputs#supported-models",
         "tools: `tool calling` is not supported with this model"
-      ]
+      ],
+      "retired_at": ""
     },
     "llama-3.1-8b-instant": {
       "provider": "groq",
@@ -67,7 +69,8 @@
       "max_nesting_depth": null,
       "notes": [
         "json_schema: This model does not support response format `json_schema`. See supported models at https://console.groq.com/docs/structured-outputs#supported-models"
-      ]
+      ],
+      "retired_at": "2026-08-18T05:33:50.565887+00:00"
     },
     "llama-3.3-70b-versatile": {
       "provider": "groq",
@@ -83,12 +86,13 @@
       "max_nesting_depth": null,
       "notes": [
         "json_schema: This model does not support response format `json_schema`. See supported models at https://console.groq.com/docs/structured-outputs#supported-models"
-      ]
+      ],
+      "retired_at": "2026-08-18T05:33:50.565887+00:00"
     },
     "openai/gpt-oss-120b": {
       "provider": "groq",
       "model": "openai/gpt-oss-120b",
-      "probed_at": "2026-08-15T14:20:46.518859+00:00",
+      "probed_at": "2026-08-18T05:17:49.463539+00:00",
       "tiers": {
         "json_schema": "conformed",
         "json_object": "conformed",
@@ -108,12 +112,13 @@
       "max_nesting_depth": 6,
       "notes": [
         "partial_required: invalid JSON schema for response_format: 'probe_partial_required': /required: `required` is required to be supplied and to be an array including every key in properties. The following properties must "
-      ]
+      ],
+      "retired_at": ""
     },
     "openai/gpt-oss-20b": {
       "provider": "groq",
       "model": "openai/gpt-oss-20b",
-      "probed_at": "2026-08-15T14:19:59.345289+00:00",
+      "probed_at": "2026-08-18T05:18:03.847865+00:00",
       "tiers": {
         "json_schema": "conformed",
         "json_object": "conformed",
@@ -133,16 +138,17 @@
       "max_nesting_depth": 6,
       "notes": [
         "partial_required: invalid JSON schema for response_format: 'probe_partial_required': /required: `required` is required to be supplied and to be an array including every key in properties. The following properties must "
-      ]
+      ],
+      "retired_at": ""
     },
     "qwen/qwen3.6-27b": {
       "provider": "groq",
       "model": "qwen/qwen3.6-27b",
-      "probed_at": "2026-08-15T14:21:20.919133+00:00",
+      "probed_at": "2026-08-18T05:18:37.391965+00:00",
       "tiers": {
         "json_schema": "conformed",
         "json_object": "conformed",
-        "tools": "conformed",
+        "tools": "ignored",
         "prompt_only": "ignored"
       },
       "features": {
@@ -157,10 +163,11 @@
       },
       "max_nesting_depth": 6,
       "notes": [
-        "tools: first sample did not conform (no tool call emitted); second did",
+        "tools: no tool call emitted (confirmed over 2 samples)",
         "prompt_only: <think> Here's a thinking process: 1. **Analyze User Input:** - **Request:** Return the name and approximate population ...",
         "partial_required: invalid JSON schema for response_format: 'probe_partial_required': /required: `required` is required to be supplied and to be an array including every key in properties. The following properties must "
-      ]
+      ],
+      "retired_at": ""
     }
   },
   "openrouter": {
@@ -184,7 +191,8 @@
         "ref_defs": "conformed"
       },
       "max_nesting_depth": 6,
-      "notes": []
+      "notes": [],
+      "retired_at": ""
     }
   }
 }

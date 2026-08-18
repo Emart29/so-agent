@@ -1,243 +1,12 @@
-groq: 1 models x 3 tiers x 3 contracts, 10 cases x 3 repeats -> up to 9 cells
+groq: 1 models x 3 tiers x 3 contracts, 10 cases x 2 repeats -> up to 9 cells
   1/9 skip llama-3.3-70b-versatile / json_schema / TicketSummary: json_schema 
 is rejected on this model
   2/9 skip llama-3.3-70b-versatile / json_schema / TicketAnalysis: json_schema 
 is rejected on this model
   3/9 skip llama-3.3-70b-versatile / json_schema / TicketTriage: json_schema is
 rejected on this model
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-  4/9 llama-3.3-70b-versatile / json_object / TicketSummary: first 97%, final 
-100%, accurate 83%
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-  5/9 llama-3.3-70b-versatile / json_object / TicketAnalysis: first 90%, final 
-100%, accurate 20%
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 2/4)
-WARNING groq rate limited, waiting 3.0s (attempt 1/4)
-WARNING groq rate limited, waiting 4.0s (attempt 1/4)
-WARNING groq rate limited, waiting 3.0s (attempt 1/4)
-WARNING groq rate limited, waiting 4.0s (attempt 1/4)
-  6/9 llama-3.3-70b-versatile / json_object / TicketTriage: first 97%, final 
-100%, accurate 20%
-WARNING groq rate limited, waiting 1.0s (attempt 1/4)
-WARNING groq rate limited, waiting 1.0s (attempt 1/4)
-WARNING groq rate limited, waiting 1.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-  7/9 llama-3.3-70b-versatile / prompt_only / TicketSummary: first 100%, final 
-100%, accurate 80%
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 60.0s (attempt 2/4)
-WARNING groq rate limited, waiting 60.0s (attempt 3/4)
-WARNING no output for add_seat: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99588, Requested 532. Please try again in 1m43.68s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-WARNING groq rate limited, waiting 60.0s (attempt 1/4)
-WARNING groq rate limited, waiting 36.0s (attempt 2/4)
-WARNING groq rate limited, waiting 60.0s (attempt 1/4)
-WARNING groq rate limited, waiting 60.0s (attempt 2/4)
-WARNING groq rate limited, waiting 60.0s (attempt 3/4)
-WARNING no output for angry_refund: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99730, Requested 2426. Please try again in 31m2.784s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-  8/9 llama-3.3-70b-versatile / prompt_only / TicketAnalysis: first 96%, final 
-100%, accurate 21%
-WARNING groq rate limited, waiting 60.0s (attempt 1/4)
-WARNING groq rate limited, waiting 60.0s (attempt 2/4)
-WARNING groq rate limited, waiting 60.0s (attempt 3/4)
-WARNING no output for billing_duplicate: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99519, Requested 2746. Please try again in 32m36.96s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-WARNING groq rate limited, waiting 60.0s (attempt 1/4)
-WARNING groq rate limited, waiting 60.0s (attempt 2/4)
-WARNING groq rate limited, waiting 60.0s (attempt 3/4)
-WARNING no output for export_broken: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99309, Requested 2728. Please try again in 29m19.967999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-WARNING groq rate limited, waiting 60.0s (attempt 1/4)
-WARNING groq rate limited, waiting 60.0s (attempt 2/4)
-WARNING groq rate limited, waiting 60.0s (attempt 3/4)
-WARNING no output for cancel_account: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99098, Requested 2718. Please try again in 26m9.024s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-WARNING groq rate limited, waiting 60.0s (attempt 1/4)
-WARNING groq rate limited, waiting 60.0s (attempt 2/4)
-WARNING groq rate limited, waiting 60.0s (attempt 3/4)
-WARNING no output for dark_mode: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 98887, Requested 2720. Please try again in 23m8.448s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-WARNING groq rate limited, waiting 60.0s (attempt 1/4)
-WARNING groq rate limited, waiting 60.0s (attempt 2/4)
-WARNING groq rate limited, waiting 60.0s (attempt 3/4)
-WARNING no output for total_outage: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 98677, Requested 2730. Please try again in 20m15.648s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-WARNING groq rate limited, waiting 60.0s (attempt 1/4)
-WARNING groq rate limited, waiting 60.0s (attempt 2/4)
-WARNING groq rate limited, waiting 60.0s (attempt 3/4)
-WARNING no output for vat_rate: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 98466, Requested 2733. Please try again in 17m15.936s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-WARNING groq rate limited, waiting 60.0s (attempt 1/4)
-WARNING groq rate limited, waiting 60.0s (attempt 2/4)
-WARNING groq rate limited, waiting 60.0s (attempt 3/4)
-WARNING no output for api_500s: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 98250, Requested 2731. Please try again in 14m7.584s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-WARNING groq rate limited, waiting 60.0s (attempt 1/4)
-WARNING groq rate limited, waiting 60.0s (attempt 2/4)
-WARNING groq rate limited, waiting 60.0s (attempt 3/4)
-WARNING no output for add_seat: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 98039, Requested 2717. Please try again in 10m53.184s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-WARNING groq rate limited, waiting 60.0s (attempt 1/4)
-WARNING groq rate limited, waiting 60.0s (attempt 2/4)
-WARNING groq rate limited, waiting 60.0s (attempt 3/4)
-WARNING no output for vague: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 97828, Requested 2709. Please try again in 7m43.967999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-WARNING groq rate limited, waiting 60.0s (attempt 1/4)
-WARNING groq rate limited, waiting 60.0s (attempt 2/4)
-WARNING groq rate limited, waiting 60.0s (attempt 3/4)
-WARNING no output for angry_refund: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 97617, Requested 2734. Please try again in 5m3.264s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-WARNING groq rate limited, waiting 60.0s (attempt 1/4)
-WARNING groq rate limited, waiting 60.0s (attempt 2/4)
-WARNING groq rate limited, waiting 60.0s (attempt 3/4)
-WARNING no output for billing_duplicate: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 97406, Requested 2746. Please try again in 2m11.328s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-WARNING groq rate limited, waiting 60.0s (attempt 1/4)
-WARNING groq rate limited, waiting 56.0s (attempt 2/4)
-WARNING groq rate limited, waiting 60.0s (attempt 1/4)
-WARNING groq rate limited, waiting 60.0s (attempt 2/4)
-WARNING groq rate limited, waiting 60.0s (attempt 3/4)
-WARNING no output for cancel_account: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99789, Requested 2718. Please try again in 36m6.047999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-WARNING groq rate limited, waiting 60.0s (attempt 1/4)
-WARNING groq rate limited, waiting 60.0s (attempt 2/4)
-WARNING groq rate limited, waiting 60.0s (attempt 3/4)
-WARNING no output for dark_mode: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99579, Requested 2720. Please try again in 33m6.336s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-WARNING groq rate limited, waiting 60.0s (attempt 1/4)
-WARNING groq rate limited, waiting 60.0s (attempt 2/4)
-WARNING groq rate limited, waiting 60.0s (attempt 3/4)
-WARNING no output for total_outage: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99368, Requested 2730. Please try again in 30m12.671999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-WARNING groq rate limited, waiting 60.0s (attempt 1/4)
-WARNING groq rate limited, waiting 60.0s (attempt 2/4)
-WARNING groq rate limited, waiting 60.0s (attempt 3/4)
-WARNING no output for vat_rate: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99157, Requested 2733. Please try again in 27m12.96s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-WARNING groq rate limited, waiting 60.0s (attempt 1/4)
-WARNING groq rate limited, waiting 60.0s (attempt 2/4)
-WARNING groq rate limited, waiting 60.0s (attempt 3/4)
-WARNING no output for api_500s: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 98946, Requested 2731. Please try again in 24m8.928s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-WARNING groq rate limited, waiting 60.0s (attempt 1/4)
-WARNING groq rate limited, waiting 60.0s (attempt 2/4)
-WARNING groq rate limited, waiting 60.0s (attempt 3/4)
-WARNING no output for add_seat: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 98735, Requested 2717. Please try again in 20m54.528s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-WARNING groq rate limited, waiting 60.0s (attempt 1/4)
-WARNING groq rate limited, waiting 60.0s (attempt 2/4)
-WARNING groq rate limited, waiting 60.0s (attempt 3/4)
-WARNING no output for vague: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 98524, Requested 2709. Please try again in 17m45.312s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-WARNING groq rate limited, waiting 60.0s (attempt 1/4)
-WARNING groq rate limited, waiting 60.0s (attempt 2/4)
-WARNING groq rate limited, waiting 60.0s (attempt 3/4)
-WARNING no output for angry_refund: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 98313, Requested 2734. Please try again in 15m4.608s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-WARNING groq rate limited, waiting 60.0s (attempt 1/4)
-WARNING groq rate limited, waiting 60.0s (attempt 2/4)
-WARNING groq rate limited, waiting 60.0s (attempt 3/4)
-WARNING no output for billing_duplicate: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 98102, Requested 2746. Please try again in 12m12.672s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-WARNING groq rate limited, waiting 60.0s (attempt 1/4)
-WARNING groq rate limited, waiting 60.0s (attempt 2/4)
-WARNING groq rate limited, waiting 60.0s (attempt 3/4)
-WARNING no output for export_broken: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 97892, Requested 2728. Please try again in 8m55.679999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-WARNING groq rate limited, waiting 60.0s (attempt 1/4)
-WARNING groq rate limited, waiting 60.0s (attempt 2/4)
+WARNING no output for billing_duplicate: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for export_broken: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
 WARNING no output for cancel_account: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
 WARNING no output for dark_mode: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
 WARNING no output for total_outage: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
@@ -246,8 +15,128 @@ WARNING no output for api_500s: NotFoundError: Error code: 404 - {'error': {'mes
 WARNING no output for add_seat: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
 WARNING no output for vague: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
 WARNING no output for angry_refund: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
-  9/9 llama-3.3-70b-versatile / prompt_only / TicketTriage: first 100%, final 
-100%, accurate 0%
+WARNING no output for billing_duplicate: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for export_broken: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for cancel_account: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for dark_mode: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for total_outage: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for vat_rate: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for api_500s: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for add_seat: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for vague: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for angry_refund: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+  4/9 llama-3.3-70b-versatile / json_object / TicketSummary: first 0%, final 
+0%, accurate 0%
+WARNING no output for billing_duplicate: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for export_broken: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for cancel_account: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for dark_mode: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for total_outage: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for vat_rate: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for api_500s: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for add_seat: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for vague: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for angry_refund: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for billing_duplicate: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for export_broken: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for cancel_account: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for dark_mode: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for total_outage: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for vat_rate: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for api_500s: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for add_seat: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for vague: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for angry_refund: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+  5/9 llama-3.3-70b-versatile / json_object / TicketAnalysis: first 0%, final 
+0%, accurate 0%
+WARNING no output for billing_duplicate: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for export_broken: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for cancel_account: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for dark_mode: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for total_outage: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for vat_rate: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for api_500s: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for add_seat: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for vague: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for angry_refund: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for billing_duplicate: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for export_broken: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for cancel_account: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for dark_mode: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for total_outage: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for vat_rate: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for api_500s: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for add_seat: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for vague: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for angry_refund: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+  6/9 llama-3.3-70b-versatile / json_object / TicketTriage: first 0%, final 0%,
+accurate 0%
+WARNING no output for billing_duplicate: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for export_broken: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for cancel_account: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for dark_mode: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for total_outage: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for vat_rate: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for api_500s: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for add_seat: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for vague: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for angry_refund: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for billing_duplicate: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for export_broken: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for cancel_account: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for dark_mode: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for total_outage: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for vat_rate: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for api_500s: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for add_seat: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for vague: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for angry_refund: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+  7/9 llama-3.3-70b-versatile / prompt_only / TicketSummary: first 0%, final 
+0%, accurate 0%
+WARNING no output for billing_duplicate: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for export_broken: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for cancel_account: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for dark_mode: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for total_outage: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for vat_rate: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for api_500s: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for add_seat: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for vague: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for angry_refund: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for billing_duplicate: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for export_broken: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for cancel_account: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for dark_mode: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for total_outage: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for vat_rate: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for api_500s: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for add_seat: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for vague: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for angry_refund: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+  8/9 llama-3.3-70b-versatile / prompt_only / TicketAnalysis: first 0%, final 
+0%, accurate 0%
+WARNING no output for billing_duplicate: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for export_broken: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for cancel_account: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for dark_mode: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for total_outage: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for vat_rate: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for api_500s: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for add_seat: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for vague: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for angry_refund: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for billing_duplicate: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for export_broken: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for cancel_account: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for dark_mode: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for total_outage: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for vat_rate: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for api_500s: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for add_seat: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for vague: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+WARNING no output for angry_refund: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+  9/9 llama-3.3-70b-versatile / prompt_only / TicketTriage: first 0%, final 0%,
+accurate 0%
 
                                Benchmark matrix                                
 ┌───────┬───────┬───────┬───────┬───────┬───────┬──────┬───────┬──────┬───────┐
@@ -275,61 +164,36 @@ WARNING no output for angry_refund: NotFoundError: Error code: 404 - {'error': {
 │       │       │       │    on │       │       │      │       │      │       │
 │       │       │       │  this │       │       │      │       │      │       │
 │       │       │       │ model │       │       │      │       │      │       │
-│ llam… │ json… │ simp… │ 96.7% │ 100.… │     0 │ 83.… │ 100.… │  325 │       │
-│       │       │       │ (90.… │ (100… │       │ (70… │ (100… │      │       │
-│       │       │       │ n=30) │ n=30) │       │ n=3… │ n=30) │      │       │
-│ llam… │ json… │ nest… │ 90.0% │ 100.… │     0 │ 20.… │ 20.0% │  540 │       │
-│       │       │       │ (79.… │ (100… │       │ (5.… │ (5.7… │      │       │
-│       │       │       │ n=30) │ n=30) │       │ n=3… │ n=30) │      │       │
-│ llam… │ json… │ hard  │ 96.7% │ 100.… │     0 │ 20.… │ 20.0% │  886 │       │
-│       │       │       │ (90.… │ (100… │       │ (5.… │ (5.7… │      │       │
-│       │       │       │ n=30) │ n=30) │       │ n=3… │ n=30) │      │       │
-│ llam… │ prom… │ simp… │ 100.… │ 100.… │     0 │ 80.… │ 100.… │  309 │       │
-│       │       │       │ (100… │ (100… │       │ (65… │ (100… │      │       │
-│       │       │       │ n=30) │ n=30) │       │ n=3… │ n=30) │      │       │
-│ llam… │ prom… │ nest… │ 96.4% │ 100.… │     0 │ 21.… │ 21.4% │  526 │     2 │
-│       │       │       │ (89.… │ (100… │       │ (6.… │ (6.2… │      │       │
-│       │       │       │ n=28) │ n=28) │       │ n=2… │ n=28) │      │       │
-│ llam… │ prom… │ hard  │ 100.… │ 100.… │     0 │ 0.0% │  0.0% │  854 │    29 │
-│       │       │       │ (100… │ (100… │       │ (0.… │ (0.0… │      │       │
-│       │       │       │  n=1) │  n=1) │       │ n=1) │  n=1) │      │       │
+│ llam… │ json… │ simp… │     - │     - │     0 │    - │     - │    - │    20 │
+│ llam… │ json… │ nest… │     - │     - │     0 │    - │     - │    - │    20 │
+│ llam… │ json… │ hard  │     - │     - │     0 │    - │     - │    - │    20 │
+│ llam… │ prom… │ simp… │     - │     - │     0 │    - │     - │    - │    20 │
+│ llam… │ prom… │ nest… │     - │     - │     0 │    - │     - │    - │    20 │
+│ llam… │ prom… │ hard  │     - │     - │     0 │    - │     - │    - │    20 │
 └───────┴───────┴───────┴───────┴───────┴───────┴──────┴───────┴──────┴───────┘
 
-                              By enforcement tier                              
-┌─────────────┬────────────────────┬─────────────────────┬────────────────────┐
-│ tier        │      first attempt │        after repair │  semantic accuracy │
-├─────────────┼────────────────────┼─────────────────────┼────────────────────┤
-│ json_object │              94.4% │              100.0% │              41.1% │
-│             │      (89.7%-99.2%, │     (100.0%-100.0%, │      (30.9%-51.3%, │
-│             │              n=90) │               n=90) │              n=90) │
-│ prompt_only │              98.3% │              100.0% │              50.8% │
-│             │     (95.0%-100.0%, │     (100.0%-100.0%, │      (38.1%-63.6%, │
-│             │              n=59) │               n=59) │              n=59) │
-└─────────────┴────────────────────┴─────────────────────┴────────────────────┘
+                       By enforcement tier                        
+┌─────────────┬───────────────┬──────────────┬───────────────────┐
+│ tier        │ first attempt │ after repair │ semantic accuracy │
+├─────────────┼───────────────┼──────────────┼───────────────────┤
+│ json_object │             - │            - │                 - │
+│ prompt_only │             - │            - │                 - │
+└─────────────┴───────────────┴──────────────┴───────────────────┘
 
-     First-attempt failures by type      
-┌─────────────┬─────────────────┬───────┐
-│ tier        │ failure         │ count │
-├─────────────┼─────────────────┼───────┤
-│ json_object │ schema_mismatch │     5 │
-│ prompt_only │ not_json        │     1 │
-└─────────────┴─────────────────┴───────┘
+ First-attempt failures by type  
+┌─────────────┬─────────┬───────┐
+│ tier        │ failure │ count │
+├─────────────┼─────────┼───────┤
+│ json_object │ none    │     0 │
+│ prompt_only │ none    │     0 │
+└─────────────┴─────────┴───────┘
 
-                   Projected chain reliability (upper bound)                   
-┌─────────────────────────┬──────────┬────────┬─────────┬──────────┬──────────┐
-│ cell                    │ per call │ 1 step │ 5 steps │ 10 steps │ 50 steps │
-├─────────────────────────┼──────────┼────────┼─────────┼──────────┼──────────┤
-│ best:                   │   100.0% │ 100.0% │  100.0% │   100.0% │   100.0% │
-│ llama-3.3-70b-versatile │          │        │         │          │          │
-│ / json_object / simple  │          │        │         │          │          │
-│ worst:                  │   100.0% │ 100.0% │  100.0% │   100.0% │   100.0% │
-│ llama-3.3-70b-versatile │          │        │         │          │          │
-│ / json_object / simple  │          │        │         │          │          │
-└─────────────────────────┴──────────┴────────┴─────────┴──────────┴──────────┘
+         Projected chain reliability (upper bound)          
+┌──────┬──────────┬────────┬─────────┬──────────┬──────────┐
+│ cell │ per call │ 1 step │ 5 steps │ 10 steps │ 50 steps │
+├──────┼──────────┼────────┼─────────┼──────────┼──────────┤
+└──────┴──────────┴────────┴─────────┴──────────┴──────────┘
 
-2 of 6 cells have n<30 (smallest n=1); widest interval is +/-0.0%. Around 30x 
-the repeats would put every cell over the threshold. Cells sitting at 0% or 
-100% show a zero-width interval, which is an artefact of the approximation 
-rather than precision.
+No cell produced data.
 
-Wrote runs\llama-3.3-70b-versatile.json in 80.6 min
+Wrote runs\llama-3.3-70b-versatile.json in 0.6 min

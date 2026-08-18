@@ -1,8 +1,8 @@
 {
-  "written_at": "2026-08-17T11:04:29.701724+00:00",
+  "written_at": "2026-08-18T04:31:45.401462+00:00",
   "sampling": {
     "provider": "groq",
-    "repeats": 3,
+    "repeats": 2,
     "cases": 10,
     "review": false,
     "critic_model": "",
@@ -10,7 +10,7 @@
     "transport_retries": 4,
     "max_repair_attempts": 3,
     "critic_judges_itself": false,
-    "elapsed_seconds": 13511.3
+    "elapsed_seconds": 48202.6
   },
   "cells": [
     {
@@ -19,18 +19,18 @@
       "tier": "json_schema",
       "contract": "TicketSummary",
       "difficulty": "simple",
-      "first_attempt_ok": 29,
-      "final_ok": 30,
+      "first_attempt_ok": 15,
+      "final_ok": 16,
       "free_repairs": 0,
-      "total": 30,
+      "total": 16,
       "failures": {
         "provider_rejected": 1
       },
-      "errors": 0,
+      "errors": 4,
       "critic_sound": 0,
       "critic_judged": 0,
-      "tokens": 47132,
-      "latency_ms": 314665.2993999887,
+      "tokens": 23347,
+      "latency_ms": 169676.27720005112,
       "skipped_reason": "",
       "scores": [
         {
@@ -48,7 +48,7 @@
         {
           "case_id": "export_broken",
           "category_ok": true,
-          "priority_ok": false,
+          "priority_ok": true,
           "invented": [],
           "missed": [
             "account_tier"
@@ -66,7 +66,7 @@
         {
           "case_id": "dark_mode",
           "category_ok": true,
-          "priority_ok": true,
+          "priority_ok": false,
           "invented": [],
           "missed": [],
           "placeholders": []
@@ -137,95 +137,6 @@
         {
           "case_id": "export_broken",
           "category_ok": true,
-          "priority_ok": false,
-          "invented": [],
-          "missed": [
-            "account_tier"
-          ],
-          "placeholders": []
-        },
-        {
-          "case_id": "cancel_account",
-          "category_ok": true,
-          "priority_ok": true,
-          "invented": [],
-          "missed": [],
-          "placeholders": []
-        },
-        {
-          "case_id": "dark_mode",
-          "category_ok": true,
-          "priority_ok": false,
-          "invented": [],
-          "missed": [],
-          "placeholders": []
-        },
-        {
-          "case_id": "total_outage",
-          "category_ok": true,
-          "priority_ok": true,
-          "invented": [],
-          "missed": [],
-          "placeholders": []
-        },
-        {
-          "case_id": "vat_rate",
-          "category_ok": true,
-          "priority_ok": true,
-          "invented": [],
-          "missed": [],
-          "placeholders": []
-        },
-        {
-          "case_id": "api_500s",
-          "category_ok": true,
-          "priority_ok": true,
-          "invented": [],
-          "missed": [
-            "name",
-            "account_tier"
-          ],
-          "placeholders": []
-        },
-        {
-          "case_id": "add_seat",
-          "category_ok": true,
-          "priority_ok": true,
-          "invented": [],
-          "missed": [],
-          "placeholders": []
-        },
-        {
-          "case_id": "vague",
-          "category_ok": true,
-          "priority_ok": true,
-          "invented": [],
-          "missed": [],
-          "placeholders": []
-        },
-        {
-          "case_id": "angry_refund",
-          "category_ok": true,
-          "priority_ok": true,
-          "invented": [],
-          "missed": [],
-          "placeholders": []
-        },
-        {
-          "case_id": "billing_duplicate",
-          "category_ok": true,
-          "priority_ok": true,
-          "invented": [],
-          "missed": [
-            "name",
-            "account_tier",
-            "assignee"
-          ],
-          "placeholders": []
-        },
-        {
-          "case_id": "export_broken",
-          "category_ok": true,
           "priority_ok": true,
           "invented": [],
           "missed": [
@@ -258,42 +169,7 @@
           "placeholders": []
         },
         {
-          "case_id": "vat_rate",
-          "category_ok": true,
-          "priority_ok": true,
-          "invented": [],
-          "missed": [],
-          "placeholders": []
-        },
-        {
-          "case_id": "api_500s",
-          "category_ok": true,
-          "priority_ok": true,
-          "invented": [],
-          "missed": [
-            "name",
-            "account_tier"
-          ],
-          "placeholders": []
-        },
-        {
-          "case_id": "add_seat",
-          "category_ok": true,
-          "priority_ok": true,
-          "invented": [],
-          "missed": [],
-          "placeholders": []
-        },
-        {
           "case_id": "vague",
-          "category_ok": true,
-          "priority_ok": true,
-          "invented": [],
-          "missed": [],
-          "placeholders": []
-        },
-        {
-          "case_id": "angry_refund",
           "category_ok": true,
           "priority_ok": true,
           "invented": [],
@@ -308,188 +184,25 @@
       "tier": "json_schema",
       "contract": "TicketAnalysis",
       "difficulty": "nested",
-      "first_attempt_ok": 23,
-      "final_ok": 25,
+      "first_attempt_ok": 3,
+      "final_ok": 3,
       "free_repairs": 0,
-      "total": 30,
-      "failures": {
-        "provider_rejected": 7
-      },
-      "errors": 0,
+      "total": 3,
+      "failures": {},
+      "errors": 17,
       "critic_sound": 0,
       "critic_judged": 0,
-      "tokens": 47474,
-      "latency_ms": 360719.52599997167,
+      "tokens": 5179,
+      "latency_ms": 438599.797199975,
       "skipped_reason": "",
       "scores": [
-        {
-          "case_id": "billing_duplicate",
-          "category_ok": true,
-          "priority_ok": true,
-          "invented": [],
-          "missed": [
-            "assignee"
-          ],
-          "placeholders": []
-        },
-        {
-          "case_id": "export_broken",
-          "category_ok": true,
-          "priority_ok": true,
-          "invented": [],
-          "missed": [],
-          "placeholders": [
-            "name='unknown'"
-          ]
-        },
-        {
-          "case_id": "cancel_account",
-          "category_ok": true,
-          "priority_ok": true,
-          "invented": [],
-          "missed": [],
-          "placeholders": [
-            "name='unknown'",
-            "account_tier='unknown'"
-          ]
-        },
-        {
-          "case_id": "dark_mode",
-          "category_ok": true,
-          "priority_ok": true,
-          "invented": [],
-          "missed": [],
-          "placeholders": [
-            "name='unknown'",
-            "account_tier='unknown'"
-          ]
-        },
-        {
-          "case_id": "vat_rate",
-          "category_ok": true,
-          "priority_ok": true,
-          "invented": [],
-          "missed": [],
-          "placeholders": [
-            "name='unknown'",
-            "account_tier='unknown'"
-          ]
-        },
-        {
-          "case_id": "api_500s",
-          "category_ok": true,
-          "priority_ok": true,
-          "invented": [],
-          "missed": [],
-          "placeholders": []
-        },
-        {
-          "case_id": "add_seat",
-          "category_ok": true,
-          "priority_ok": false,
-          "invented": [],
-          "missed": [],
-          "placeholders": [
-            "name='unknown'",
-            "account_tier='unknown'"
-          ]
-        },
-        {
-          "case_id": "billing_duplicate",
-          "category_ok": true,
-          "priority_ok": true,
-          "invented": [],
-          "missed": [
-            "assignee"
-          ],
-          "placeholders": []
-        },
-        {
-          "case_id": "export_broken",
-          "category_ok": true,
-          "priority_ok": true,
-          "invented": [],
-          "missed": [],
-          "placeholders": [
-            "name='unknown'"
-          ]
-        },
-        {
-          "case_id": "cancel_account",
-          "category_ok": true,
-          "priority_ok": true,
-          "invented": [],
-          "missed": [],
-          "placeholders": [
-            "name='unknown'",
-            "account_tier='unknown'"
-          ]
-        },
-        {
-          "case_id": "dark_mode",
-          "category_ok": true,
-          "priority_ok": true,
-          "invented": [],
-          "missed": [],
-          "placeholders": [
-            "name='unknown'",
-            "account_tier='unknown'"
-          ]
-        },
         {
           "case_id": "total_outage",
           "category_ok": true,
           "priority_ok": true,
           "invented": [],
           "missed": [],
-          "placeholders": [
-            "name='unknown'",
-            "account_tier='unknown'"
-          ]
-        },
-        {
-          "case_id": "vat_rate",
-          "category_ok": true,
-          "priority_ok": true,
-          "invented": [],
-          "missed": [],
-          "placeholders": [
-            "name='unknown'",
-            "account_tier='unknown'"
-          ]
-        },
-        {
-          "case_id": "add_seat",
-          "category_ok": false,
-          "priority_ok": false,
-          "invented": [],
-          "missed": [],
-          "placeholders": [
-            "name='unknown'",
-            "account_tier='unknown'"
-          ]
-        },
-        {
-          "case_id": "vague",
-          "category_ok": true,
-          "priority_ok": true,
-          "invented": [],
-          "missed": [],
-          "placeholders": [
-            "name='Unknown'",
-            "account_tier='unknown'"
-          ]
-        },
-        {
-          "case_id": "angry_refund",
-          "category_ok": true,
-          "priority_ok": true,
-          "invented": [],
-          "missed": [],
-          "placeholders": [
-            "name='unknown'",
-            "account_tier='unknown'"
-          ]
+          "placeholders": []
         },
         {
           "case_id": "billing_duplicate",
@@ -502,88 +215,12 @@
           "placeholders": []
         },
         {
-          "case_id": "export_broken",
-          "category_ok": true,
-          "priority_ok": true,
-          "invented": [],
-          "missed": [],
-          "placeholders": [
-            "name='unknown'"
-          ]
-        },
-        {
-          "case_id": "cancel_account",
-          "category_ok": true,
-          "priority_ok": true,
-          "invented": [],
-          "missed": [],
-          "placeholders": [
-            "name='unknown'",
-            "account_tier='unknown'"
-          ]
-        },
-        {
-          "case_id": "dark_mode",
-          "category_ok": true,
-          "priority_ok": false,
-          "invented": [],
-          "missed": [],
-          "placeholders": [
-            "name='unknown'",
-            "account_tier='unknown'"
-          ]
-        },
-        {
           "case_id": "vat_rate",
           "category_ok": true,
-          "priority_ok": true,
-          "invented": [],
-          "missed": [],
-          "placeholders": [
-            "name='Unknown'",
-            "account_tier='unknown'"
-          ]
-        },
-        {
-          "case_id": "api_500s",
-          "category_ok": true,
-          "priority_ok": true,
+          "priority_ok": false,
           "invented": [],
           "missed": [],
           "placeholders": []
-        },
-        {
-          "case_id": "add_seat",
-          "category_ok": true,
-          "priority_ok": false,
-          "invented": [],
-          "missed": [],
-          "placeholders": [
-            "name='unknown'",
-            "account_tier='unknown'"
-          ]
-        },
-        {
-          "case_id": "vague",
-          "category_ok": true,
-          "priority_ok": true,
-          "invented": [],
-          "missed": [],
-          "placeholders": [
-            "name='unknown'",
-            "account_tier='unknown'"
-          ]
-        },
-        {
-          "case_id": "angry_refund",
-          "category_ok": true,
-          "priority_ok": true,
-          "invented": [],
-          "missed": [],
-          "placeholders": [
-            "name='unknown'",
-            "account_tier='unknown'"
-          ]
         }
       ]
     },
@@ -593,20 +230,28 @@
       "tier": "json_schema",
       "contract": "TicketTriage",
       "difficulty": "hard",
-      "first_attempt_ok": 8,
-      "final_ok": 10,
+      "first_attempt_ok": 2,
+      "final_ok": 2,
       "free_repairs": 0,
-      "total": 11,
+      "total": 4,
       "failures": {
-        "provider_rejected": 3
+        "provider_rejected": 2
       },
-      "errors": 19,
+      "errors": 16,
       "critic_sound": 0,
       "critic_judged": 0,
-      "tokens": 21115,
-      "latency_ms": 308418.18700000294,
+      "tokens": 4348,
+      "latency_ms": 27437.922800017986,
       "skipped_reason": "",
       "scores": [
+        {
+          "case_id": "vague",
+          "category_ok": true,
+          "priority_ok": true,
+          "invented": [],
+          "missed": [],
+          "placeholders": []
+        },
         {
           "case_id": "billing_duplicate",
           "category_ok": true,
@@ -614,102 +259,6 @@
           "invented": [],
           "missed": [],
           "placeholders": []
-        },
-        {
-          "case_id": "cancel_account",
-          "category_ok": true,
-          "priority_ok": true,
-          "invented": [],
-          "missed": [],
-          "placeholders": [
-            "name='unknown'",
-            "account_tier='unknown'"
-          ]
-        },
-        {
-          "case_id": "dark_mode",
-          "category_ok": true,
-          "priority_ok": true,
-          "invented": [],
-          "missed": [],
-          "placeholders": [
-            "name='Unknown'",
-            "account_tier='unknown'"
-          ]
-        },
-        {
-          "case_id": "total_outage",
-          "category_ok": true,
-          "priority_ok": true,
-          "invented": [],
-          "missed": [],
-          "placeholders": [
-            "name='Unknown'",
-            "account_tier='unknown'"
-          ]
-        },
-        {
-          "case_id": "vat_rate",
-          "category_ok": true,
-          "priority_ok": true,
-          "invented": [],
-          "missed": [],
-          "placeholders": [
-            "name='unknown'",
-            "account_tier='unknown'"
-          ]
-        },
-        {
-          "case_id": "api_500s",
-          "category_ok": true,
-          "priority_ok": true,
-          "invented": [],
-          "missed": [],
-          "placeholders": []
-        },
-        {
-          "case_id": "add_seat",
-          "category_ok": true,
-          "priority_ok": true,
-          "invented": [],
-          "missed": [],
-          "placeholders": [
-            "name='unknown'",
-            "account_tier='unknown'"
-          ]
-        },
-        {
-          "case_id": "vague",
-          "category_ok": true,
-          "priority_ok": true,
-          "invented": [],
-          "missed": [],
-          "placeholders": [
-            "name='Unknown'",
-            "account_tier='unknown'"
-          ]
-        },
-        {
-          "case_id": "cancel_account",
-          "category_ok": true,
-          "priority_ok": true,
-          "invented": [],
-          "missed": [],
-          "placeholders": [
-            "name='unknown'",
-            "account_tier='unknown'"
-          ]
-        },
-        {
-          "case_id": "angry_refund",
-          "category_ok": true,
-          "priority_ok": true,
-          "invented": [],
-          "missed": [],
-          "placeholders": [
-            "name='unknown'",
-            "account_tier='unknown'"
-          ]
         }
       ]
     },
@@ -719,60 +268,29 @@
       "tier": "json_object",
       "contract": "TicketSummary",
       "difficulty": "simple",
-      "first_attempt_ok": 9,
-      "final_ok": 11,
+      "first_attempt_ok": 13,
+      "final_ok": 13,
       "free_repairs": 0,
-      "total": 11,
-      "failures": {
-        "provider_rejected": 1,
-        "schema_mismatch": 1
-      },
-      "errors": 19,
+      "total": 13,
+      "failures": {},
+      "errors": 7,
       "critic_sound": 0,
       "critic_judged": 0,
-      "tokens": 10530,
-      "latency_ms": 746948.4868000145,
+      "tokens": 12983,
+      "latency_ms": 6490937.272099981,
       "skipped_reason": "",
       "scores": [
         {
-          "case_id": "export_broken",
-          "category_ok": true,
-          "priority_ok": true,
-          "invented": [],
-          "missed": [
-            "account_tier"
-          ],
-          "placeholders": []
-        },
-        {
-          "case_id": "export_broken",
-          "category_ok": true,
-          "priority_ok": false,
-          "invented": [],
-          "missed": [
-            "account_tier"
-          ],
-          "placeholders": []
-        },
-        {
           "case_id": "cancel_account",
           "category_ok": true,
-          "priority_ok": false,
-          "invented": [],
-          "missed": [],
-          "placeholders": []
-        },
-        {
-          "case_id": "dark_mode",
-          "category_ok": true,
-          "priority_ok": false,
+          "priority_ok": true,
           "invented": [],
           "missed": [],
           "placeholders": []
         },
         {
           "case_id": "total_outage",
-          "category_ok": true,
+          "category_ok": false,
           "priority_ok": true,
           "invented": [],
           "missed": [],
@@ -782,25 +300,6 @@
           "case_id": "vat_rate",
           "category_ok": true,
           "priority_ok": true,
-          "invented": [],
-          "missed": [],
-          "placeholders": []
-        },
-        {
-          "case_id": "api_500s",
-          "category_ok": true,
-          "priority_ok": true,
-          "invented": [],
-          "missed": [
-            "name",
-            "account_tier"
-          ],
-          "placeholders": []
-        },
-        {
-          "case_id": "add_seat",
-          "category_ok": true,
-          "priority_ok": false,
           "invented": [],
           "missed": [],
           "placeholders": []
@@ -826,7 +325,68 @@
           "placeholders": []
         },
         {
+          "case_id": "export_broken",
+          "category_ok": true,
+          "priority_ok": true,
+          "invented": [],
+          "missed": [
+            "account_tier"
+          ],
+          "placeholders": []
+        },
+        {
+          "case_id": "cancel_account",
+          "category_ok": true,
+          "priority_ok": true,
+          "invented": [],
+          "missed": [],
+          "placeholders": []
+        },
+        {
+          "case_id": "dark_mode",
+          "category_ok": true,
+          "priority_ok": false,
+          "invented": [],
+          "missed": [],
+          "placeholders": []
+        },
+        {
+          "case_id": "total_outage",
+          "category_ok": false,
+          "priority_ok": true,
+          "invented": [],
+          "missed": [],
+          "placeholders": []
+        },
+        {
           "case_id": "vat_rate",
+          "category_ok": true,
+          "priority_ok": true,
+          "invented": [],
+          "missed": [],
+          "placeholders": []
+        },
+        {
+          "case_id": "api_500s",
+          "category_ok": true,
+          "priority_ok": true,
+          "invented": [],
+          "missed": [
+            "name",
+            "account_tier"
+          ],
+          "placeholders": []
+        },
+        {
+          "case_id": "add_seat",
+          "category_ok": true,
+          "priority_ok": false,
+          "invented": [],
+          "missed": [],
+          "placeholders": []
+        },
+        {
+          "case_id": "vague",
           "category_ok": true,
           "priority_ok": true,
           "invented": [],
@@ -834,6 +394,129 @@
           "placeholders": []
         }
       ]
+    },
+    {
+      "provider": "groq",
+      "model": "qwen/qwen3.6-27b",
+      "tier": "json_object",
+      "contract": "TicketAnalysis",
+      "difficulty": "nested",
+      "first_attempt_ok": 2,
+      "final_ok": 2,
+      "free_repairs": 0,
+      "total": 2,
+      "failures": {},
+      "errors": 18,
+      "critic_sound": 0,
+      "critic_judged": 0,
+      "tokens": 1718,
+      "latency_ms": 125394.51760001248,
+      "skipped_reason": "",
+      "scores": [
+        {
+          "case_id": "billing_duplicate",
+          "category_ok": true,
+          "priority_ok": true,
+          "invented": [],
+          "missed": [
+            "assignee"
+          ],
+          "placeholders": []
+        },
+        {
+          "case_id": "cancel_account",
+          "category_ok": true,
+          "priority_ok": true,
+          "invented": [],
+          "missed": [],
+          "placeholders": []
+        }
+      ]
+    },
+    {
+      "provider": "groq",
+      "model": "qwen/qwen3.6-27b",
+      "tier": "json_object",
+      "contract": "TicketTriage",
+      "difficulty": "hard",
+      "first_attempt_ok": 1,
+      "final_ok": 1,
+      "free_repairs": 0,
+      "total": 1,
+      "failures": {},
+      "errors": 19,
+      "critic_sound": 0,
+      "critic_judged": 0,
+      "tokens": 2559,
+      "latency_ms": 6325.689100020099,
+      "skipped_reason": "",
+      "scores": [
+        {
+          "case_id": "cancel_account",
+          "category_ok": true,
+          "priority_ok": true,
+          "invented": [],
+          "missed": [],
+          "placeholders": []
+        }
+      ]
+    },
+    {
+      "provider": "groq",
+      "model": "qwen/qwen3.6-27b",
+      "tier": "prompt_only",
+      "contract": "TicketSummary",
+      "difficulty": "simple",
+      "first_attempt_ok": 0,
+      "final_ok": 0,
+      "free_repairs": 0,
+      "total": 0,
+      "failures": {},
+      "errors": 20,
+      "critic_sound": 0,
+      "critic_judged": 0,
+      "tokens": 0,
+      "latency_ms": 0.0,
+      "skipped_reason": "",
+      "scores": []
+    },
+    {
+      "provider": "groq",
+      "model": "qwen/qwen3.6-27b",
+      "tier": "prompt_only",
+      "contract": "TicketAnalysis",
+      "difficulty": "nested",
+      "first_attempt_ok": 0,
+      "final_ok": 0,
+      "free_repairs": 0,
+      "total": 0,
+      "failures": {},
+      "errors": 20,
+      "critic_sound": 0,
+      "critic_judged": 0,
+      "tokens": 0,
+      "latency_ms": 0.0,
+      "skipped_reason": "",
+      "scores": []
+    },
+    {
+      "provider": "groq",
+      "model": "qwen/qwen3.6-27b",
+      "tier": "prompt_only",
+      "contract": "TicketTriage",
+      "difficulty": "hard",
+      "first_attempt_ok": 0,
+      "final_ok": 0,
+      "free_repairs": 0,
+      "total": 0,
+      "failures": {},
+      "errors": 20,
+      "critic_sound": 0,
+      "critic_judged": 0,
+      "tokens": 0,
+      "latency_ms": 0.0,
+      "skipped_reason": "",
+      "scores": []
     }
   ]
 }

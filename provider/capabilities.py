@@ -280,6 +280,10 @@ class ModelCapabilities:
     features: dict[str, str] = field(default_factory=dict)
     max_nesting_depth: int | None = None
     notes: list[str] = field(default_factory=list)
+    #: When the provider stopped listing this model, if it has. The measurement
+    #: is kept rather than deleted: that a model was probed on one date and gone
+    #: four days later is a finding about how long any of these numbers last.
+    retired_at: str = ""
 
     @property
     def best_tier(self) -> str:
@@ -665,6 +669,35 @@ def save_capabilities(
         for provider, models in data.items()
     }
     path.write_text(json.dumps(serialisable, indent=2), encoding="utf-8")
+
+
+def mark_retired(
+    cached: dict[str, ModelCapabilities], listed: list[str]
+) -> list[str]:
+    """Flag cached models the provider no longer serves.
+
+    Args:
+        cached: Everything previously probed for one provider.
+        listed: Model ids the provider returns now.
+
+    Returns:
+        The ids newly marked retired.
+
+    Deletion would be easier and wrong. A dated measurement of a model that has
+    since disappeared is evidence about the shelf life of every other number
+    here, and the benchmark needs to skip these rather than forget them.
+    """
+    if not listed:
+        # An empty listing means the call failed, not that everything is gone.
+        return []
+    available = set(listed)
+    now = datetime.now(timezone.utc).isoformat()
+    newly = []
+    for model, caps in cached.items():
+        if model not in available and not caps.retired_at:
+            caps.retired_at = now
+            newly.append(model)
+    return newly
 
 
 def is_stale(caps: ModelCapabilities, max_age_hours: int | None = None) -> bool:

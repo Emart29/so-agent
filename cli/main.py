@@ -34,6 +34,7 @@ from provider.capabilities import (
     chat_models,
     is_stale,
     load_capabilities,
+    mark_retired,
     save_capabilities,
 )
 from provider.client import BudgetExhaustedError, LLMClient
@@ -160,11 +161,26 @@ def probe(
     cache = load_capabilities()
     cached = cache.get(name, {})
 
-    targets = list(models) if models else chat_models(client.list_models())
+    if models:
+        targets, listed = list(models), []
+    else:
+        listed = client.list_models()
+        targets = chat_models(listed)
     if limit:
         targets = targets[:limit]
     if not targets:
         _fail(f"no models to probe on {name}. Pass --model explicitly.")
+
+    # Only a full listing can say a model is gone; an explicit --model list says
+    # nothing about the models it did not mention.
+    retired = mark_retired(cached, listed)
+    if retired:
+        console.print(
+            f"[yellow]{len(retired)} model(s) the provider no longer serves: "
+            f"{', '.join(retired)}[/yellow]\n"
+            "[dim]Their measurements are kept and marked retired rather than "
+            "deleted.[/dim]"
+        )
 
     console.print(f"probing {len(targets)} models on [bold]{name}[/bold]")
 
