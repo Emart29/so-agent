@@ -215,6 +215,16 @@ def matrix_section(cells: list[CellResult]) -> str:
                 "</td></tr>"
             )
             continue
+        if not cell.total:
+            # Attempted and produced nothing: every call errored before a
+            # generation came back. Distinct from a skipped cell, which was
+            # never tried, and shown rather than dropped so the reader can see
+            # the difference.
+            rows.append(
+                head + '<td class="skip" colspan="7">every call errored '
+                f'({cell.errors} attempts, no output)</td></tr>'
+            )
+            continue
         scored = len(cell.scores)
         rows.append(
             head

@@ -19,6 +19,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
+from config import settings  # noqa: E402
 from critic.labelled import LABELLED_CASES  # noqa: E402
 from critic.semantic import SemanticCritic  # noqa: E402
 from provider.client import LLMClient  # noqa: E402
@@ -30,7 +31,10 @@ if hasattr(sys.stdout, "reconfigure"):
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--provider", default="groq")
-    parser.add_argument("--critic", default="llama-3.1-8b-instant")
+    # Read from configuration rather than hardcoded: the model this defaulted
+    # to was retired by its provider mid-project, and a default that names a
+    # dead model fails with a 404 that explains nothing.
+    parser.add_argument("--critic", default=settings.CRITIC_MODEL)
     args = parser.parse_args()
 
     client = LLMClient(args.provider)

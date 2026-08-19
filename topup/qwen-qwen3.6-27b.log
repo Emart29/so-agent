@@ -32,3 +32,323 @@ WARNING groq rate limited, waiting 9.0s (attempt 1/6)
 WARNING groq rate limited, waiting 60.0s (attempt 1/6)
 WARNING groq rate limited, waiting 60.0s (attempt 2/6)
 WARNING groq rate limited, waiting 60.0s (attempt 3/6)
+WARNING groq rate limited, waiting 60.0s (attempt 4/6)
+WARNING groq rate limited, waiting 60.0s (attempt 1/6)
+WARNING groq rate limited, waiting 60.0s (attempt 2/6)
+WARNING groq rate limited, waiting 60.0s (attempt 3/6)
+WARNING groq rate limited, waiting 60.0s (attempt 4/6)
+WARNING groq rate limited, waiting 60.0s (attempt 5/6)
+WARNING no output for cancel_account: RuntimeError: groq failed after 6 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198749, Requested 2456. Please try again in 8m40.559999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+WARNING groq rate limited, waiting 60.0s (attempt 1/6)
+WARNING groq rate limited, waiting 60.0s (attempt 2/6)
+WARNING groq rate limited, waiting 60.0s (attempt 3/6)
+WARNING groq rate limited, waiting 60.0s (attempt 4/6)
+WARNING groq rate limited, waiting 60.0s (attempt 5/6)
+WARNING no output for dark_mode: RuntimeError: groq failed after 6 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198045, Requested 2458. Please try again in 3m37.296s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+WARNING groq rate limited, waiting 60.0s (attempt 1/6)
+WARNING groq rate limited, waiting 60.0s (attempt 2/6)
+WARNING groq rate limited, waiting 60.0s (attempt 3/6)
+WARNING groq rate limited, waiting 39.0s (attempt 4/6)
+WARNING groq rate limited, waiting 60.0s (attempt 1/6)
+WARNING groq rate limited, waiting 60.0s (attempt 2/6)
+WARNING groq rate limited, waiting 60.0s (attempt 3/6)
+WARNING groq rate limited, waiting 60.0s (attempt 4/6)
+WARNING groq rate limited, waiting 60.0s (attempt 5/6)
+WARNING no output for vat_rate: RuntimeError: groq failed after 6 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199294, Requested 2473. Please try again in 12m43.344s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+WARNING groq rate limited, waiting 60.0s (attempt 1/6)
+WARNING groq rate limited, waiting 60.0s (attempt 2/6)
+WARNING groq rate limited, waiting 60.0s (attempt 3/6)
+WARNING groq rate limited, waiting 60.0s (attempt 4/6)
+WARNING groq rate limited, waiting 60.0s (attempt 5/6)
+WARNING no output for api_500s: RuntimeError: groq failed after 6 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198589, Requested 2471. Please try again in 7m37.92s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+WARNING groq rate limited, waiting 60.0s (attempt 1/6)
+WARNING groq rate limited, waiting 60.0s (attempt 2/6)
+WARNING groq rate limited, waiting 60.0s (attempt 3/6)
+WARNING groq rate limited, waiting 60.0s (attempt 4/6)
+WARNING groq rate limited, waiting 60.0s (attempt 5/6)
+WARNING no output for add_seat: RuntimeError: groq failed after 6 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 197884, Requested 2455. Please try again in 2m26.447999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+WARNING groq rate limited, waiting 60.0s (attempt 1/6)
+WARNING groq rate limited, waiting 60.0s (attempt 2/6)
+WARNING groq rate limited, waiting 21.0s (attempt 3/6)
+WARNING groq rate limited, waiting 60.0s (attempt 1/6)
+WARNING groq rate limited, waiting 60.0s (attempt 2/6)
+WARNING groq rate limited, waiting 60.0s (attempt 3/6)
+WARNING groq rate limited, waiting 60.0s (attempt 4/6)
+WARNING groq rate limited, waiting 60.0s (attempt 5/6)
+WARNING no output for angry_refund: RuntimeError: groq failed after 6 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199292, Requested 2472. Please try again in 12m42.048s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+WARNING groq rate limited, waiting 60.0s (attempt 1/6)
+WARNING groq rate limited, waiting 60.0s (attempt 3/6)
+WARNING groq rate limited, waiting 60.0s (attempt 4/6)
+WARNING groq rate limited, waiting 60.0s (attempt 5/6)
+WARNING no output for billing_duplicate: RuntimeError: groq failed after 6 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198649, Requested 2483. Please try again in 8m9.024s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+WARNING groq rate limited, waiting 60.0s (attempt 1/6)
+WARNING groq rate limited, waiting 60.0s (attempt 4/6)
+WARNING groq rate limited, waiting 60.0s (attempt 5/6)
+WARNING no output for export_broken: RuntimeError: groq failed after 6 attempts: Connection error.
+WARNING groq rate limited, waiting 60.0s (attempt 1/6)
+WARNING groq rate limited, waiting 60.0s (attempt 2/6)
+WARNING groq rate limited, waiting 22.0s (attempt 3/6)
+WARNING groq rate limited, waiting 60.0s (attempt 1/6)
+WARNING groq rate limited, waiting 60.0s (attempt 2/6)
+WARNING groq rate limited, waiting 60.0s (attempt 3/6)
+WARNING groq rate limited, waiting 60.0s (attempt 4/6)
+WARNING groq rate limited, waiting 60.0s (attempt 5/6)
+WARNING no output for dark_mode: RuntimeError: groq failed after 6 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199261, Requested 2458. Please try again in 12m22.608s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+WARNING groq rate limited, waiting 60.0s (attempt 1/6)
+WARNING groq rate limited, waiting 60.0s (attempt 2/6)
+WARNING groq rate limited, waiting 60.0s (attempt 3/6)
+WARNING groq rate limited, waiting 60.0s (attempt 4/6)
+WARNING groq rate limited, waiting 60.0s (attempt 5/6)
+WARNING no output for total_outage: RuntimeError: groq failed after 6 attempts: Connection error.
+WARNING groq rate limited, waiting 60.0s (attempt 1/6)
+WARNING groq rate limited, waiting 60.0s (attempt 2/6)
+WARNING groq rate limited, waiting 60.0s (attempt 3/6)
+WARNING groq rate limited, waiting 60.0s (attempt 4/6)
+WARNING groq rate limited, waiting 60.0s (attempt 5/6)
+WARNING no output for vat_rate: RuntimeError: groq failed after 6 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 197732, Requested 2473. Please try again in 1m28.56s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+WARNING groq rate limited, waiting 60.0s (attempt 1/6)
+WARNING groq rate limited, waiting 27.0s (attempt 2/6)
+WARNING groq rate limited, waiting 60.0s (attempt 1/6)
+WARNING groq rate limited, waiting 60.0s (attempt 2/6)
+WARNING groq rate limited, waiting 60.0s (attempt 3/6)
+WARNING groq rate limited, waiting 60.0s (attempt 4/6)
+WARNING groq rate limited, waiting 60.0s (attempt 5/6)
+WARNING no output for add_seat: RuntimeError: groq failed after 6 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199286, Requested 2059. Please try again in 9m41.04s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+WARNING groq rate limited, waiting 60.0s (attempt 1/6)
+WARNING groq rate limited, waiting 60.0s (attempt 2/6)
+WARNING groq rate limited, waiting 60.0s (attempt 3/6)
+WARNING groq rate limited, waiting 60.0s (attempt 4/6)
+WARNING groq rate limited, waiting 60.0s (attempt 5/6)
+WARNING no output for vague: RuntimeError: groq failed after 6 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198582, Requested 2446. Please try again in 7m24.095999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+WARNING groq rate limited, waiting 60.0s (attempt 1/6)
+WARNING groq rate limited, waiting 60.0s (attempt 2/6)
+WARNING groq rate limited, waiting 60.0s (attempt 3/6)
+WARNING groq rate limited, waiting 60.0s (attempt 4/6)
+WARNING groq rate limited, waiting 60.0s (attempt 5/6)
+WARNING no output for angry_refund: RuntimeError: groq failed after 6 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 197878, Requested 2472. Please try again in 2m31.2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+WARNING groq rate limited, waiting 60.0s (attempt 1/6)
+WARNING groq rate limited, waiting 60.0s (attempt 2/6)
+WARNING groq rate limited, waiting 60.0s (attempt 3/6)
+WARNING groq rate limited, waiting 60.0s (attempt 4/6)
+WARNING groq rate limited, waiting 60.0s (attempt 5/6)
+WARNING no output for billing_duplicate: RuntimeError: groq failed after 6 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199465, Requested 1856. Please try again in 9m30.672s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+WARNING groq rate limited, waiting 60.0s (attempt 1/6)
+WARNING groq rate limited, waiting 60.0s (attempt 2/6)
+WARNING groq rate limited, waiting 60.0s (attempt 3/6)
+WARNING groq rate limited, waiting 60.0s (attempt 4/6)
+WARNING groq rate limited, waiting 60.0s (attempt 5/6)
+WARNING no output for export_broken: RuntimeError: groq failed after 6 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198760, Requested 2466. Please try again in 8m49.631999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+WARNING groq rate limited, waiting 60.0s (attempt 1/6)
+WARNING groq rate limited, waiting 60.0s (attempt 2/6)
+WARNING groq rate limited, waiting 60.0s (attempt 3/6)
+WARNING groq rate limited, waiting 60.0s (attempt 4/6)
+WARNING groq rate limited, waiting 60.0s (attempt 5/6)
+WARNING no output for cancel_account: RuntimeError: groq failed after 6 attempts: Connection error.
+WARNING no output for dark_mode: RuntimeError: groq failed after 6 attempts: Connection error.
+WARNING groq rate limited, waiting 60.0s (attempt 1/6)
+WARNING groq rate limited, waiting 60.0s (attempt 2/6)
+WARNING groq rate limited, waiting 60.0s (attempt 3/6)
+WARNING groq rate limited, waiting 60.0s (attempt 4/6)
+WARNING groq rate limited, waiting 60.0s (attempt 5/6)
+WARNING no output for vat_rate: RuntimeError: groq failed after 6 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199295, Requested 2473. Please try again in 12m43.776s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+WARNING groq rate limited, waiting 60.0s (attempt 1/6)
+WARNING no output for api_500s: RuntimeError: groq failed after 6 attempts: Request timed out.
+WARNING no output for add_seat: RuntimeError: groq failed after 6 attempts: Connection error.
+WARNING no output for vague: RuntimeError: groq failed after 6 attempts: Connection error.
+WARNING no output for angry_refund: RuntimeError: groq failed after 6 attempts: Connection error.
+  2/3 qwen/qwen3.6-27b / prompt_only / TicketAnalysis: first 100%, final 100%, 
+accurate 100%
+WARNING no output for billing_duplicate: RuntimeError: groq failed after 6 attempts: Connection error.
+WARNING no output for export_broken: RuntimeError: groq failed after 6 attempts: Connection error.
+WARNING no output for cancel_account: RuntimeError: groq failed after 6 attempts: Connection error.
+WARNING no output for dark_mode: RuntimeError: groq failed after 6 attempts: Connection error.
+WARNING no output for total_outage: RuntimeError: groq failed after 6 attempts: Connection error.
+WARNING no output for vat_rate: RuntimeError: groq failed after 6 attempts: Connection error.
+WARNING groq rate limited, waiting 1.0s (attempt 1/6)
+WARNING groq rate limited, waiting 3.0s (attempt 2/6)
+WARNING groq rate limited, waiting 9.0s (attempt 3/6)
+WARNING groq rate limited, waiting 10.0s (attempt 4/6)
+WARNING groq rate limited, waiting 13.0s (attempt 5/6)
+WARNING no output for add_seat: RuntimeError: groq failed after 6 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 197426, Requested 2711. Please try again in 59.184s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+WARNING groq rate limited, waiting 60.0s (attempt 1/6)
+WARNING groq rate limited, waiting 60.0s (attempt 2/6)
+WARNING groq rate limited, waiting 60.0s (attempt 3/6)
+WARNING groq rate limited, waiting 60.0s (attempt 4/6)
+WARNING groq rate limited, waiting 60.0s (attempt 5/6)
+WARNING no output for vague: RuntimeError: groq failed after 6 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 197765, Requested 2702. Please try again in 3m21.744s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+WARNING groq rate limited, waiting 60.0s (attempt 1/6)
+WARNING groq rate limited, waiting 60.0s (attempt 2/6)
+WARNING groq rate limited, waiting 60.0s (attempt 3/6)
+WARNING groq rate limited, waiting 60.0s (attempt 4/6)
+WARNING groq rate limited, waiting 60.0s (attempt 5/6)
+WARNING no output for angry_refund: RuntimeError: groq failed after 6 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199332, Requested 2728. Please try again in 14m49.92s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+WARNING groq rate limited, waiting 60.0s (attempt 1/6)
+WARNING groq rate limited, waiting 60.0s (attempt 2/6)
+WARNING groq rate limited, waiting 60.0s (attempt 3/6)
+WARNING groq rate limited, waiting 60.0s (attempt 4/6)
+WARNING groq rate limited, waiting 60.0s (attempt 5/6)
+WARNING no output for billing_duplicate: RuntimeError: groq failed after 6 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198618, Requested 2739. Please try again in 9m46.224s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+WARNING groq rate limited, waiting 60.0s (attempt 1/6)
+WARNING groq rate limited, waiting 60.0s (attempt 2/6)
+WARNING groq rate limited, waiting 60.0s (attempt 3/6)
+WARNING groq rate limited, waiting 60.0s (attempt 4/6)
+WARNING groq rate limited, waiting 60.0s (attempt 5/6)
+WARNING no output for export_broken: RuntimeError: groq failed after 6 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 197644, Requested 2722. Please try again in 2m38.112s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+WARNING groq rate limited, waiting 60.0s (attempt 1/6)
+WARNING groq rate limited, waiting 60.0s (attempt 2/6)
+WARNING groq rate limited, waiting 60.0s (attempt 3/6)
+WARNING groq rate limited, waiting 60.0s (attempt 4/6)
+WARNING groq rate limited, waiting 60.0s (attempt 5/6)
+WARNING no output for cancel_account: RuntimeError: groq failed after 6 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199791, Requested 2712. Please try again in 18m1.296s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+WARNING groq rate limited, waiting 60.0s (attempt 1/6)
+WARNING groq rate limited, waiting 60.0s (attempt 2/6)
+WARNING groq rate limited, waiting 60.0s (attempt 3/6)
+WARNING groq rate limited, waiting 60.0s (attempt 4/6)
+WARNING groq rate limited, waiting 60.0s (attempt 5/6)
+WARNING no output for dark_mode: RuntimeError: groq failed after 6 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199029, Requested 2714. Please try again in 12m32.976s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+WARNING groq rate limited, waiting 60.0s (attempt 1/6)
+WARNING groq rate limited, waiting 60.0s (attempt 2/6)
+WARNING groq rate limited, waiting 60.0s (attempt 3/6)
+WARNING groq rate limited, waiting 60.0s (attempt 4/6)
+WARNING groq rate limited, waiting 60.0s (attempt 5/6)
+WARNING no output for total_outage: RuntimeError: groq failed after 6 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198003, Requested 2724. Please try again in 5m14.064s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+WARNING groq rate limited, waiting 60.0s (attempt 1/6)
+WARNING groq rate limited, waiting 60.0s (attempt 2/6)
+WARNING groq rate limited, waiting 60.0s (attempt 3/6)
+WARNING groq rate limited, waiting 60.0s (attempt 4/6)
+WARNING groq rate limited, waiting 60.0s (attempt 5/6)
+WARNING no output for vat_rate: RuntimeError: groq failed after 6 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199688, Requested 1707. Please try again in 10m2.64s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+WARNING groq rate limited, waiting 60.0s (attempt 1/6)
+WARNING groq rate limited, waiting 60.0s (attempt 2/6)
+WARNING groq rate limited, waiting 60.0s (attempt 3/6)
+WARNING groq rate limited, waiting 60.0s (attempt 4/6)
+WARNING groq rate limited, waiting 60.0s (attempt 5/6)
+WARNING no output for api_500s: RuntimeError: groq failed after 6 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198979, Requested 2727. Please try again in 12m16.992s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+WARNING groq rate limited, waiting 60.0s (attempt 1/6)
+WARNING groq rate limited, waiting 60.0s (attempt 2/6)
+WARNING groq rate limited, waiting 60.0s (attempt 3/6)
+WARNING groq rate limited, waiting 60.0s (attempt 4/6)
+WARNING groq rate limited, waiting 60.0s (attempt 5/6)
+WARNING no output for add_seat: RuntimeError: groq failed after 6 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198276, Requested 2711. Please try again in 7m6.384s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+WARNING groq rate limited, waiting 60.0s (attempt 1/6)
+WARNING groq rate limited, waiting 60.0s (attempt 2/6)
+WARNING groq rate limited, waiting 60.0s (attempt 3/6)
+WARNING groq rate limited, waiting 60.0s (attempt 4/6)
+WARNING groq rate limited, waiting 60.0s (attempt 5/6)
+WARNING no output for vague: RuntimeError: groq failed after 6 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 197570, Requested 2702. Please try again in 1m57.504s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+WARNING groq rate limited, waiting 60.0s (attempt 1/6)
+WARNING groq rate limited, waiting 60.0s (attempt 2/6)
+WARNING groq rate limited, waiting 60.0s (attempt 3/6)
+WARNING groq rate limited, waiting 60.0s (attempt 4/6)
+WARNING groq rate limited, waiting 60.0s (attempt 5/6)
+WARNING no output for angry_refund: RuntimeError: groq failed after 6 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199330, Requested 2728. Please try again in 14m49.056s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+WARNING groq rate limited, waiting 60.0s (attempt 1/6)
+WARNING groq rate limited, waiting 60.0s (attempt 2/6)
+WARNING groq rate limited, waiting 60.0s (attempt 3/6)
+WARNING groq rate limited, waiting 60.0s (attempt 4/6)
+WARNING groq rate limited, waiting 60.0s (attempt 5/6)
+WARNING no output for billing_duplicate: RuntimeError: groq failed after 6 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198624, Requested 2739. Please try again in 9m48.816s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+WARNING groq rate limited, waiting 60.0s (attempt 1/6)
+WARNING groq rate limited, waiting 60.0s (attempt 2/6)
+WARNING groq rate limited, waiting 60.0s (attempt 4/6)
+WARNING groq rate limited, waiting 60.0s (attempt 5/6)
+WARNING no output for export_broken: RuntimeError: groq failed after 6 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 197961, Requested 2722. Please try again in 4m55.056s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+WARNING groq rate limited, waiting 60.0s (attempt 1/6)
+WARNING groq rate limited, waiting 60.0s (attempt 2/6)
+WARNING groq rate limited, waiting 60.0s (attempt 3/6)
+WARNING groq rate limited, waiting 60.0s (attempt 4/6)
+WARNING groq rate limited, waiting 60.0s (attempt 5/6)
+WARNING no output for cancel_account: RuntimeError: groq failed after 6 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199745, Requested 2123. Please try again in 13m26.976s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+WARNING groq rate limited, waiting 60.0s (attempt 1/6)
+WARNING groq rate limited, waiting 60.0s (attempt 2/6)
+WARNING groq rate limited, waiting 60.0s (attempt 3/6)
+WARNING groq rate limited, waiting 60.0s (attempt 4/6)
+WARNING groq rate limited, waiting 60.0s (attempt 5/6)
+WARNING no output for dark_mode: RuntimeError: groq failed after 6 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199036, Requested 2714. Please try again in 12m36s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+WARNING groq rate limited, waiting 60.0s (attempt 1/6)
+WARNING groq rate limited, waiting 60.0s (attempt 2/6)
+WARNING groq rate limited, waiting 60.0s (attempt 3/6)
+WARNING groq rate limited, waiting 60.0s (attempt 4/6)
+WARNING groq rate limited, waiting 60.0s (attempt 5/6)
+WARNING no output for total_outage: RuntimeError: groq failed after 6 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198328, Requested 2724. Please try again in 7m34.464s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+WARNING groq rate limited, waiting 60.0s (attempt 1/6)
+WARNING groq rate limited, waiting 60.0s (attempt 2/6)
+WARNING groq rate limited, waiting 60.0s (attempt 3/6)
+WARNING groq rate limited, waiting 60.0s (attempt 4/6)
+WARNING groq rate limited, waiting 60.0s (attempt 5/6)
+WARNING no output for vat_rate: RuntimeError: groq failed after 6 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 197620, Requested 2729. Please try again in 2m30.768s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+WARNING groq rate limited, waiting 60.0s (attempt 1/6)
+WARNING groq rate limited, waiting 60.0s (attempt 2/6)
+WARNING groq rate limited, waiting 60.0s (attempt 3/6)
+WARNING groq rate limited, waiting 60.0s (attempt 4/6)
+WARNING groq rate limited, waiting 60.0s (attempt 5/6)
+WARNING no output for api_500s: RuntimeError: groq failed after 6 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199385, Requested 2154. Please try again in 11m4.848s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+WARNING groq rate limited, waiting 60.0s (attempt 1/6)
+WARNING groq rate limited, waiting 60.0s (attempt 2/6)
+WARNING groq rate limited, waiting 60.0s (attempt 3/6)
+WARNING groq rate limited, waiting 60.0s (attempt 4/6)
+WARNING groq rate limited, waiting 60.0s (attempt 5/6)
+WARNING no output for add_seat: RuntimeError: groq failed after 6 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198680, Requested 2711. Please try again in 10m0.912s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+WARNING groq rate limited, waiting 60.0s (attempt 1/6)
+WARNING groq rate limited, waiting 60.0s (attempt 2/6)
+WARNING groq rate limited, waiting 60.0s (attempt 3/6)
+WARNING groq rate limited, waiting 60.0s (attempt 4/6)
+WARNING groq rate limited, waiting 60.0s (attempt 5/6)
+WARNING no output for vague: RuntimeError: groq failed after 6 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 197976, Requested 2702. Please try again in 4m52.895999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+WARNING groq rate limited, waiting 60.0s (attempt 1/6)
+WARNING groq rate limited, waiting 60.0s (attempt 2/6)
+WARNING groq rate limited, waiting 60.0s (attempt 3/6)
+WARNING groq rate limited, waiting 60.0s (attempt 4/6)
+WARNING groq rate limited, waiting 60.0s (attempt 5/6)
+WARNING no output for angry_refund: RuntimeError: groq failed after 6 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `qwen/qwen3.6-27b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199719, Requested 2728. Please try again in 17m37.104s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+  3/3 qwen/qwen3.6-27b / prompt_only / TicketTriage: first 100%, final 100%, 
+accurate 100%
+
+                               Benchmark matrix                                
+┌───────┬───────┬───────┬───────┬───────┬───────┬──────┬───────┬──────┬───────┐
+│       │       │       │ first │ after │  free │      │       │      │    no │
+│ model │ tier  │ sche… │ atte… │ repa… │ repa… │ acc… │ grou… │ tok… │ outp… │
+├───────┼───────┼───────┼───────┼───────┼───────┼──────┼───────┼──────┼───────┤
+│ qwen… │ prom… │ simp… │ 100.… │ 100.… │     0 │ 86.… │ 100.… │  826 │       │
+│       │       │       │ (100… │ (100… │       │ (74… │ (100… │      │       │
+│       │       │       │ n=30) │ n=30) │       │ n=3… │ n=30) │      │       │
+│ qwen… │ prom… │ nest… │ 100.… │ 100.… │     0 │ 100… │ 100.… │ 1442 │    23 │
+│       │       │       │ (100… │ (100… │       │ (10… │ (100… │      │       │
+│       │       │       │  n=7) │  n=7) │       │ n=7) │  n=7) │      │       │
+│ qwen… │ prom… │ hard  │ 100.… │ 100.… │     0 │ 100… │ 100.… │ 2727 │    29 │
+│       │       │       │ (100… │ (100… │       │ (10… │ (100… │      │       │
+│       │       │       │  n=1) │  n=1) │       │ n=1) │  n=1) │      │       │
+└───────┴───────┴───────┴───────┴───────┴───────┴──────┴───────┴──────┴───────┘
+
+                              By enforcement tier                              
+┌─────────────┬────────────────────┬─────────────────────┬────────────────────┐
+│ tier        │      first attempt │        after repair │  semantic accuracy │
+├─────────────┼────────────────────┼─────────────────────┼────────────────────┤
+│ prompt_only │             100.0% │              100.0% │              89.5% │
+│             │    (100.0%-100.0%, │     (100.0%-100.0%, │      (79.7%-99.2%, │
+│             │              n=38) │               n=38) │              n=38) │
+└─────────────┴────────────────────┴─────────────────────┴────────────────────┘
+
+ First-attempt failures by type  
+┌─────────────┬─────────┬───────┐
+│ tier        │ failure │ count │
+├─────────────┼─────────┼───────┤
+│ prompt_only │ none    │     0 │
+└─────────────┴─────────┴───────┘
+
+                   Projected chain reliability (upper bound)                   
+┌─────────────────────────┬──────────┬────────┬─────────┬──────────┬──────────┐
+│ cell                    │ per call │ 1 step │ 5 steps │ 10 steps │ 50 steps │
+├─────────────────────────┼──────────┼────────┼─────────┼──────────┼──────────┤
+│ best: qwen3.6-27b /     │   100.0% │ 100.0% │  100.0% │   100.0% │   100.0% │
+│ prompt_only / simple    │          │        │         │          │          │
+│ worst: qwen3.6-27b /    │   100.0% │ 100.0% │  100.0% │   100.0% │   100.0% │
+│ prompt_only / simple    │          │        │         │          │          │
+└─────────────────────────┴──────────┴────────┴─────────┴──────────┴──────────┘
+
+2 of 3 cells have n<30 (smallest n=1); widest interval is +/-0.0%. Around 30x 
+the repeats would put every cell over the threshold. Cells sitting at 0% or 
+100% show a zero-width interval, which is an artefact of the approximation 
+rather than precision.
+
+Wrote topup\qwen-qwen3.6-27b.json in 335.0 min

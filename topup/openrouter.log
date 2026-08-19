@@ -1,0 +1,109 @@
+openrouter: 1 models x 3 tiers x 3 contracts, 5 cases x 1 repeats -> up to 9 
+cells
+WARNING openrouter rate limited, waiting 24.0s (attempt 1/4)
+  1/9 openai/gpt-oss-20b:free / json_schema / TicketSummary: first 100%, final 
+100%, accurate 80%
+  2/9 openai/gpt-oss-20b:free / json_schema / TicketAnalysis: first 100%, final
+100%, accurate 80%
+WARNING openrouter rate limited, waiting 24.0s (attempt 1/4)
+WARNING openrouter rate limited, waiting 27.0s (attempt 2/4)
+  3/9 openai/gpt-oss-20b:free / json_schema / TicketTriage: first 80%, final 
+80%, accurate 75%
+WARNING openrouter rate limited, waiting 24.0s (attempt 1/4)
+WARNING openrouter rate limited, waiting 8.0s (attempt 2/4)
+  4/9 openai/gpt-oss-20b:free / json_object / TicketSummary: first 100%, final 
+100%, accurate 60%
+WARNING openrouter rate limited, waiting 2.0s (attempt 1/4)
+  5/9 openai/gpt-oss-20b:free / json_object / TicketAnalysis: first 100%, final
+100%, accurate 80%
+  6/9 openai/gpt-oss-20b:free / json_object / TicketTriage: first 100%, final 
+100%, accurate 80%
+WARNING openrouter rate limited, waiting 24.0s (attempt 1/4)
+WARNING openrouter rate limited, waiting 30.0s (attempt 2/4)
+  7/9 openai/gpt-oss-20b:free / prompt_only / TicketSummary: first 80%, final 
+100%, accurate 80%
+WARNING no output for billing_duplicate: RuntimeError: openrouter failed after 4 attempts: Connection error.
+WARNING no output for export_broken: BudgetExhaustedError: openrouter daily allowance spent: 48 of 45 requests used today (UTC). It resets at midnight UTC.
+WARNING no output for cancel_account: BudgetExhaustedError: openrouter daily allowance spent: 48 of 45 requests used today (UTC). It resets at midnight UTC.
+WARNING no output for dark_mode: BudgetExhaustedError: openrouter daily allowance spent: 48 of 45 requests used today (UTC). It resets at midnight UTC.
+WARNING no output for total_outage: BudgetExhaustedError: openrouter daily allowance spent: 48 of 45 requests used today (UTC). It resets at midnight UTC.
+  8/9 openai/gpt-oss-20b:free / prompt_only / TicketAnalysis: first 0%, final 
+0%, accurate 0%
+WARNING no output for billing_duplicate: BudgetExhaustedError: openrouter daily allowance spent: 48 of 45 requests used today (UTC). It resets at midnight UTC.
+WARNING no output for export_broken: BudgetExhaustedError: openrouter daily allowance spent: 48 of 45 requests used today (UTC). It resets at midnight UTC.
+WARNING no output for cancel_account: BudgetExhaustedError: openrouter daily allowance spent: 48 of 45 requests used today (UTC). It resets at midnight UTC.
+WARNING no output for dark_mode: BudgetExhaustedError: openrouter daily allowance spent: 48 of 45 requests used today (UTC). It resets at midnight UTC.
+WARNING no output for total_outage: BudgetExhaustedError: openrouter daily allowance spent: 48 of 45 requests used today (UTC). It resets at midnight UTC.
+  9/9 openai/gpt-oss-20b:free / prompt_only / TicketTriage: first 0%, final 0%,
+accurate 0%
+
+                               Benchmark matrix                                
+┌───────┬───────┬───────┬───────┬───────┬───────┬──────┬───────┬──────┬───────┐
+│       │       │       │ first │ after │  free │      │       │      │    no │
+│ model │ tier  │ sche… │ atte… │ repa… │ repa… │ acc… │ grou… │ tok… │ outp… │
+├───────┼───────┼───────┼───────┼───────┼───────┼──────┼───────┼──────┼───────┤
+│ gpt-… │ json… │ simp… │ 100.… │ 100.… │     0 │ 80.… │ 100.… │  522 │       │
+│       │       │       │ (100… │ (100… │       │ (44… │ (100… │      │       │
+│       │       │       │  n=5) │  n=5) │       │ n=5) │  n=5) │      │       │
+│ gpt-… │ json… │ nest… │ 100.… │ 100.… │     0 │ 80.… │ 100.… │  833 │       │
+│       │       │       │ (100… │ (100… │       │ (44… │ (100… │      │       │
+│       │       │       │  n=5) │  n=5) │       │ n=5) │  n=5) │      │       │
+│ gpt-… │ json… │ hard  │ 80.0% │ 80.0% │     0 │ 75.… │ 100.… │ 1049 │       │
+│       │       │       │ (44.… │ (44.… │       │ (32… │ (100… │      │       │
+│       │       │       │  n=5) │  n=5) │       │ n=4) │  n=4) │      │       │
+│ gpt-… │ json… │ simp… │ 100.… │ 100.… │     0 │ 60.… │ 100.… │  495 │       │
+│       │       │       │ (100… │ (100… │       │ (17… │ (100… │      │       │
+│       │       │       │  n=5) │  n=5) │       │ n=5) │  n=5) │      │       │
+│ gpt-… │ json… │ nest… │ 100.… │ 100.… │     0 │ 80.… │ 100.… │  784 │       │
+│       │       │       │ (100… │ (100… │       │ (44… │ (100… │      │       │
+│       │       │       │  n=5) │  n=5) │       │ n=5) │  n=5) │      │       │
+│ gpt-… │ json… │ hard  │ 100.… │ 100.… │     0 │ 80.… │ 100.… │ 1464 │       │
+│       │       │       │ (100… │ (100… │       │ (44… │ (100… │      │       │
+│       │       │       │  n=5) │  n=5) │       │ n=5) │  n=5) │      │       │
+│ gpt-… │ prom… │ simp… │ 80.0% │ 100.… │     0 │ 80.… │ 100.… │  956 │       │
+│       │       │       │ (44.… │ (100… │       │ (44… │ (100… │      │       │
+│       │       │       │  n=5) │  n=5) │       │ n=5) │  n=5) │      │       │
+│ gpt-… │ prom… │ nest… │     - │     - │     0 │    - │     - │    - │     5 │
+│ gpt-… │ prom… │ hard  │     - │     - │     0 │    - │     - │    - │     5 │
+└───────┴───────┴───────┴───────┴───────┴───────┴──────┴───────┴──────┴───────┘
+
+                              By enforcement tier                              
+┌─────────────┬────────────────────┬────────────────────┬─────────────────────┐
+│ tier        │      first attempt │       after repair │   semantic accuracy │
+├─────────────┼────────────────────┼────────────────────┼─────────────────────┤
+│ json_object │             100.0% │             100.0% │ 73.3% (51.0%-95.7%, │
+│             │    (100.0%-100.0%, │    (100.0%-100.0%, │               n=15) │
+│             │              n=15) │              n=15) │                     │
+│ json_schema │              93.3% │              93.3% │               78.6% │
+│             │     (80.7%-100.0%, │     (80.7%-100.0%, │      (57.1%-100.0%, │
+│             │              n=15) │              n=15) │               n=14) │
+│ prompt_only │              80.0% │             100.0% │               80.0% │
+│             │     (44.9%-100.0%, │    (100.0%-100.0%, │ (44.9%-100.0%, n=5) │
+│             │               n=5) │               n=5) │                     │
+└─────────────┴────────────────────┴────────────────────┴─────────────────────┘
+
+  First-attempt failures by type   
+┌─────────────┬───────────┬───────┐
+│ tier        │ failure   │ count │
+├─────────────┼───────────┼───────┤
+│ json_object │ none      │     0 │
+│ json_schema │ empty     │     1 │
+│ prompt_only │ truncated │     1 │
+└─────────────┴───────────┴───────┘
+
+                   Projected chain reliability (upper bound)                   
+┌─────────────────────────┬──────────┬────────┬─────────┬──────────┬──────────┐
+│ cell                    │ per call │ 1 step │ 5 steps │ 10 steps │ 50 steps │
+├─────────────────────────┼──────────┼────────┼─────────┼──────────┼──────────┤
+│ best: gpt-oss-20b:free  │   100.0% │ 100.0% │  100.0% │   100.0% │   100.0% │
+│ / json_schema / simple  │          │        │         │          │          │
+│ worst: gpt-oss-20b:free │    80.0% │  80.0% │   32.8% │    10.7% │     0.0% │
+│ / json_schema / hard    │          │        │         │          │          │
+└─────────────────────────┴──────────┴────────┴─────────┴──────────┴──────────┘
+
+7 of 7 cells have n<30 (smallest n=5); widest interval is +/-27.5%. Around 6x 
+the repeats would put every cell over the threshold. Cells sitting at 0% or 
+100% show a zero-width interval, which is an artefact of the approximation 
+rather than precision.
+
+Wrote topup\openrouter.json in 19.6 min

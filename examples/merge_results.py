@@ -53,6 +53,23 @@ def merge_logs(sources: list[Path], destination: Path) -> int:
     return copied
 
 
+def keep_best_sampled(cells: list) -> list:
+    """Collapse duplicate cells, keeping the one with the most data.
+
+    A cell can be measured more than once — a run starved by a daily token
+    budget leaves an n of one or two, and a later top-up fills it in. Keeping
+    both would double-count; keeping the first would throw away the better
+    measurement. A skipped cell only survives if nothing ever ran it.
+    """
+    best: dict[tuple, object] = {}
+    for cell in cells:
+        key = (cell.provider, cell.model, cell.tier, cell.contract)
+        seen = best.get(key)
+        if seen is None or cell.total > seen.total:
+            best[key] = cell
+    return list(best.values())
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("results", nargs="+", help="per-model result files")
@@ -61,7 +78,7 @@ def main() -> int:
     parser.add_argument("--logs", nargs="*", default=None, help="per-model databases")
     args = parser.parse_args()
 
-    cells = []
+    cells: list = []
     sampling: dict = {}
     elapsed = 0.0
 
@@ -72,6 +89,8 @@ def main() -> int:
         # so the longest one is the run's duration.
         elapsed = max(elapsed, payload.get("sampling", {}).get("elapsed_seconds", 0.0))
         sampling.update(payload.get("sampling", {}))
+
+    cells = keep_best_sampled(cells)
 
     sampling["elapsed_seconds"] = round(elapsed, 1)
     sampling["run_shape"] = f"{len(args.results)} models in parallel, one process each"
