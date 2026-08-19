@@ -140,6 +140,23 @@ def providers() -> None:
     if not settings.PRIMARY_MODEL:
         console.print("[yellow]Run `probe` first; no model is configured.[/yellow]")
 
+    # A configured model the provider has dropped fails at the call site with a
+    # 404 and no explanation. The probe already knows; saying so here is the
+    # difference between a puzzling run and a one-line fix.
+    probed = cache.get(settings.PROVIDER, {})
+    for label, model in (
+        ("PRIMARY_MODEL", settings.PRIMARY_MODEL),
+        ("CRITIC_MODEL", settings.CRITIC_MODEL),
+        ("FALLBACK_MODEL", settings.FALLBACK_MODEL),
+    ):
+        caps = probed.get(model) if model else None
+        if caps is not None and caps.retired_at:
+            console.print(
+                f"[red]{label}={model} is no longer served by "
+                f"{settings.PROVIDER}[/red] (last seen {caps.retired_at[:10]}). "
+                "Pick another and update .env."
+            )
+
 
 @app.command()
 def probe(

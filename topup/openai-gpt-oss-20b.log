@@ -1,0 +1,142 @@
+groq: 1 models x 1 tiers x 3 contracts, 10 cases x 3 repeats -> up to 3 cells
+WARNING groq rate limited, waiting 2.0s (attempt 1/6)
+WARNING groq rate limited, waiting 2.0s (attempt 1/6)
+WARNING groq rate limited, waiting 2.0s (attempt 1/6)
+WARNING groq rate limited, waiting 2.0s (attempt 1/6)
+WARNING groq rate limited, waiting 1.0s (attempt 2/6)
+WARNING groq rate limited, waiting 2.0s (attempt 1/6)
+WARNING groq rate limited, waiting 1.0s (attempt 1/6)
+WARNING groq rate limited, waiting 4.0s (attempt 1/6)
+WARNING groq rate limited, waiting 1.0s (attempt 1/6)
+WARNING groq rate limited, waiting 2.0s (attempt 2/6)
+WARNING groq rate limited, waiting 1.0s (attempt 1/6)
+WARNING groq rate limited, waiting 3.0s (attempt 1/6)
+WARNING groq rate limited, waiting 1.0s (attempt 2/6)
+WARNING groq rate limited, waiting 2.0s (attempt 1/6)
+WARNING groq rate limited, waiting 2.0s (attempt 1/6)
+WARNING groq rate limited, waiting 3.0s (attempt 1/6)
+WARNING groq rate limited, waiting 3.0s (attempt 1/6)
+WARNING groq rate limited, waiting 4.0s (attempt 1/6)
+WARNING groq rate limited, waiting 2.0s (attempt 1/6)
+WARNING groq rate limited, waiting 2.0s (attempt 1/6)
+WARNING groq rate limited, waiting 4.0s (attempt 1/6)
+WARNING groq rate limited, waiting 1.0s (attempt 2/6)
+WARNING groq rate limited, waiting 2.0s (attempt 1/6)
+WARNING groq rate limited, waiting 3.0s (attempt 1/6)
+WARNING groq rate limited, waiting 1.0s (attempt 1/6)
+WARNING groq rate limited, waiting 2.0s (attempt 1/6)
+  1/3 openai/gpt-oss-20b / prompt_only / TicketSummary: first 100%, final 100%,
+accurate 87%
+WARNING groq rate limited, waiting 5.0s (attempt 1/6)
+WARNING groq rate limited, waiting 4.0s (attempt 1/6)
+WARNING groq rate limited, waiting 5.0s (attempt 1/6)
+WARNING groq rate limited, waiting 1.0s (attempt 2/6)
+WARNING groq rate limited, waiting 5.0s (attempt 1/6)
+WARNING groq rate limited, waiting 1.0s (attempt 1/6)
+WARNING groq rate limited, waiting 3.0s (attempt 1/6)
+WARNING groq rate limited, waiting 5.0s (attempt 1/6)
+WARNING groq rate limited, waiting 5.0s (attempt 1/6)
+WARNING groq rate limited, waiting 6.0s (attempt 1/6)
+WARNING groq rate limited, waiting 5.0s (attempt 1/6)
+WARNING groq rate limited, waiting 3.0s (attempt 1/6)
+WARNING groq rate limited, waiting 5.0s (attempt 1/6)
+WARNING groq rate limited, waiting 2.0s (attempt 1/6)
+WARNING groq rate limited, waiting 1.0s (attempt 1/6)
+WARNING groq rate limited, waiting 6.0s (attempt 1/6)
+WARNING groq rate limited, waiting 3.0s (attempt 1/6)
+WARNING groq rate limited, waiting 6.0s (attempt 1/6)
+WARNING groq rate limited, waiting 4.0s (attempt 1/6)
+WARNING groq rate limited, waiting 1.0s (attempt 2/6)
+WARNING groq rate limited, waiting 7.0s (attempt 1/6)
+WARNING groq rate limited, waiting 3.0s (attempt 1/6)
+WARNING groq rate limited, waiting 6.0s (attempt 1/6)
+WARNING groq rate limited, waiting 5.0s (attempt 1/6)
+WARNING groq rate limited, waiting 4.0s (attempt 1/6)
+WARNING groq rate limited, waiting 6.0s (attempt 1/6)
+WARNING groq rate limited, waiting 5.0s (attempt 1/6)
+WARNING groq rate limited, waiting 5.0s (attempt 1/6)
+WARNING groq rate limited, waiting 5.0s (attempt 1/6)
+WARNING groq rate limited, waiting 3.0s (attempt 1/6)
+WARNING groq rate limited, waiting 6.0s (attempt 1/6)
+  2/3 openai/gpt-oss-20b / prompt_only / TicketAnalysis: first 100%, final 
+100%, accurate 70%
+WARNING groq rate limited, waiting 6.0s (attempt 1/6)
+WARNING groq rate limited, waiting 8.0s (attempt 1/6)
+WARNING groq rate limited, waiting 9.0s (attempt 1/6)
+WARNING groq rate limited, waiting 9.0s (attempt 1/6)
+WARNING groq rate limited, waiting 9.0s (attempt 1/6)
+WARNING groq rate limited, waiting 8.0s (attempt 1/6)
+WARNING groq rate limited, waiting 9.0s (attempt 1/6)
+WARNING groq rate limited, waiting 7.0s (attempt 1/6)
+WARNING groq rate limited, waiting 7.0s (attempt 1/6)
+WARNING groq rate limited, waiting 7.0s (attempt 1/6)
+WARNING groq rate limited, waiting 1.0s (attempt 2/6)
+WARNING groq rate limited, waiting 9.0s (attempt 1/6)
+WARNING groq rate limited, waiting 11.0s (attempt 1/6)
+WARNING groq rate limited, waiting 9.0s (attempt 1/6)
+WARNING groq rate limited, waiting 10.0s (attempt 1/6)
+WARNING groq rate limited, waiting 9.0s (attempt 1/6)
+WARNING groq rate limited, waiting 10.0s (attempt 1/6)
+WARNING groq rate limited, waiting 9.0s (attempt 1/6)
+WARNING groq rate limited, waiting 12.0s (attempt 1/6)
+WARNING groq rate limited, waiting 8.0s (attempt 1/6)
+WARNING groq rate limited, waiting 10.0s (attempt 1/6)
+WARNING groq rate limited, waiting 5.0s (attempt 1/6)
+WARNING groq rate limited, waiting 7.0s (attempt 1/6)
+WARNING groq rate limited, waiting 4.0s (attempt 1/6)
+WARNING groq rate limited, waiting 10.0s (attempt 1/6)
+WARNING groq rate limited, waiting 8.0s (attempt 1/6)
+WARNING groq rate limited, waiting 12.0s (attempt 1/6)
+WARNING groq rate limited, waiting 3.0s (attempt 1/6)
+WARNING groq rate limited, waiting 3.0s (attempt 1/6)
+WARNING groq rate limited, waiting 1.0s (attempt 2/6)
+WARNING groq rate limited, waiting 9.0s (attempt 1/6)
+WARNING groq rate limited, waiting 6.0s (attempt 1/6)
+  3/3 openai/gpt-oss-20b / prompt_only / TicketTriage: first 100%, final 100%, 
+accurate 70%
+
+                               Benchmark matrix                                
+┌───────┬───────┬───────┬───────┬───────┬───────┬──────┬───────┬──────┬───────┐
+│       │       │       │ first │ after │  free │      │       │      │    no │
+│ model │ tier  │ sche… │ atte… │ repa… │ repa… │ acc… │ grou… │ tok… │ outp… │
+├───────┼───────┼───────┼───────┼───────┼───────┼──────┼───────┼──────┼───────┤
+│ gpt-… │ prom… │ simp… │ 100.… │ 100.… │     0 │ 86.… │ 100.… │  538 │       │
+│       │       │       │ (100… │ (100… │       │ (74… │ (100… │      │       │
+│       │       │       │ n=30) │ n=30) │       │ n=3… │ n=30) │      │       │
+│ gpt-… │ prom… │ nest… │ 100.… │ 100.… │     0 │ 70.… │ 100.… │  886 │       │
+│       │       │       │ (100… │ (100… │       │ (53… │ (100… │      │       │
+│       │       │       │ n=30) │ n=30) │       │ n=3… │ n=30) │      │       │
+│ gpt-… │ prom… │ hard  │ 100.… │ 100.… │     0 │ 70.… │ 100.… │ 1500 │       │
+│       │       │       │ (100… │ (100… │       │ (53… │ (100… │      │       │
+│       │       │       │ n=30) │ n=30) │       │ n=3… │ n=30) │      │       │
+└───────┴───────┴───────┴───────┴───────┴───────┴──────┴───────┴──────┴───────┘
+
+                              By enforcement tier                              
+┌─────────────┬────────────────────┬─────────────────────┬────────────────────┐
+│ tier        │      first attempt │        after repair │  semantic accuracy │
+├─────────────┼────────────────────┼─────────────────────┼────────────────────┤
+│ prompt_only │             100.0% │              100.0% │              75.6% │
+│             │    (100.0%-100.0%, │     (100.0%-100.0%, │      (66.7%-84.4%, │
+│             │              n=90) │               n=90) │              n=90) │
+└─────────────┴────────────────────┴─────────────────────┴────────────────────┘
+
+ First-attempt failures by type  
+┌─────────────┬─────────┬───────┐
+│ tier        │ failure │ count │
+├─────────────┼─────────┼───────┤
+│ prompt_only │ none    │     0 │
+└─────────────┴─────────┴───────┘
+
+                   Projected chain reliability (upper bound)                   
+┌─────────────────────────┬──────────┬────────┬─────────┬──────────┬──────────┐
+│ cell                    │ per call │ 1 step │ 5 steps │ 10 steps │ 50 steps │
+├─────────────────────────┼──────────┼────────┼─────────┼──────────┼──────────┤
+│ best: gpt-oss-20b /     │   100.0% │ 100.0% │  100.0% │   100.0% │   100.0% │
+│ prompt_only / simple    │          │        │         │          │          │
+│ worst: gpt-oss-20b /    │   100.0% │ 100.0% │  100.0% │   100.0% │   100.0% │
+│ prompt_only / simple    │          │        │         │          │          │
+└─────────────────────────┴──────────┴────────┴─────────┴──────────┴──────────┘
+
+Every cell has n>=30; widest interval is +/-0.0%.
+
+Wrote topup\openai-gpt-oss-20b.json in 10.0 min
