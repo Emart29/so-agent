@@ -144,6 +144,12 @@ def main() -> int:
     if saved:
         payload = load_results(saved)
         console.print(tier_table(payload["cells"]))
+        console.print(
+            "[dim]Tiers pooled across models are confounded — a model that "
+            "cannot run json_schema contributes only to the weaker tiers. The "
+            "per-model comparison is in the report; there, enforcement wins on "
+            "none of the four.[/dim]"
+        )
         console.print(f"[dim]from {saved}[/dim]")
     else:
         console.print(

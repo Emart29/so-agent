@@ -161,8 +161,17 @@ def summary_table(cells: list[CellResult]) -> Table:
 
 
 def tier_table(cells: list[CellResult]) -> Table:
-    """Rates pooled by enforcement tier — the comparison the project exists for."""
-    table = Table(title="By enforcement tier")
+    """Rates pooled by enforcement tier.
+
+    Pooling across models is confounded and the title says so. A model that
+    cannot run ``json_schema`` contributes only to the weaker tiers, so the
+    strict-mode pool is made of capable models by construction and wins a
+    comparison it never entered. Only the per-model rows in the full matrix
+    support a claim about what a tier is worth.
+    """
+    table = Table(
+        title="By enforcement tier (pooled across models — see caveat below)"
+    )
     table.add_column("tier")
     table.add_column("first attempt", justify="right")
     table.add_column("after repair", justify="right")
@@ -271,5 +280,12 @@ def print_summary(
     console = console or Console()
     for build in (summary_table, tier_table, failure_table, trajectory_table):
         console.print(build(cells))
+        if build is tier_table:
+            console.print(
+                "[dim]Pooled tiers are confounded: a model that cannot run a "
+                "tier contributes only to the others, so the stricter pools "
+                "contain more capable models by construction. Compare tiers "
+                "within a model, not across.[/dim]"
+            )
         console.print()
     console.print(interval_advice(cells))
