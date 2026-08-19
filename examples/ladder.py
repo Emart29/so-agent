@@ -21,10 +21,21 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from provider.capabilities import ModelCapabilities, load_capabilities  # noqa: E402
 
+if hasattr(sys.stdout, "reconfigure"):
+    # LF, not the platform default. This output is read by shell scripts, and a
+    # model id carrying a carriage return becomes a file path that cannot be
+    # opened — with an error that names SQLite rather than the line ending.
+    sys.stdout.reconfigure(encoding="utf-8", newline=chr(10))
+
 #: Models to leave out of the benchmark, with the reason. Not a blocklist of
 #: things that perform badly — only of things the benchmark cannot measure.
 EXCLUDED = {
     "groq/compound": "an agentic system rather than a plain chat model",
+    # Measured, then excluded on the evidence: its 429s name other models.
+    # Benchmarking it spent llama-3.3-70b-versatile's and gpt-oss-120b's daily
+    # token budgets, which means its rates belong to whatever it routed to on
+    # the day rather than to a model anyone can name.
+    "groq/compound-mini": "a router; its calls are served by other models",
 }
 
 

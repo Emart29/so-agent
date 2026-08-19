@@ -1,0 +1,4 @@
+# Shell scripts must keep LF endings: bash reads a CRLF script's own lines
+# literally, and a trailing carriage return turns a path into one that does
+# not exist.
+*.sh text eol=lf

@@ -1,157 +1,212 @@
-groq: 1 models x 3 tiers x 3 contracts, 10 cases x 2 repeats -> up to 9 cells
-WARNING groq rate limited, waiting 10.0s (attempt 1/4)
-WARNING groq rate limited, waiting 3.0s (attempt 1/4)
+groq: 1 models x 3 tiers x 3 contracts, 10 cases x 3 repeats -> up to 9 cells
 WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 3.0s (attempt 1/4)
+WARNING groq rate limited, waiting 4.0s (attempt 2/4)
 WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 3.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 3.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 12.0s (attempt 2/4)
-WARNING groq rate limited, waiting 17.0s (attempt 1/4)
-  1/9 openai/gpt-oss-120b / json_schema / TicketSummary: first 100%, final 
-100%, accurate 80%
-WARNING groq rate limited, waiting 1.0s (attempt 1/4)
+WARNING groq rate limited, waiting 14.0s (attempt 2/4)
 WARNING groq rate limited, waiting 4.0s (attempt 1/4)
-WARNING groq rate limited, waiting 4.0s (attempt 1/4)
-WARNING groq rate limited, waiting 5.0s (attempt 1/4)
-WARNING groq rate limited, waiting 1.0s (attempt 1/4)
-WARNING groq rate limited, waiting 5.0s (attempt 1/4)
-WARNING groq rate limited, waiting 1.0s (attempt 1/4)
-WARNING groq rate limited, waiting 3.0s (attempt 1/4)
-WARNING groq rate limited, waiting 1.0s (attempt 2/4)
-WARNING groq rate limited, waiting 4.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 4.0s (attempt 1/4)
-WARNING groq rate limited, waiting 5.0s (attempt 1/4)
-WARNING groq rate limited, waiting 4.0s (attempt 1/4)
-WARNING groq rate limited, waiting 4.0s (attempt 1/4)
-WARNING groq rate limited, waiting 1.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 5.0s (attempt 1/4)
-  2/9 openai/gpt-oss-120b / json_schema / TicketAnalysis: first 100%, final 
-100%, accurate 95%
-WARNING groq rate limited, waiting 3.0s (attempt 1/4)
-WARNING groq rate limited, waiting 8.0s (attempt 1/4)
-WARNING groq rate limited, waiting 7.0s (attempt 1/4)
-WARNING groq rate limited, waiting 7.0s (attempt 1/4)
-WARNING groq rate limited, waiting 1.0s (attempt 2/4)
-WARNING groq rate limited, waiting 6.0s (attempt 1/4)
-WARNING groq rate limited, waiting 8.0s (attempt 1/4)
-WARNING groq rate limited, waiting 7.0s (attempt 1/4)
-WARNING groq rate limited, waiting 7.0s (attempt 1/4)
-WARNING groq rate limited, waiting 7.0s (attempt 1/4)
-WARNING groq rate limited, waiting 7.0s (attempt 1/4)
-WARNING groq rate limited, waiting 5.0s (attempt 1/4)
-WARNING groq rate limited, waiting 6.0s (attempt 1/4)
-WARNING groq rate limited, waiting 8.0s (attempt 1/4)
-WARNING groq rate limited, waiting 7.0s (attempt 1/4)
-WARNING groq rate limited, waiting 3.0s (attempt 1/4)
-WARNING groq rate limited, waiting 7.0s (attempt 1/4)
-WARNING groq rate limited, waiting 6.0s (attempt 1/4)
-WARNING groq rate limited, waiting 1.0s (attempt 2/4)
-WARNING groq rate limited, waiting 6.0s (attempt 1/4)
-WARNING groq rate limited, waiting 1.0s (attempt 2/4)
-WARNING groq rate limited, waiting 5.0s (attempt 1/4)
-WARNING groq rate limited, waiting 1.0s (attempt 2/4)
-  3/9 openai/gpt-oss-120b / json_schema / TicketTriage: first 100%, final 100%,
-accurate 80%
-WARNING groq rate limited, waiting 7.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 1.0s (attempt 2/4)
-WARNING groq rate limited, waiting 1.0s (attempt 1/4)
-WARNING groq rate limited, waiting 1.0s (attempt 2/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-WARNING groq rate limited, waiting 3.0s (attempt 1/4)
-WARNING groq rate limited, waiting 3.0s (attempt 1/4)
-WARNING groq rate limited, waiting 3.0s (attempt 1/4)
-WARNING groq rate limited, waiting 1.0s (attempt 1/4)
-WARNING groq rate limited, waiting 3.0s (attempt 1/4)
-WARNING groq rate limited, waiting 1.0s (attempt 1/4)
-WARNING groq rate limited, waiting 60.0s (attempt 1/4)
-WARNING groq rate limited, waiting 60.0s (attempt 2/4)
-WARNING groq rate limited, waiting 60.0s (attempt 3/4)
-WARNING no output for cancel_account: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199209, Requested 922. Please try again in 56.592s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-WARNING groq rate limited, waiting 58.0s (attempt 1/4)
-WARNING groq rate limited, waiting 57.0s (attempt 2/4)
-WARNING groq rate limited, waiting 60.0s (attempt 1/4)
-WARNING groq rate limited, waiting 60.0s (attempt 2/4)
-WARNING groq rate limited, waiting 60.0s (attempt 3/4)
-WARNING no output for total_outage: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198978, Requested 2344. Please try again in 9m31.104s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-WARNING groq rate limited, waiting 60.0s (attempt 1/4)
-WARNING groq rate limited, waiting 60.0s (attempt 2/4)
-WARNING groq rate limited, waiting 60.0s (attempt 3/4)
-WARNING no output for vat_rate: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198557, Requested 2346. Please try again in 6m30.096s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-WARNING groq rate limited, waiting 60.0s (attempt 1/4)
-WARNING groq rate limited, waiting 60.0s (attempt 2/4)
-WARNING groq rate limited, waiting 60.0s (attempt 3/4)
-WARNING no output for api_500s: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198134, Requested 2344. Please try again in 3m26.496s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-WARNING groq rate limited, waiting 60.0s (attempt 1/4)
-WARNING groq rate limited, waiting 60.0s (attempt 2/4)
-WARNING groq rate limited, waiting 60.0s (attempt 3/4)
-WARNING no output for add_seat: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 197712, Requested 2331. Please try again in 18.576s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
 WARNING groq rate limited, waiting 15.0s (attempt 1/4)
-WARNING groq rate limited, waiting 60.0s (attempt 1/4)
-WARNING groq rate limited, waiting 60.0s (attempt 2/4)
-WARNING groq rate limited, waiting 60.0s (attempt 3/4)
-WARNING no output for angry_refund: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199518, Requested 2347. Please try again in 13m25.68s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+WARNING groq rate limited, waiting 10.0s (attempt 2/4)
+WARNING groq rate limited, waiting 8.0s (attempt 3/4)
+WARNING groq rate limited, waiting 2.0s (attempt 1/4)
+WARNING groq rate limited, waiting 13.0s (attempt 2/4)
+WARNING groq rate limited, waiting 15.0s (attempt 1/4)
+WARNING groq rate limited, waiting 14.0s (attempt 1/4)
+WARNING groq rate limited, waiting 1.0s (attempt 1/4)
+WARNING groq rate limited, waiting 16.0s (attempt 1/4)
+WARNING groq rate limited, waiting 6.0s (attempt 2/4)
+WARNING groq rate limited, waiting 4.0s (attempt 1/4)
+WARNING groq rate limited, waiting 2.0s (attempt 1/4)
+WARNING groq rate limited, waiting 3.0s (attempt 1/4)
+WARNING groq rate limited, waiting 1.0s (attempt 1/4)
+WARNING groq rate limited, waiting 1.0s (attempt 2/4)
+WARNING groq rate limited, waiting 2.0s (attempt 1/4)
+WARNING groq rate limited, waiting 2.0s (attempt 1/4)
+WARNING groq rate limited, waiting 3.0s (attempt 1/4)
+WARNING groq rate limited, waiting 2.0s (attempt 1/4)
+WARNING groq rate limited, waiting 2.0s (attempt 1/4)
+  1/9 openai/gpt-oss-120b / json_schema / TicketSummary: first 100%, final 
+100%, accurate 83%
+WARNING groq rate limited, waiting 4.0s (attempt 1/4)
+WARNING groq rate limited, waiting 5.0s (attempt 1/4)
+WARNING groq rate limited, waiting 3.0s (attempt 1/4)
+WARNING groq rate limited, waiting 5.0s (attempt 1/4)
+WARNING groq rate limited, waiting 4.0s (attempt 1/4)
+WARNING groq rate limited, waiting 2.0s (attempt 1/4)
+WARNING groq rate limited, waiting 1.0s (attempt 2/4)
+WARNING groq rate limited, waiting 3.0s (attempt 1/4)
+WARNING groq rate limited, waiting 5.0s (attempt 1/4)
+WARNING groq rate limited, waiting 1.0s (attempt 1/4)
+WARNING groq rate limited, waiting 4.0s (attempt 1/4)
+WARNING groq rate limited, waiting 1.0s (attempt 2/4)
+WARNING groq rate limited, waiting 4.0s (attempt 1/4)
+WARNING groq rate limited, waiting 4.0s (attempt 1/4)
+WARNING groq rate limited, waiting 3.0s (attempt 1/4)
+WARNING groq rate limited, waiting 4.0s (attempt 1/4)
+WARNING groq rate limited, waiting 5.0s (attempt 1/4)
+WARNING groq rate limited, waiting 3.0s (attempt 1/4)
+WARNING groq rate limited, waiting 4.0s (attempt 1/4)
+WARNING groq rate limited, waiting 2.0s (attempt 1/4)
+WARNING groq rate limited, waiting 3.0s (attempt 1/4)
+WARNING groq rate limited, waiting 5.0s (attempt 1/4)
+WARNING groq rate limited, waiting 4.0s (attempt 1/4)
+WARNING groq rate limited, waiting 1.0s (attempt 1/4)
+WARNING groq rate limited, waiting 1.0s (attempt 1/4)
+WARNING groq rate limited, waiting 2.0s (attempt 1/4)
+WARNING groq rate limited, waiting 2.0s (attempt 1/4)
+WARNING groq rate limited, waiting 3.0s (attempt 1/4)
+WARNING groq rate limited, waiting 1.0s (attempt 1/4)
+WARNING groq rate limited, waiting 1.0s (attempt 1/4)
+WARNING groq rate limited, waiting 1.0s (attempt 1/4)
+WARNING groq rate limited, waiting 1.0s (attempt 1/4)
+  2/9 openai/gpt-oss-120b / json_schema / TicketAnalysis: first 100%, final 
+100%, accurate 93%
+WARNING groq rate limited, waiting 7.0s (attempt 1/4)
+WARNING groq rate limited, waiting 5.0s (attempt 2/4)
+WARNING groq rate limited, waiting 7.0s (attempt 1/4)
+WARNING groq rate limited, waiting 8.0s (attempt 1/4)
+WARNING groq rate limited, waiting 7.0s (attempt 2/4)
+WARNING groq rate limited, waiting 5.0s (attempt 3/4)
+WARNING groq rate limited, waiting 3.0s (attempt 1/4)
+WARNING groq rate limited, waiting 6.0s (attempt 1/4)
+WARNING groq rate limited, waiting 7.0s (attempt 2/4)
+WARNING groq rate limited, waiting 5.0s (attempt 3/4)
+WARNING no output for total_outage: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Used 7421, Requested 1140. Please try again in 4.2075s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+WARNING groq rate limited, waiting 4.0s (attempt 1/4)
+WARNING groq rate limited, waiting 7.0s (attempt 1/4)
+WARNING groq rate limited, waiting 8.0s (attempt 2/4)
+WARNING groq rate limited, waiting 8.0s (attempt 1/4)
+WARNING groq rate limited, waiting 7.0s (attempt 1/4)
+WARNING groq rate limited, waiting 1.0s (attempt 1/4)
+WARNING groq rate limited, waiting 2.0s (attempt 1/4)
+WARNING groq rate limited, waiting 7.0s (attempt 1/4)
+WARNING groq rate limited, waiting 7.0s (attempt 1/4)
+WARNING groq rate limited, waiting 6.0s (attempt 1/4)
+WARNING groq rate limited, waiting 3.0s (attempt 1/4)
+WARNING groq rate limited, waiting 2.0s (attempt 1/4)
+WARNING groq rate limited, waiting 7.0s (attempt 1/4)
+WARNING groq rate limited, waiting 7.0s (attempt 1/4)
+WARNING groq rate limited, waiting 7.0s (attempt 1/4)
+WARNING groq rate limited, waiting 6.0s (attempt 1/4)
+WARNING groq rate limited, waiting 7.0s (attempt 1/4)
+WARNING groq rate limited, waiting 7.0s (attempt 1/4)
+WARNING groq rate limited, waiting 3.0s (attempt 1/4)
+WARNING groq rate limited, waiting 7.0s (attempt 1/4)
+WARNING groq rate limited, waiting 2.0s (attempt 1/4)
+WARNING groq rate limited, waiting 3.0s (attempt 1/4)
+WARNING groq rate limited, waiting 3.0s (attempt 1/4)
+WARNING groq rate limited, waiting 3.0s (attempt 1/4)
+WARNING groq rate limited, waiting 3.0s (attempt 1/4)
+  3/9 openai/gpt-oss-120b / json_schema / TicketTriage: first 100%, final 100%,
+accurate 79%
+WARNING groq rate limited, waiting 3.0s (attempt 1/4)
+WARNING groq rate limited, waiting 2.0s (attempt 1/4)
+WARNING groq rate limited, waiting 3.0s (attempt 1/4)
+WARNING groq rate limited, waiting 2.0s (attempt 1/4)
+WARNING groq rate limited, waiting 2.0s (attempt 1/4)
+WARNING groq rate limited, waiting 2.0s (attempt 1/4)
+WARNING groq rate limited, waiting 2.0s (attempt 1/4)
+WARNING groq rate limited, waiting 3.0s (attempt 1/4)
+WARNING groq rate limited, waiting 2.0s (attempt 1/4)
+WARNING groq rate limited, waiting 3.0s (attempt 1/4)
+WARNING groq rate limited, waiting 3.0s (attempt 1/4)
+WARNING groq rate limited, waiting 2.0s (attempt 1/4)
+WARNING groq rate limited, waiting 1.0s (attempt 1/4)
+WARNING groq rate limited, waiting 3.0s (attempt 1/4)
+WARNING groq rate limited, waiting 3.0s (attempt 1/4)
+WARNING groq rate limited, waiting 2.0s (attempt 1/4)
+WARNING groq rate limited, waiting 3.0s (attempt 1/4)
+WARNING groq rate limited, waiting 3.0s (attempt 1/4)
+WARNING groq rate limited, waiting 2.0s (attempt 1/4)
+WARNING groq rate limited, waiting 3.0s (attempt 1/4)
+WARNING groq rate limited, waiting 3.0s (attempt 1/4)
+WARNING groq rate limited, waiting 1.0s (attempt 1/4)
+WARNING groq rate limited, waiting 2.0s (attempt 1/4)
+WARNING groq rate limited, waiting 4.0s (attempt 1/4)
+WARNING groq rate limited, waiting 3.0s (attempt 1/4)
   4/9 openai/gpt-oss-120b / json_object / TicketSummary: first 100%, final 
-100%, accurate 71%
+100%, accurate 83%
+WARNING groq rate limited, waiting 2.0s (attempt 1/4)
+WARNING groq rate limited, waiting 5.0s (attempt 1/4)
+WARNING groq rate limited, waiting 5.0s (attempt 1/4)
+WARNING groq rate limited, waiting 4.0s (attempt 1/4)
+WARNING groq rate limited, waiting 5.0s (attempt 1/4)
+WARNING groq rate limited, waiting 5.0s (attempt 1/4)
+WARNING groq rate limited, waiting 5.0s (attempt 1/4)
+WARNING groq rate limited, waiting 5.0s (attempt 1/4)
+WARNING groq rate limited, waiting 5.0s (attempt 1/4)
+WARNING groq rate limited, waiting 6.0s (attempt 1/4)
+WARNING groq rate limited, waiting 1.0s (attempt 1/4)
+WARNING groq rate limited, waiting 4.0s (attempt 1/4)
+WARNING groq rate limited, waiting 6.0s (attempt 1/4)
+WARNING groq rate limited, waiting 2.0s (attempt 1/4)
+WARNING groq rate limited, waiting 3.0s (attempt 1/4)
+WARNING groq rate limited, waiting 6.0s (attempt 1/4)
+WARNING groq rate limited, waiting 5.0s (attempt 1/4)
+WARNING groq rate limited, waiting 4.0s (attempt 1/4)
+WARNING groq rate limited, waiting 4.0s (attempt 1/4)
+WARNING groq rate limited, waiting 5.0s (attempt 1/4)
+WARNING groq rate limited, waiting 3.0s (attempt 1/4)
+WARNING groq rate limited, waiting 5.0s (attempt 1/4)
+WARNING groq rate limited, waiting 2.0s (attempt 1/4)
+WARNING groq rate limited, waiting 5.0s (attempt 1/4)
+WARNING groq rate limited, waiting 5.0s (attempt 1/4)
+WARNING groq rate limited, waiting 4.0s (attempt 1/4)
+WARNING groq rate limited, waiting 5.0s (attempt 1/4)
+WARNING groq rate limited, waiting 4.0s (attempt 1/4)
+WARNING groq rate limited, waiting 6.0s (attempt 1/4)
+  5/9 openai/gpt-oss-120b / json_object / TicketAnalysis: first 100%, final 
+100%, accurate 73%
+WARNING groq rate limited, waiting 7.0s (attempt 1/4)
+WARNING groq rate limited, waiting 7.0s (attempt 1/4)
+WARNING groq rate limited, waiting 9.0s (attempt 1/4)
+WARNING groq rate limited, waiting 8.0s (attempt 1/4)
+WARNING groq rate limited, waiting 8.0s (attempt 1/4)
+WARNING groq rate limited, waiting 5.0s (attempt 1/4)
+WARNING groq rate limited, waiting 7.0s (attempt 1/4)
+WARNING groq rate limited, waiting 8.0s (attempt 1/4)
+WARNING groq rate limited, waiting 10.0s (attempt 1/4)
+WARNING groq rate limited, waiting 6.0s (attempt 1/4)
+WARNING groq rate limited, waiting 1.0s (attempt 2/4)
+WARNING groq rate limited, waiting 60.0s (attempt 1/4)
+WARNING groq rate limited, waiting 60.0s (attempt 2/4)
+WARNING groq rate limited, waiting 60.0s (attempt 1/4)
+WARNING groq rate limited, waiting 60.0s (attempt 2/4)
 WARNING groq rate limited, waiting 60.0s (attempt 1/4)
 WARNING groq rate limited, waiting 60.0s (attempt 2/4)
 WARNING groq rate limited, waiting 60.0s (attempt 3/4)
-WARNING no output for billing_duplicate: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199096, Requested 2557. Please try again in 11m54.096s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+WARNING no output for cancel_account: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198710, Requested 2789. Please try again in 10m47.568s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
 WARNING groq rate limited, waiting 60.0s (attempt 1/4)
 WARNING groq rate limited, waiting 60.0s (attempt 2/4)
 WARNING groq rate limited, waiting 60.0s (attempt 3/4)
-WARNING no output for export_broken: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198675, Requested 2541. Please try again in 8m45.312s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+WARNING no output for dark_mode: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198287, Requested 2792. Please try again in 7m46.128s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
 WARNING groq rate limited, waiting 60.0s (attempt 1/4)
 WARNING groq rate limited, waiting 60.0s (attempt 2/4)
 WARNING groq rate limited, waiting 60.0s (attempt 3/4)
-WARNING no output for cancel_account: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198252, Requested 2531. Please try again in 5m38.256s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+WARNING no output for total_outage: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 197864, Requested 2802. Please try again in 4m47.712s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
 WARNING groq rate limited, waiting 60.0s (attempt 1/4)
 WARNING groq rate limited, waiting 60.0s (attempt 2/4)
 WARNING groq rate limited, waiting 60.0s (attempt 3/4)
-WARNING no output for dark_mode: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 197830, Requested 2534. Please try again in 2m37.248s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+WARNING no output for vat_rate: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 197440, Requested 2804. Please try again in 1m45.408s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
 WARNING groq rate limited, waiting 60.0s (attempt 1/4)
-WARNING groq rate limited, waiting 60.0s (attempt 2/4)
-WARNING groq rate limited, waiting 39.0s (attempt 3/4)
-WARNING groq rate limited, waiting 60.0s (attempt 1/4)
-WARNING groq rate limited, waiting 60.0s (attempt 2/4)
-WARNING groq rate limited, waiting 60.0s (attempt 3/4)
-WARNING no output for vat_rate: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199577, Requested 2546. Please try again in 15m17.136s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+WARNING groq rate limited, waiting 44.0s (attempt 2/4)
 WARNING groq rate limited, waiting 60.0s (attempt 1/4)
 WARNING groq rate limited, waiting 60.0s (attempt 2/4)
 WARNING groq rate limited, waiting 60.0s (attempt 3/4)
-WARNING no output for api_500s: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198635, Requested 2544. Please try again in 8m29.328s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+WARNING no output for add_seat: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199579, Requested 1401. Please try again in 7m3.36s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
 WARNING groq rate limited, waiting 60.0s (attempt 1/4)
 WARNING groq rate limited, waiting 60.0s (attempt 2/4)
 WARNING groq rate limited, waiting 60.0s (attempt 3/4)
-WARNING no output for add_seat: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 197594, Requested 2531. Please try again in 54s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-WARNING groq rate limited, waiting 51.0s (attempt 1/4)
+WARNING no output for vague: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199152, Requested 2781. Please try again in 13m55.056s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
 WARNING groq rate limited, waiting 60.0s (attempt 1/4)
 WARNING groq rate limited, waiting 60.0s (attempt 2/4)
 WARNING groq rate limited, waiting 60.0s (attempt 3/4)
-WARNING no output for angry_refund: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199580, Requested 896. Please try again in 3m25.632s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+WARNING no output for angry_refund: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198728, Requested 2805. Please try again in 11m2.256s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
 WARNING groq rate limited, waiting 60.0s (attempt 1/4)
 WARNING groq rate limited, waiting 60.0s (attempt 2/4)
 WARNING groq rate limited, waiting 60.0s (attempt 3/4)
-WARNING no output for billing_duplicate: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199138, Requested 2557. Please try again in 12m12.24s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-WARNING groq rate limited, waiting 60.0s (attempt 1/4)
-WARNING groq rate limited, waiting 60.0s (attempt 2/4)
-WARNING groq rate limited, waiting 60.0s (attempt 3/4)
-WARNING no output for export_broken: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198717, Requested 2541. Please try again in 9m3.456s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-WARNING groq rate limited, waiting 60.0s (attempt 1/4)
-WARNING groq rate limited, waiting 60.0s (attempt 2/4)
-WARNING groq rate limited, waiting 60.0s (attempt 3/4)
-WARNING no output for cancel_account: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198296, Requested 2531. Please try again in 5m57.264s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-WARNING groq rate limited, waiting 60.0s (attempt 1/4)
-WARNING groq rate limited, waiting 60.0s (attempt 2/4)
-WARNING groq rate limited, waiting 60.0s (attempt 3/4)
+WARNING no output for billing_duplicate: RuntimeError: groq failed after 4 attempts: Connection error.
+WARNING no output for export_broken: RuntimeError: groq failed after 4 attempts: Connection error.
+WARNING no output for cancel_account: RuntimeError: groq failed after 4 attempts: Connection error.
 WARNING no output for dark_mode: RuntimeError: groq failed after 4 attempts: Connection error.
 WARNING no output for total_outage: RuntimeError: groq failed after 4 attempts: Connection error.
 WARNING no output for vat_rate: RuntimeError: groq failed after 4 attempts: Connection error.
@@ -159,120 +214,62 @@ WARNING no output for api_500s: RuntimeError: groq failed after 4 attempts: Conn
 WARNING no output for add_seat: RuntimeError: groq failed after 4 attempts: Connection error.
 WARNING no output for vague: RuntimeError: groq failed after 4 attempts: Connection error.
 WARNING no output for angry_refund: RuntimeError: groq failed after 4 attempts: Connection error.
-  5/9 openai/gpt-oss-120b / json_object / TicketAnalysis: first 100%, final 
-100%, accurate 100%
+  6/9 openai/gpt-oss-120b / json_object / TicketTriage: first 100%, final 100%,
+accurate 85%
 WARNING no output for billing_duplicate: RuntimeError: groq failed after 4 attempts: Connection error.
 WARNING no output for export_broken: RuntimeError: groq failed after 4 attempts: Connection error.
 WARNING no output for cancel_account: RuntimeError: groq failed after 4 attempts: Connection error.
 WARNING no output for dark_mode: RuntimeError: groq failed after 4 attempts: Connection error.
-WARNING groq rate limited, waiting 6.0s (attempt 1/4)
-WARNING groq rate limited, waiting 10.0s (attempt 1/4)
-WARNING groq rate limited, waiting 21.0s (attempt 1/4)
-WARNING groq rate limited, waiting 3.0s (attempt 1/4)
-WARNING groq rate limited, waiting 8.0s (attempt 2/4)
-WARNING groq rate limited, waiting 60.0s (attempt 1/4)
-WARNING groq rate limited, waiting 60.0s (attempt 2/4)
-WARNING groq rate limited, waiting 60.0s (attempt 3/4)
-WARNING no output for export_broken: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199053, Requested 1471. Please try again in 3m46.368s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-WARNING groq rate limited, waiting 60.0s (attempt 1/4)
-WARNING groq rate limited, waiting 60.0s (attempt 2/4)
-WARNING groq rate limited, waiting 60.0s (attempt 3/4)
-WARNING no output for cancel_account: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198628, Requested 2789. Please try again in 10m12.144s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-WARNING groq rate limited, waiting 60.0s (attempt 1/4)
-WARNING groq rate limited, waiting 60.0s (attempt 2/4)
-WARNING groq rate limited, waiting 60.0s (attempt 3/4)
-WARNING no output for dark_mode: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198206, Requested 2792. Please try again in 7m11.135999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-WARNING groq rate limited, waiting 60.0s (attempt 1/4)
-WARNING groq rate limited, waiting 60.0s (attempt 2/4)
-WARNING groq rate limited, waiting 60.0s (attempt 3/4)
-WARNING no output for total_outage: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 197785, Requested 2802. Please try again in 4m13.584s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-WARNING groq rate limited, waiting 60.0s (attempt 1/4)
-WARNING groq rate limited, waiting 60.0s (attempt 2/4)
-WARNING groq rate limited, waiting 60.0s (attempt 3/4)
-WARNING no output for vat_rate: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 197360, Requested 2804. Please try again in 1m10.848s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-WARNING groq rate limited, waiting 60.0s (attempt 1/4)
-WARNING groq rate limited, waiting 10.0s (attempt 2/4)
-WARNING groq rate limited, waiting 60.0s (attempt 1/4)
-WARNING groq rate limited, waiting 60.0s (attempt 2/4)
-WARNING groq rate limited, waiting 60.0s (attempt 3/4)
-WARNING no output for add_seat: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199579, Requested 2789. Please try again in 17m2.976s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-WARNING groq rate limited, waiting 60.0s (attempt 1/4)
-WARNING groq rate limited, waiting 60.0s (attempt 2/4)
-WARNING groq rate limited, waiting 60.0s (attempt 3/4)
-WARNING no output for vague: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199156, Requested 2781. Please try again in 13m56.783999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-WARNING groq rate limited, waiting 60.0s (attempt 1/4)
-WARNING groq rate limited, waiting 60.0s (attempt 2/4)
-WARNING groq rate limited, waiting 60.0s (attempt 3/4)
-WARNING no output for angry_refund: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198729, Requested 2805. Please try again in 11m2.688s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-  6/9 openai/gpt-oss-120b / json_object / TicketTriage: first 100%, final 100%,
-accurate 88%
-WARNING groq rate limited, waiting 60.0s (attempt 1/4)
-WARNING groq rate limited, waiting 60.0s (attempt 2/4)
-WARNING groq rate limited, waiting 60.0s (attempt 3/4)
-WARNING no output for billing_duplicate: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198307, Requested 2340. Please try again in 4m39.504s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-WARNING groq rate limited, waiting 60.0s (attempt 1/4)
-WARNING groq rate limited, waiting 60.0s (attempt 2/4)
-WARNING groq rate limited, waiting 60.0s (attempt 3/4)
-WARNING no output for export_broken: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 197881, Requested 2324. Please try again in 1m28.56s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-WARNING groq rate limited, waiting 60.0s (attempt 1/4)
-WARNING groq rate limited, waiting 24.0s (attempt 2/4)
-WARNING groq rate limited, waiting 60.0s (attempt 1/4)
-WARNING groq rate limited, waiting 60.0s (attempt 2/4)
-WARNING groq rate limited, waiting 60.0s (attempt 3/4)
-WARNING no output for dark_mode: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199579, Requested 2317. Please try again in 13m39.072s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+WARNING no output for total_outage: RuntimeError: groq failed after 4 attempts: Connection error.
+WARNING no output for vat_rate: RuntimeError: groq failed after 4 attempts: Connection error.
+WARNING no output for api_500s: RuntimeError: groq failed after 4 attempts: Connection error.
+WARNING no output for add_seat: RuntimeError: groq failed after 4 attempts: Connection error.
+WARNING no output for vague: RuntimeError: groq failed after 4 attempts: Connection error.
+WARNING no output for angry_refund: RuntimeError: groq failed after 4 attempts: Connection error.
+WARNING no output for billing_duplicate: RuntimeError: groq failed after 4 attempts: Connection error.
+WARNING no output for export_broken: RuntimeError: groq failed after 4 attempts: Connection error.
+WARNING no output for cancel_account: RuntimeError: groq failed after 4 attempts: Connection error.
+WARNING no output for dark_mode: RuntimeError: groq failed after 4 attempts: Connection error.
+WARNING no output for total_outage: RuntimeError: groq failed after 4 attempts: Connection error.
+WARNING no output for vat_rate: RuntimeError: groq failed after 4 attempts: Connection error.
+WARNING no output for api_500s: RuntimeError: groq failed after 4 attempts: Connection error.
+WARNING no output for add_seat: RuntimeError: groq failed after 4 attempts: Connection error.
+WARNING no output for vague: RuntimeError: groq failed after 4 attempts: Connection error.
+WARNING no output for angry_refund: RuntimeError: groq failed after 4 attempts: Connection error.
+WARNING no output for billing_duplicate: RuntimeError: groq failed after 4 attempts: Connection error.
+WARNING no output for export_broken: RuntimeError: groq failed after 4 attempts: Connection error.
+WARNING no output for cancel_account: RuntimeError: groq failed after 4 attempts: Connection error.
+WARNING no output for dark_mode: RuntimeError: groq failed after 4 attempts: Connection error.
+WARNING no output for total_outage: RuntimeError: groq failed after 4 attempts: Connection error.
+WARNING no output for vat_rate: RuntimeError: groq failed after 4 attempts: Connection error.
+WARNING no output for api_500s: RuntimeError: groq failed after 4 attempts: Connection error.
+WARNING no output for add_seat: RuntimeError: groq failed after 4 attempts: Connection error.
+WARNING no output for vague: RuntimeError: groq failed after 4 attempts: Connection error.
+WARNING no output for angry_refund: RuntimeError: groq failed after 4 attempts: Connection error.
+  7/9 openai/gpt-oss-120b / prompt_only / TicketSummary: first 0%, final 0%, 
+accurate 0%
+WARNING no output for billing_duplicate: RuntimeError: groq failed after 4 attempts: Connection error.
 WARNING groq rate limited, waiting 60.0s (attempt 1/4)
 WARNING groq rate limited, waiting 60.0s (attempt 1/4)
 WARNING groq rate limited, waiting 60.0s (attempt 2/4)
 WARNING groq rate limited, waiting 60.0s (attempt 3/4)
-WARNING no output for vat_rate: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199496, Requested 2329. Please try again in 13m8.4s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+WARNING no output for dark_mode: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198160, Requested 2517. Please try again in 4m52.464s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
 WARNING groq rate limited, waiting 60.0s (attempt 1/4)
 WARNING groq rate limited, waiting 60.0s (attempt 2/4)
-WARNING groq rate limited, waiting 60.0s (attempt 3/4)
-WARNING no output for api_500s: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199074, Requested 2327. Please try again in 10m5.232s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
 WARNING groq rate limited, waiting 60.0s (attempt 1/4)
-WARNING groq rate limited, waiting 60.0s (attempt 2/4)
-WARNING groq rate limited, waiting 60.0s (attempt 3/4)
-WARNING no output for add_seat: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198651, Requested 2314. Please try again in 6m56.88s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-WARNING groq rate limited, waiting 60.0s (attempt 1/4)
-WARNING groq rate limited, waiting 60.0s (attempt 2/4)
-WARNING groq rate limited, waiting 60.0s (attempt 3/4)
-WARNING no output for vague: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198217, Requested 2306. Please try again in 3m45.936s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-WARNING groq rate limited, waiting 60.0s (attempt 1/4)
-WARNING groq rate limited, waiting 60.0s (attempt 2/4)
-WARNING groq rate limited, waiting 10.0s (attempt 1/4)
-WARNING groq rate limited, waiting 17.0s (attempt 1/4)
-WARNING groq rate limited, waiting 2.0s (attempt 1/4)
-  7/9 openai/gpt-oss-120b / prompt_only / TicketSummary: first 100%, final 
-100%, accurate 77%
-WARNING groq rate limited, waiting 15.0s (attempt 1/4)
-WARNING groq rate limited, waiting 60.0s (attempt 1/4)
-WARNING groq rate limited, waiting 60.0s (attempt 2/4)
-WARNING groq rate limited, waiting 60.0s (attempt 3/4)
-WARNING no output for export_broken: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199538, Requested 729. Please try again in 1m55.344s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-WARNING groq rate limited, waiting 60.0s (attempt 1/4)
-WARNING groq rate limited, waiting 40.0s (attempt 2/4)
-WARNING groq rate limited, waiting 7.0s (attempt 3/4)
-WARNING groq rate limited, waiting 60.0s (attempt 1/4)
-WARNING groq rate limited, waiting 60.0s (attempt 2/4)
-WARNING groq rate limited, waiting 60.0s (attempt 3/4)
-WARNING no output for dark_mode: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199572, Requested 845. Please try again in 3m0.144s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-WARNING groq rate limited, waiting 60.0s (attempt 1/4)
-WARNING groq rate limited, waiting 60.0s (attempt 2/4)
-WARNING groq rate limited, waiting 60.0s (attempt 3/4)
-WARNING no output for total_outage: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199145, Requested 2527. Please try again in 12m2.304s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-WARNING groq rate limited, waiting 60.0s (attempt 1/4)
-WARNING groq rate limited, waiting 60.0s (attempt 2/4)
-WARNING groq rate limited, waiting 60.0s (attempt 3/4)
-WARNING no output for vat_rate: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198715, Requested 2529. Please try again in 8m57.408s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-WARNING groq rate limited, waiting 60.0s (attempt 1/4)
-WARNING groq rate limited, waiting 60.0s (attempt 2/4)
-WARNING groq rate limited, waiting 60.0s (attempt 3/4)
-WARNING no output for api_500s: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198289, Requested 2527. Please try again in 5m52.512s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-WARNING groq rate limited, waiting 60.0s (attempt 1/4)
-WARNING groq rate limited, waiting 60.0s (attempt 2/4)
-WARNING groq rate limited, waiting 60.0s (attempt 3/4)
-WARNING no output for add_seat: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 197861, Requested 2514. Please try again in 2m42s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-WARNING groq rate limited, waiting 60.0s (attempt 1/4)
+WARNING no output for vat_rate: RuntimeError: groq failed after 4 attempts: Connection error.
+WARNING no output for api_500s: RuntimeError: groq failed after 4 attempts: Connection error.
+WARNING no output for add_seat: RuntimeError: groq failed after 4 attempts: Connection error.
+WARNING no output for vague: RuntimeError: groq failed after 4 attempts: Connection error.
+WARNING no output for angry_refund: RuntimeError: groq failed after 4 attempts: Connection error.
+WARNING no output for billing_duplicate: RuntimeError: groq failed after 4 attempts: Connection error.
+WARNING no output for export_broken: RuntimeError: groq failed after 4 attempts: Connection error.
+WARNING no output for cancel_account: RuntimeError: groq failed after 4 attempts: Connection error.
+WARNING no output for dark_mode: RuntimeError: groq failed after 4 attempts: Connection error.
+WARNING no output for total_outage: RuntimeError: groq failed after 4 attempts: Connection error.
+WARNING no output for vat_rate: RuntimeError: groq failed after 4 attempts: Connection error.
+WARNING no output for api_500s: RuntimeError: groq failed after 4 attempts: Connection error.
+WARNING no output for add_seat: RuntimeError: groq failed after 4 attempts: Connection error.
 WARNING no output for vague: RuntimeError: groq failed after 4 attempts: Connection error.
 WARNING no output for angry_refund: RuntimeError: groq failed after 4 attempts: Connection error.
 WARNING no output for billing_duplicate: RuntimeError: groq failed after 4 attempts: Connection error.
@@ -302,24 +299,22 @@ WARNING no output for export_broken: RuntimeError: groq failed after 4 attempts:
 WARNING no output for cancel_account: RuntimeError: groq failed after 4 attempts: Connection error.
 WARNING no output for dark_mode: RuntimeError: groq failed after 4 attempts: Connection error.
 WARNING no output for total_outage: RuntimeError: groq failed after 4 attempts: Connection error.
-WARNING groq rate limited, waiting 14.0s (attempt 3/4)
-WARNING groq rate limited, waiting 60.0s (attempt 1/4)
-WARNING groq rate limited, waiting 60.0s (attempt 2/4)
-WARNING groq rate limited, waiting 60.0s (attempt 3/4)
-WARNING no output for api_500s: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199574, Requested 1482. Please try again in 7m36.192s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-WARNING groq rate limited, waiting 60.0s (attempt 1/4)
-WARNING groq rate limited, waiting 60.0s (attempt 2/4)
-WARNING groq rate limited, waiting 60.0s (attempt 3/4)
-WARNING no output for add_seat: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199146, Requested 2772. Please try again in 13m48.575999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-WARNING groq rate limited, waiting 60.0s (attempt 1/4)
-WARNING groq rate limited, waiting 60.0s (attempt 2/4)
-WARNING groq rate limited, waiting 60.0s (attempt 3/4)
-WARNING no output for vague: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198722, Requested 2764. Please try again in 10m41.952s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-WARNING groq rate limited, waiting 60.0s (attempt 1/4)
-WARNING groq rate limited, waiting 60.0s (attempt 2/4)
-WARNING groq rate limited, waiting 60.0s (attempt 3/4)
-WARNING no output for angry_refund: RuntimeError: groq failed after 4 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kyfq7wnbfagseh2dp6f40gvx` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198298, Requested 2788. Please try again in 7m49.152s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-  9/9 openai/gpt-oss-120b / prompt_only / TicketTriage: first 100%, final 100%,
+WARNING no output for vat_rate: RuntimeError: groq failed after 4 attempts: Connection error.
+WARNING no output for api_500s: RuntimeError: groq failed after 4 attempts: Connection error.
+WARNING no output for add_seat: RuntimeError: groq failed after 4 attempts: Connection error.
+WARNING no output for vague: RuntimeError: groq failed after 4 attempts: Connection error.
+WARNING no output for angry_refund: RuntimeError: groq failed after 4 attempts: Connection error.
+WARNING no output for billing_duplicate: RuntimeError: groq failed after 4 attempts: Connection error.
+WARNING no output for export_broken: RuntimeError: groq failed after 4 attempts: Connection error.
+WARNING no output for cancel_account: RuntimeError: groq failed after 4 attempts: Connection error.
+WARNING no output for dark_mode: RuntimeError: groq failed after 4 attempts: Connection error.
+WARNING no output for total_outage: RuntimeError: groq failed after 4 attempts: Connection error.
+WARNING no output for vat_rate: RuntimeError: groq failed after 4 attempts: Connection error.
+WARNING no output for api_500s: RuntimeError: groq failed after 4 attempts: Connection error.
+WARNING no output for add_seat: RuntimeError: groq failed after 4 attempts: Connection error.
+WARNING no output for vague: RuntimeError: groq failed after 4 attempts: Connection error.
+WARNING no output for angry_refund: RuntimeError: groq failed after 4 attempts: Connection error.
+  9/9 openai/gpt-oss-120b / prompt_only / TicketTriage: first 0%, final 0%, 
 accurate 0%
 
                                Benchmark matrix                                
@@ -327,48 +322,44 @@ accurate 0%
 │       │       │       │ first │ after │  free │      │       │      │    no │
 │ model │ tier  │ sche… │ atte… │ repa… │ repa… │ acc… │ grou… │ tok… │ outp… │
 ├───────┼───────┼───────┼───────┼───────┼───────┼──────┼───────┼──────┼───────┤
-│ gpt-… │ json… │ simp… │ 100.… │ 100.… │     0 │ 80.… │ 100.… │  474 │       │
-│       │       │       │ (100… │ (100… │       │ (62… │ (100… │      │       │
-│       │       │       │ n=20) │ n=20) │       │ n=2… │ n=20) │      │       │
-│ gpt-… │ json… │ nest… │ 100.… │ 100.… │     0 │ 95.… │ 100.… │  769 │       │
-│       │       │       │ (100… │ (100… │       │ (85… │ (100… │      │       │
-│       │       │       │ n=20) │ n=20) │       │ n=2… │ n=20) │      │       │
-│ gpt-… │ json… │ hard  │ 100.… │ 100.… │     0 │ 80.… │ 100.… │ 1223 │       │
-│       │       │       │ (100… │ (100… │       │ (62… │ (100… │      │       │
-│       │       │       │ n=20) │ n=20) │       │ n=2… │ n=20) │      │       │
-│ gpt-… │ json… │ simp… │ 100.… │ 100.… │     0 │ 71.… │ 100.… │  501 │     6 │
-│       │       │       │ (100… │ (100… │       │ (47… │ (100… │      │       │
-│       │       │       │ n=14) │ n=14) │       │ n=1… │ n=14) │      │       │
-│ gpt-… │ json… │ nest… │ 100.… │ 100.… │     0 │ 100… │ 100.… │  867 │    18 │
-│       │       │       │ (100… │ (100… │       │ (10… │ (100… │      │       │
-│       │       │       │  n=2) │  n=2) │       │ n=2) │  n=2) │      │       │
-│ gpt-… │ json… │ hard  │ 100.… │ 100.… │     0 │ 87.… │ 100.… │ 1366 │    12 │
+│ gpt-… │ json… │ simp… │ 100.… │ 100.… │     0 │ 83.… │ 100.… │  487 │       │
+│       │       │       │ (100… │ (100… │       │ (70… │ (100… │      │       │
+│       │       │       │ n=30) │ n=30) │       │ n=3… │ n=30) │      │       │
+│ gpt-… │ json… │ nest… │ 100.… │ 100.… │     0 │ 93.… │ 100.… │  793 │       │
+│       │       │       │ (100… │ (100… │       │ (84… │ (100… │      │       │
+│       │       │       │ n=30) │ n=30) │       │ n=3… │ n=30) │      │       │
+│ gpt-… │ json… │ hard  │ 100.… │ 100.… │     0 │ 79.… │ 100.… │ 1232 │     1 │
 │       │       │       │ (100… │ (100… │       │ (64… │ (100… │      │       │
-│       │       │       │  n=8) │  n=8) │       │ n=8) │  n=8) │      │       │
-│ gpt-… │ prom… │ simp… │ 100.… │ 100.… │     0 │ 76.… │ 100.… │  501 │     7 │
-│       │       │       │ (100… │ (100… │       │ (54… │ (100… │      │       │
+│       │       │       │ n=29) │ n=29) │       │ n=2… │ n=29) │      │       │
+│ gpt-… │ json… │ simp… │ 100.… │ 100.… │     0 │ 83.… │ 100.… │  528 │       │
+│       │       │       │ (100… │ (100… │       │ (70… │ (100… │      │       │
+│       │       │       │ n=30) │ n=30) │       │ n=3… │ n=30) │      │       │
+│ gpt-… │ json… │ nest… │ 100.… │ 100.… │     0 │ 73.… │ 100.… │  931 │       │
+│       │       │       │ (100… │ (100… │       │ (57… │ (100… │      │       │
+│       │       │       │ n=30) │ n=30) │       │ n=3… │ n=30) │      │       │
+│ gpt-… │ json… │ hard  │ 100.… │ 100.… │     0 │ 84.… │ 100.… │ 1446 │    17 │
+│       │       │       │ (100… │ (100… │       │ (65… │ (100… │      │       │
 │       │       │       │ n=13) │ n=13) │       │ n=1… │ n=13) │      │       │
-│ gpt-… │ prom… │ nest… │ 100.… │ 100.… │     0 │ 100… │ 100.… │  856 │    18 │
+│ gpt-… │ prom… │ simp… │     - │     - │     0 │    - │     - │    - │    30 │
+│ gpt-… │ prom… │ nest… │ 100.… │ 100.… │     0 │ 100… │ 100.… │  804 │    27 │
 │       │       │       │ (100… │ (100… │       │ (10… │ (100… │      │       │
-│       │       │       │  n=2) │  n=2) │       │ n=2) │  n=2) │      │       │
-│ gpt-… │ prom… │ hard  │ 100.… │ 100.… │     0 │ 0.0% │ 100.… │ 1484 │    19 │
-│       │       │       │ (100… │ (100… │       │ (0.… │ (100… │      │       │
-│       │       │       │  n=1) │  n=1) │       │ n=1) │  n=1) │      │       │
+│       │       │       │  n=3) │  n=3) │       │ n=3) │  n=3) │      │       │
+│ gpt-… │ prom… │ hard  │     - │     - │     0 │    - │     - │    - │    30 │
 └───────┴───────┴───────┴───────┴───────┴───────┴──────┴───────┴──────┴───────┘
 
                               By enforcement tier                              
 ┌─────────────┬────────────────────┬─────────────────────┬────────────────────┐
 │ tier        │      first attempt │        after repair │  semantic accuracy │
 ├─────────────┼────────────────────┼─────────────────────┼────────────────────┤
-│ json_object │             100.0% │              100.0% │              79.2% │
-│             │    (100.0%-100.0%, │     (100.0%-100.0%, │      (62.9%-95.4%, │
-│             │              n=24) │               n=24) │              n=24) │
-│ json_schema │             100.0% │              100.0% │              85.0% │
-│             │    (100.0%-100.0%, │     (100.0%-100.0%, │      (76.0%-94.0%, │
-│             │              n=60) │               n=60) │              n=60) │
-│ prompt_only │             100.0% │              100.0% │              75.0% │
-│             │    (100.0%-100.0%, │     (100.0%-100.0%, │      (53.8%-96.2%, │
-│             │              n=16) │               n=16) │              n=16) │
+│ json_object │             100.0% │              100.0% │              79.5% │
+│             │    (100.0%-100.0%, │     (100.0%-100.0%, │      (70.2%-88.7%, │
+│             │              n=73) │               n=73) │              n=73) │
+│ json_schema │             100.0% │              100.0% │              85.4% │
+│             │    (100.0%-100.0%, │     (100.0%-100.0%, │      (78.1%-92.7%, │
+│             │              n=89) │               n=89) │              n=89) │
+│ prompt_only │             100.0% │              100.0% │             100.0% │
+│             │    (100.0%-100.0%, │     (100.0%-100.0%, │    (100.0%-100.0%, │
+│             │               n=3) │                n=3) │               n=3) │
 └─────────────┴────────────────────┴─────────────────────┴────────────────────┘
 
  First-attempt failures by type  
@@ -390,9 +381,9 @@ accurate 0%
 │ json_schema / simple    │          │        │         │          │          │
 └─────────────────────────┴──────────┴────────┴─────────┴──────────┴──────────┘
 
-9 of 9 cells have n<30 (smallest n=1); widest interval is +/-0.0%. Around 30x 
+3 of 7 cells have n<30 (smallest n=3); widest interval is +/-0.0%. Around 10x 
 the repeats would put every cell over the threshold. Cells sitting at 0% or 
 100% show a zero-width interval, which is an artefact of the approximation 
 rather than precision.
 
-Wrote runs\openai-gpt-oss-120b.json in 373.8 min
+Wrote runs\openai-gpt-oss-120b.json in 576.4 min

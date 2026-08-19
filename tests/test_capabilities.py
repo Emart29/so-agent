@@ -13,6 +13,7 @@ from datetime import datetime, timedelta, timezone
 
 import pytest
 
+import subprocess
 import sys
 from pathlib import Path
 
@@ -367,3 +368,16 @@ class TestLadder:
         caps = load_capabilities()["groq"]
         enforcing = [bool(caps[m].enforces_schema) for m in ladder]
         assert enforcing == sorted(enforcing)
+
+
+class TestLadderOutput:
+    def test_it_prints_one_id_per_line_with_no_carriage_returns(self):
+        """Shell scripts read this. Python on Windows writes CRLF by default, and
+        a model id carrying a carriage return becomes a path that cannot be
+        opened — reported as a SQLite error that names nothing relevant."""
+        result = subprocess.run(
+            [sys.executable, "examples/ladder.py", "--provider", "groq"],
+            capture_output=True, cwd=Path(__file__).resolve().parent.parent,
+        )
+        assert result.returncode == 0, result.stderr.decode()
+        assert b"\r" not in result.stdout
