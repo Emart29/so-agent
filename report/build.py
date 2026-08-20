@@ -161,15 +161,38 @@ def capability_section(capabilities: dict) -> str:
                 f'{TIER_LABEL.get(caps.tiers.get(t, "-"), "-")}</td>'
                 for t in TIER_ORDER
             )
+            # A model the provider has since dropped is kept in the table
+            # and labelled. Removing the row would hide the most concrete
+            # thing this report can say about how long its numbers last.
+            when = esc(caps.probed_at[:10])
+            if caps.retired_at:
+                when += (
+                    f'<br><span class="ignored">withdrawn '
+                    f'{esc(caps.retired_at[:10])}</span>'
+                )
             rows.append(
                 f"<tr><td>{esc(provider)}</td><td>{esc(short_model(model))}</td>"
                 f"{cells}<td>{esc(caps.best_tier)}</td>"
-                f'<td class="n">{esc(caps.probed_at[:10])}</td></tr>'
+                f'<td class="n">{when}</td></tr>'
             )
     if not rows:
         return ""
 
     headers = "".join(f"<th>{esc(t)}</th>" for t in TIER_ORDER)
+    withdrawn = [
+        (p_, m) for p_, ms in capabilities.items() for m, c in ms.items()
+        if c.retired_at
+    ]
+    gone = ""
+    if withdrawn:
+        gone = (
+            "<p class='note'><strong>Two of these models no longer exist.</strong> "
+            + esc(", ".join(f"{p_}/{short_model(m)}" for p_, m in withdrawn))
+            + " were measured and then withdrawn by the provider days later. The "
+            "rows stay because a model that was probed on one date and gone on "
+            "the next is the sharpest available statement about the shelf life of "
+            "every other number here.</p>"
+        )
     ignoring = [
         (p, m, c) for p, ms in capabilities.items() for m, c in ms.items()
         if c.silently_ignores
@@ -196,7 +219,7 @@ def capability_section(capabilities: dict) -> str:
         "it until you look at the output.</p>"
         f"<table><thead><tr><th>provider</th><th>model</th>{headers}"
         f"<th>best</th><th>probed</th></tr></thead>"
-        f"<tbody>{''.join(rows)}</tbody></table>{warning}"
+        f"<tbody>{''.join(rows)}</tbody></table>{gone}{warning}"
     )
 
 
